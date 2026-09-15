@@ -30,6 +30,7 @@ app.get('/quizlet/:type/:level', (req, res) => {
     const filePath = path.join(__dirname, 'data', type, `${level}.json`);
 
     let cards = [];
+    
     if (fs.existsSync(filePath)) {
         try {
             const fileData = fs.readFileSync(filePath, 'utf-8').trim();
