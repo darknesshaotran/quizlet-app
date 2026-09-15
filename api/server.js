@@ -23,6 +23,7 @@ app.get('/', (req, res) => res.render('index'));
 // Trang Import TXT
 app.get('/import', (req, res) => res.render('import'));
 
+
 // Trang Học Quizlet (Chung cho cả bài mới lẫn bài Chưa Thuộc)
 app.get('/quizlet/:type/:level', (req, res) => {
     const { type, level } = req.params;
@@ -30,7 +31,7 @@ app.get('/quizlet/:type/:level', (req, res) => {
     const filePath = path.join(__dirname, 'data', type, `${level}.json`);
 
     let cards = [];
-    
+
     if (fs.existsSync(filePath)) {
         try {
             const fileData = fs.readFileSync(filePath, 'utf-8').trim();
