@@ -6,10 +6,16 @@ const multer = require('multer');
 const app = express();
 const upload = multer({ storage: multer.memoryStorage() });
 
+// Middleware xử lý dữ liệu gửi lên
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Cấu hình View Engine và Thư mục chứa file HTML/EJS (Đi ra ngoài thư mục api)
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, '../views'));
+
+// Cấu hình thư mục chứa file tĩnh (CSS, Images, JS Client)
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Trang chủ
 app.get('/', (req, res) => res.render('index'));
@@ -85,5 +91,6 @@ app.post('/api/convert', upload.single('txtFile'), (req, res) => {
     res.send(JSON.stringify(resultJson, null, 2));
 });
 
-const PORT = 3000;
-app.listen(PORT, () => console.log(`Server running: http://localhost:${PORT}`));
+// const PORT = 3000;
+// app.listen(PORT, () => console.log(`Server running: http://localhost:${PORT}`));
+module.exports = app;
