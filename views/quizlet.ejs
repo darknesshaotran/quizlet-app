@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học <%= type %> - <%= level.toUpperCase() %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include('index.ejs') %>
+
+    <div class="container" id="app">
+        <h2>
+            <%= isUnlearned ? '⚠️ Đang ôn:' : 'Đang học:' %> 
+            <%= type.toUpperCase() %> - <%= level.toUpperCase() %>
+        </h2>
+        
+        <div id="stats" style="font-weight: bold; color: #64748b; margin-bottom: 10px;"></div>
+
+        <!-- Khung 3D Flashcard -->
+        <div class="card-scene" id="card-scene" onclick="flipCard()">
+            <div class="card-inner">
+                <div class="card-front" id="card-front"></div>
+                <div class="card-back" id="card-back"></div>
+            </div>
+        </div>
+
+        <div class="btn-group" id="action-btns">
+            <button class="btn btn-danger" onclick="markCard(false)">Chưa thuộc</button>
+            <button class="btn btn-success" onclick="markCard(true)">Đã thuộc</button>
+        </div>
+        <div id="counter-stats" style="margin-top: 15px; display: flex; justify-content: center; gap: 20px; font-weight: bold;">
+            <span style="color: #22c55e;">Đã thuộc: <span id="count-known">0</span></span>
+            <span style="color: #ef4444;">Chưa thuộc: <span id="count-unknown">0</span></span>
+        </div>
+        <!-- Màn hình hoàn thành -->
+        <div id="complete-screen" style="display: none;">
+            <h3>🎉 Bạn đã hoàn thành lượt học!</h3>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="restart(false)">Học lại toàn bộ</button>
+                <button class="btn btn-danger" onclick="restart(true)">Chỉ học lại các từ CHƯA THUỘC</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const typeKey = '<%= type %>';
+const levelKey = '<%= level %>';
+const isUnlearnedMode = <%= isUnlearned %>;
+const storageKey = `unlearned_${typeKey}_${levelKey}`;
+
+// Lấy dữ liệu gốc từ Server
+const originalCards = <%- JSON.stringify(cards) %>;
+
+// Quản lý LocalStorage
+function getSavedUnlearned() {
+    return JSON.parse(localStorage.getItem(storageKey) || '[]');
+}
+
+function saveToUnlearned(card) {
+    let list = getSavedUnlearned();
+    if (!list.some(c => c.id === card.id)) {
+        list.push(card);
+        localStorage.setItem(storageKey, JSON.stringify(list));
+    }
+}
+
+function removeFromUnlearned(cardId) {
+    let list = getSavedUnlearned().filter(c => c.id !== cardId);
+    localStorage.setItem(storageKey, JSON.stringify(list));
+}
+
+// Biến khởi tạo
+let currentQueue = isUnlearnedMode ? getSavedUnlearned() : [...originalCards];
+let sessionUnlearned = [];
+let currentIndex = 0;
+
+// THÊM: Biến đếm số lượng trong lượt học hiện tại
+let knownCount = 0;
+let unknownCount = 0;
+
+function updateCounters() {
+    document.getElementById('count-known').innerText = knownCount;
+    document.getElementById('count-unknown').innerText = unknownCount;
+}
+
+function renderCard() {
+    if (!currentQueue || currentQueue.length === 0 || currentIndex >= currentQueue.length) {
+        document.getElementById('card-scene').style.display = 'none';
+        document.getElementById('action-btns').style.display = 'none';
+        document.getElementById('counter-stats').style.display = 'none'; // Ẩn bộ đếm khi hoàn thành
+        
+        if (currentQueue && currentQueue.length > 0) {
+            document.getElementById('complete-screen').style.display = 'block';
+        } else {
+            document.getElementById('stats').innerText = "Chưa có từ nào trong danh mục này.";
+        }
+        return;
+    }
+
+    document.getElementById('card-scene').classList.remove('is-flipped');
+    const card = currentQueue[currentIndex];
+    document.getElementById('stats').innerText = `Thẻ ${currentIndex + 1} / ${currentQueue.length}`;
+
+    // Render dữ liệu linh hoạt
+    const kanji = card.kanji || '';
+    const furigana = card.furigana || '';
+    const hanviet = card.hanviet || card['han-viet'] || '';
+    const meaning = card.meaning || '';
+    const example = card.example || '';
+
+    if (kanji) {
+        document.getElementById('card-front').innerHTML = `<h3>${kanji}</h3><p>(${furigana})</p>`;
+    } else {
+        document.getElementById('card-front').innerHTML = `<h3>${card.structure || ''}</h3>`;
+    }
+
+    let backHtml = '';
+    if (hanviet) backHtml += `<p><strong>Hán Việt:</strong> ${hanviet}</p>`;
+    if (meaning) backHtml += `<p><strong>Nghĩa:</strong> ${meaning}</p>`;
+    if (example) backHtml += `<p><small style="color: #475569;">${example}</small></p>`;
+
+    document.getElementById('card-back').innerHTML = backHtml || '<p>Chưa có chi tiết</p>';
+}
+
+function flipCard() {
+    document.getElementById('card-scene').classList.toggle('is-flipped');
+}
+
+function markCard(isKnown) {
+    const currentCard = currentQueue[currentIndex];
+    const scene = document.getElementById('card-scene');
+
+    scene.classList.add('slide-next');
+
+    if (!isKnown && currentCard) {
+        unknownCount++; // Tăng số từ chưa thuộc
+        sessionUnlearned.push(currentCard);
+        saveToUnlearned(currentCard); 
+    } else if (isKnown && currentCard) {
+        knownCount++; // Tăng số từ đã thuộc
+        if (isUnlearnedMode) {
+            removeFromUnlearned(currentCard.id); 
+        }
+    }
+
+    updateCounters(); // Cập nhật con số hiển thị ra màn hình
+
+    setTimeout(() => {
+        currentIndex++;
+        renderCard();
+    }, 180);
+
+    setTimeout(() => {
+        scene.classList.remove('slide-next');
+    }, 350);
+}
+
+function restart(onlyUnlearned) {
+    if (onlyUnlearned) {
+        currentQueue = [...sessionUnlearned];
+    } else {
+        currentQueue = isUnlearnedMode ? getSavedUnlearned() : [...originalCards];
+    }
+    
+    // Reset lại toàn bộ biến đếm khi học lại
+    sessionUnlearned = [];
+    currentIndex = 0;
+    knownCount = 0;
+    unknownCount = 0;
+    updateCounters();
+    
+    document.getElementById('card-scene').style.display = 'block';
+    document.getElementById('action-btns').style.display = 'flex';
+    document.getElementById('counter-stats').style.display = 'flex';
+    document.getElementById('complete-screen').style.display = 'none';
+    renderCard();
+}
+
+// Khởi chạy lần đầu
+updateCounters();
+renderCard();
+    </script>
+</body>
+</html>

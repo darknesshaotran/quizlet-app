@@ -1,0 +1,235 @@
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background-color: #f0f2f5; 
+    color: #333;
+}
+
+/* Navbar */
+.navbar { display: flex; background: #2c3e50; padding: 0 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+.nav-item { position: relative; }
+.nav-item a, .nav-btn { color: white; padding: 15px 20px; display: block; text-decoration: none; border: none; background: none; font-size: 16px; cursor: pointer; transition: background 0.3s; }
+.nav-item:hover { background: #34495e; }
+
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: #34495e; min-width: 150px; list-style: none; padding: 0; margin: 0; z-index: 100; }
+.nav-item:hover .dropdown-menu { display: block; }
+
+.dropdown-item { position: relative; }
+.dropdown-item a { padding: 12px 20px; }
+
+.sub-dropdown { display: none; position: absolute; top: 0; left: 100%; background: #2c3e50; min-width: 150px; list-style: none; padding: 0; margin: 0; z-index: 101; }
+.dropdown-item:hover .sub-dropdown { display: block; }
+
+/* Main Container & Page Turn Animation */
+.container { 
+    max-width: 650px; 
+    margin: 40px auto; 
+    padding: 30px; 
+    background: white; 
+    border-radius: 12px; 
+    text-align: center; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transform-origin: left center;
+    animation: pageTurn 0.6s ease-out forwards;
+}
+
+@keyframes pageTurn {
+    0% {
+        opacity: 0;
+        transform: rotateY(-20deg) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg) scale(1);
+    }
+}
+
+/* Flashcard 3D Flip Scene */
+.card-scene {
+    width: 100%;
+    height: 280px;
+    margin: 25px 0;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card-scene.is-flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Card Front & Back Styles */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #e2e8f0;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    color: #1e293b;
+}
+
+.card-front h3 {
+    font-size: 38px;
+    margin: 0 0 10px 0;
+    color: #0f172a;
+}
+
+.card-front p {
+    font-size: 18px;
+    color: #64748b;
+    margin: 0;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    color: #1e3a8a;
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    border-color: #bfdbfe;
+}
+
+.card-back p {
+    margin: 6px 0;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Control Buttons */
+.btn-group { margin-top: 20px; display: flex; gap: 15px; justify-content: center; }
+button.btn { 
+    padding: 12px 24px; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: 600; 
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+/* Animation khi chuyển sang thẻ tiếp theo */
+.card-scene.slide-next {
+    animation: slideNext 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideNext {
+    0% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+    50% {
+        opacity: 0;
+        transform: translateX(-60px) scale(0.92);
+    }
+    51% {
+        transform: translateX(60px) scale(0.92);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+button.btn:hover { transform: translateY(-2deg); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.btn-danger { background: #ef4444; color: white; }
+.btn-success { background: #22c55e; color: white; }
+.btn-primary { background: #3b82f6; color: white; }
+
+/* ==========================================
+   RESPONSIVE CHO TABLET (IPAD) & MOBILE (IPHONE)
+   ========================================== */
+
+/* 1. Màn hình Máy tính bảng (iPad / Tablet - dưới 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+        max-width: 600px;
+        padding: 20px;
+    }
+
+    .card-scene {
+        height: 320px; /* Thu gọn chiều cao thẻ cho vừa màn hình */
+    }
+
+    .btn-group .btn {
+        padding: 14px 28px; /* Tăng kích thước nút để dễ bấm cảm ứng */
+        font-size: 1.1rem;
+    }
+}
+
+/* 2. Màn hình Điện thoại (iPhone / Mobile - dưới 600px) */
+@media (max-width: 600px) {
+    /* Navbar cuộn ngang hoặc thu nhỏ */
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .nav-item .nav-btn, .nav-item a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+
+    .container {
+        width: 95%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Tối ưu Flashcard cho iPhone */
+    .card-scene {
+        height: 280px;
+    }
+
+    .card-front h3 {
+        font-size: 1.8rem; /* Chữ Kanji vừa mắt, không bị vỡ hàng */
+    }
+
+    .card-back p {
+        font-size: 0.95rem;
+    }
+
+    /* Bố trí lại các nút bấm */
+    .btn-group {
+        flex-direction: row;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .btn-group .btn {
+        flex: 1;
+        padding: 12px 0;
+        font-size: 1rem;
+    }
+
+    /* Khung thống kê số từ */
+    #counter-stats {
+        font-size: 0.95rem;
+        gap: 15px;
+    }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Dữ Liệu</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include('index.ejs') %>
+
+    <div class="container">
+        <h2>Import dữ liệu TXT -> JSON</h2>
+        <form action="/api/convert" method="POST" enctype="multipart/form-data">
+            <div style="margin-bottom: 20px;">
+                <label style="font-weight: bold;">Loại dữ liệu: </label>
+                <select name="type" required style="padding: 8px 12px; border-radius: 6px; border: 1px solid #ccc;">
+                    <option value="tu-vung">Từ vựng</option>
+                    <option value="ngu-phap">Ngữ pháp</option>
+                </select>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <input type="file" name="txtFile" accept=".txt" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Import & Tải file JSON</button>
+        </form>
+    </div>
+</body>
+</html>

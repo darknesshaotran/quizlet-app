@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLPT Quizlet App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-item">
+            <a href="https://drive.google.com/drive/u/1/folders/1DrSGyGi_NTzeRsGrJYV-iM9wQVmP8iKC" target="_blank">textBook</a>
+        </div>
+        
+        <!-- Dropdown Bài Học Chính -->
+        <div class="nav-item">
+            <span class="nav-btn">JLPT ▾</span>
+            <ul class="dropdown-menu">
+                <% ['n1','n2','n3','n4','n5'].forEach(level => { %>
+                    <li class="dropdown-item">
+                        <a href="#"><%= level.toUpperCase() %> ▸</a>
+                        <ul class="sub-dropdown">
+                            <li><a href="/quizlet/tu-vung/<%= level %>">Từ vựng</a></li>
+                            <li><a href="/quizlet/ngu-phap/<%= level %>">Ngữ pháp</a></li>
+                        </ul>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+
+        <!-- Dropdown Từ Chưa Thuộc -->
+        <div class="nav-item">
+            <span class="nav-btn" style="color: #ff7875; font-weight: bold;">⚠️ Chưa thuộc ▾</span>
+            <ul class="dropdown-menu">
+                <% ['n1','n2','n3','n4','n5'].forEach(level => { %>
+                    <li class="dropdown-item">
+                        <a href="#"><%= level.toUpperCase() %> ▸</a>
+                        <ul class="sub-dropdown">
+                            <li><a href="/quizlet/tu-vung/<%= level %>?mode=unlearned">Từ vựng</a></li>
+                            <li><a href="/quizlet/ngu-phap/<%= level %>?mode=unlearned">Ngữ pháp</a></li>
+                        </ul>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+
+        <div class="nav-item">
+            <a href="https://drive.google.com/drive/folders/1n3P0RVh_--djt3Pd_f9Huxng1_1eIC5s" target="_blank">Luyện thi</a>
+        </div>
+
+        <div class="nav-item">
+            <a href="/import">Import</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>HỌC ĐÊ LÊ HỒNG!</h1>
+        <p>Hãy chọn mục học trên Thanh Menu để bắt đầu.</p>
+    </div>
+</body>
+</html>
