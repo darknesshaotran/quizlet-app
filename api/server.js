@@ -28,7 +28,7 @@ app.get('/import', (req, res) => res.render('import'));
 app.get('/quizlet/:type/:level', (req, res) => {
     const { type, level } = req.params;
     const isUnlearned = req.query.mode === 'unlearned'; // Kiểm tra xem có phải chế độ xem từ chưa thuộc không
-    const filePath = path.join(__dirname, 'data', type, `${level}.json`);
+    const filePath = path.join(__dirname, '../data', type, `${level}.json`);
     let cards = [];
 
     if (fs.existsSync(filePath)) {
