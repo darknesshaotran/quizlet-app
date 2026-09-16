@@ -8,7 +8,7 @@
     "multer": "^1.4.5-lts.1"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "node api/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

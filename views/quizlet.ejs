@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Học <%= type %> - <%= level.toUpperCase() %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -11,27 +14,33 @@
 
     <div class="container" id="app">
         <h2>
-            <%= isUnlearned ? '⚠️ Đang ôn:' : 'Đang học:' %> 
+            <%= isUnlearned ? '⚠️ Đang ôn (chưa thuộc):' : (isLearned ? '✅ Xem lại (đã thuộc):' : 'Đang học:') %>
             <%= type.toUpperCase() %> - <%= level.toUpperCase() %>
         </h2>
         
-        <div id="stats" style="font-weight: bold; color: #64748b; margin-bottom: 10px;"></div>
+        <div id="stats" style="font-weight: 700; color: #6b7280; margin-bottom: 14px; letter-spacing: 0.3px;"></div>
 
-        <!-- Khung 3D Flashcard -->
-        <div class="card-scene" id="card-scene" onclick="flipCard()">
-            <div class="card-inner">
-                <div class="card-front" id="card-front"></div>
-                <div class="card-back" id="card-back"></div>
+        <!-- Khung 3D Flashcard + Nút điều hướng Trước / Sau -->
+        <div class="card-nav-wrapper" id="card-nav-wrapper">
+            <button class="nav-arrow nav-arrow-left" id="btn-prev" onclick="prevCard()" title="Thẻ trước" aria-label="Thẻ trước">&#8249;</button>
+
+            <div class="card-scene" id="card-scene" onclick="flipCard()">
+                <div class="card-inner">
+                    <div class="card-front" id="card-front"></div>
+                    <div class="card-back" id="card-back"></div>
+                </div>
             </div>
+
+            <button class="nav-arrow nav-arrow-right" id="btn-next" onclick="nextCard()" title="Thẻ tiếp theo" aria-label="Thẻ tiếp theo">&#8250;</button>
         </div>
 
         <div class="btn-group" id="action-btns">
             <button class="btn btn-danger" onclick="markCard(false)">Chưa thuộc</button>
             <button class="btn btn-success" onclick="markCard(true)">Đã thuộc</button>
         </div>
-        <div id="counter-stats" style="margin-top: 15px; display: flex; justify-content: center; gap: 20px; font-weight: bold;">
-            <span style="color: #22c55e;">Đã thuộc: <span id="count-known">0</span></span>
-            <span style="color: #ef4444;">Chưa thuộc: <span id="count-unknown">0</span></span>
+        <div id="counter-stats" style="margin-top: 18px; display: flex; justify-content: center; gap: 12px; font-weight: 700;">
+            <span style="color: #1f6f52;">Đã thuộc: <span id="count-known">0</span></span>
+            <span style="color: #8f3b46;">Chưa thuộc: <span id="count-unknown">0</span></span>
         </div>
         <!-- Màn hình hoàn thành -->
         <div id="complete-screen" style="display: none;">
@@ -47,12 +56,14 @@
         const typeKey = '<%= type %>';
 const levelKey = '<%= level %>';
 const isUnlearnedMode = <%= isUnlearned %>;
+const isLearnedMode = <%= isLearned %>;
 const storageKey = `unlearned_${typeKey}_${levelKey}`;
+const learnedStorageKey = `learned_${typeKey}_${levelKey}`;
 
 // Lấy dữ liệu gốc từ Server
 const originalCards = <%- JSON.stringify(cards) %>;
 
-// Quản lý LocalStorage
+// ==== Quản lý LocalStorage: CHƯA THUỘC ====
 function getSavedUnlearned() {
     return JSON.parse(localStorage.getItem(storageKey) || '[]');
 }
@@ -70,8 +81,32 @@ function removeFromUnlearned(cardId) {
     localStorage.setItem(storageKey, JSON.stringify(list));
 }
 
-// Biến khởi tạo
-let currentQueue = isUnlearnedMode ? getSavedUnlearned() : [...originalCards];
+// ==== Quản lý LocalStorage: ĐÃ THUỘC ====
+function getSavedLearned() {
+    return JSON.parse(localStorage.getItem(learnedStorageKey) || '[]');
+}
+
+function saveToLearned(card) {
+    let list = getSavedLearned();
+    if (!list.some(c => c.id === card.id)) {
+        list.push(card);
+        localStorage.setItem(learnedStorageKey, JSON.stringify(list));
+    }
+}
+
+function removeFromLearned(cardId) {
+    let list = getSavedLearned().filter(c => c.id !== cardId);
+    localStorage.setItem(learnedStorageKey, JSON.stringify(list));
+}
+
+// Biến khởi tạo: chọn nguồn hàng đợi theo chế độ đang xem
+function buildInitialQueue() {
+    if (isLearnedMode) return getSavedLearned();
+    if (isUnlearnedMode) return getSavedUnlearned();
+    return [...originalCards];
+}
+
+let currentQueue = buildInitialQueue();
 let sessionUnlearned = [];
 let currentIndex = 0;
 
@@ -86,7 +121,7 @@ function updateCounters() {
 
 function renderCard() {
     if (!currentQueue || currentQueue.length === 0 || currentIndex >= currentQueue.length) {
-        document.getElementById('card-scene').style.display = 'none';
+        document.getElementById('card-nav-wrapper').style.display = 'none';
         document.getElementById('action-btns').style.display = 'none';
         document.getElementById('counter-stats').style.display = 'none'; // Ẩn bộ đếm khi hoàn thành
         
@@ -101,6 +136,10 @@ function renderCard() {
     document.getElementById('card-scene').classList.remove('is-flipped');
     const card = currentQueue[currentIndex];
     document.getElementById('stats').innerText = `Thẻ ${currentIndex + 1} / ${currentQueue.length}`;
+
+    // Bật/tắt nút mũi tên Trước/Sau theo vị trí hiện tại
+    document.getElementById('btn-prev').disabled = currentIndex === 0;
+    document.getElementById('btn-next').disabled = currentIndex >= currentQueue.length - 1;
 
     // Render dữ liệu linh hoạt
     const kanji = card.kanji || '';
@@ -133,14 +172,18 @@ function markCard(isKnown) {
 
     scene.classList.add('slide-next');
 
-    if (!isKnown && currentCard) {
-        unknownCount++; // Tăng số từ chưa thuộc
-        sessionUnlearned.push(currentCard);
-        saveToUnlearned(currentCard); 
-    } else if (isKnown && currentCard) {
-        knownCount++; // Tăng số từ đã thuộc
-        if (isUnlearnedMode) {
-            removeFromUnlearned(currentCard.id); 
+    if (currentCard) {
+        if (!isKnown) {
+            // ❌ CHƯA THUỘC: thêm vào danh sách chưa thuộc, loại khỏi danh sách đã thuộc (nếu có)
+            unknownCount++;
+            sessionUnlearned.push(currentCard);
+            saveToUnlearned(currentCard);
+            removeFromLearned(currentCard.id);
+        } else {
+            // ✅ ĐÃ THUỘC: thêm vào danh sách đã thuộc, loại khỏi danh sách chưa thuộc (nếu có)
+            knownCount++;
+            saveToLearned(currentCard);
+            removeFromUnlearned(currentCard.id);
         }
     }
 
@@ -156,11 +199,27 @@ function markCard(isKnown) {
     }, 350);
 }
 
+// Xem lại thẻ trước đó (chỉ điều hướng, không tính lại điểm)
+function prevCard() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        renderCard();
+    }
+}
+
+// Bỏ qua, xem thẻ tiếp theo mà không đánh giá (chỉ điều hướng)
+function nextCard() {
+    if (currentQueue && currentIndex < currentQueue.length - 1) {
+        currentIndex++;
+        renderCard();
+    }
+}
+
 function restart(onlyUnlearned) {
     if (onlyUnlearned) {
         currentQueue = [...sessionUnlearned];
     } else {
-        currentQueue = isUnlearnedMode ? getSavedUnlearned() : [...originalCards];
+        currentQueue = buildInitialQueue();
     }
     
     // Reset lại toàn bộ biến đếm khi học lại
@@ -170,7 +229,7 @@ function restart(onlyUnlearned) {
     unknownCount = 0;
     updateCounters();
     
-    document.getElementById('card-scene').style.display = 'block';
+    document.getElementById('card-nav-wrapper').style.display = 'flex';
     document.getElementById('action-btns').style.display = 'flex';
     document.getElementById('counter-stats').style.display = 'flex';
     document.getElementById('complete-screen').style.display = 'none';

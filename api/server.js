@@ -16,7 +16,6 @@ app.set('views', path.join(__dirname, '../views'));
 
 // Cấu hình thư mục chứa file tĩnh (CSS, Images, JS Client)
 app.use(express.static(path.join(__dirname, '../public')));
-
 // Trang chủ
 app.get('/', (req, res) => res.render('index'));
 
@@ -27,7 +26,9 @@ app.get('/import', (req, res) => res.render('import'));
 // Trang Học Quizlet (Chung cho cả bài mới lẫn bài Chưa Thuộc)
 app.get('/quizlet/:type/:level', (req, res) => {
     const { type, level } = req.params;
-    const isUnlearned = req.query.mode === 'unlearned'; // Kiểm tra xem có phải chế độ xem từ chưa thuộc không
+    const mode = req.query.mode;
+    const isUnlearned = mode === 'unlearned'; // Chế độ xem từ CHƯA THUỘC
+    const isLearned = mode === 'learned';     // Chế độ xem từ ĐÃ THUỘC
     const filePath = path.join(__dirname, '../data', type, `${level}.json`);
     let cards = [];
 
@@ -40,7 +41,35 @@ app.get('/quizlet/:type/:level', (req, res) => {
         }
     }
 
-    res.render('quizlet', { type, level, cards, isUnlearned });
+    res.render('quizlet', { type, level, cards, isUnlearned, isLearned });
+});
+
+// API: Trả về tổng số thẻ (từ vựng / ngữ pháp) của từng cấp N1-N5
+// Dùng để FE tính % tiến độ học (đã thuộc / tổng số * 100)
+app.get('/api/counts', (req, res) => {
+    const types = ['tu-vung', 'ngu-phap'];
+    const levels = ['n1', 'n2', 'n3', 'n4', 'n5'];
+    const result = {};
+
+    types.forEach(type => {
+        result[type] = {};
+        levels.forEach(level => {
+            const filePath = path.join(__dirname, '../data', type, `${level}.json`);
+            let count = 0;
+            if (fs.existsSync(filePath)) {
+                try {
+                    const fileData = fs.readFileSync(filePath, 'utf-8').trim();
+                    const arr = fileData ? JSON.parse(fileData) : [];
+                    count = Array.isArray(arr) ? arr.length : 0;
+                } catch (e) {
+                    count = 0;
+                }
+            }
+            result[type][level] = count;
+        });
+    });
+
+    res.json(result);
 });
 
 // API Convert File TXT -> JSON

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JLPT Quizlet App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -13,16 +16,28 @@
             <a href="https://drive.google.com/drive/u/1/folders/1DrSGyGi_NTzeRsGrJYV-iM9wQVmP8iKC" target="_blank">textBook</a>
         </div>
         
-        <!-- Dropdown Bài Học Chính -->
-        <div class="nav-item">
+        <!-- Dropdown Bài Học Chính (kèm Progress Bar % đã thuộc) -->
+        <div class="nav-item nav-jlpt">
             <span class="nav-btn">JLPT ▾</span>
             <ul class="dropdown-menu">
                 <% ['n1','n2','n3','n4','n5'].forEach(level => { %>
                     <li class="dropdown-item">
                         <a href="#"><%= level.toUpperCase() %> ▸</a>
                         <ul class="sub-dropdown">
-                            <li><a href="/quizlet/tu-vung/<%= level %>">Từ vựng</a></li>
-                            <li><a href="/quizlet/ngu-phap/<%= level %>">Ngữ pháp</a></li>
+                            <li class="progress-item">
+                                <a href="/quizlet/tu-vung/<%= level %>">Từ vựng</a>
+                                <div class="progress-bar-mini">
+                                    <div class="progress-fill-mini" id="progress-tu-vung-<%= level %>"></div>
+                                </div>
+                                <span class="progress-label" id="progress-label-tu-vung-<%= level %>">0%</span>
+                            </li>
+                            <li class="progress-item">
+                                <a href="/quizlet/ngu-phap/<%= level %>">Ngữ pháp</a>
+                                <div class="progress-bar-mini">
+                                    <div class="progress-fill-mini" id="progress-ngu-phap-<%= level %>"></div>
+                                </div>
+                                <span class="progress-label" id="progress-label-ngu-phap-<%= level %>">0%</span>
+                            </li>
                         </ul>
                     </li>
                 <% }); %>
@@ -31,7 +46,7 @@
 
         <!-- Dropdown Từ Chưa Thuộc -->
         <div class="nav-item">
-            <span class="nav-btn" style="color: #ff7875; font-weight: bold;">⚠️ Chưa thuộc ▾</span>
+            <span class="nav-btn" style="color: #d98a92; font-weight: 700;">⚠ Chưa thuộc ▾</span>
             <ul class="dropdown-menu">
                 <% ['n1','n2','n3','n4','n5'].forEach(level => { %>
                     <li class="dropdown-item">
@@ -39,6 +54,22 @@
                         <ul class="sub-dropdown">
                             <li><a href="/quizlet/tu-vung/<%= level %>?mode=unlearned">Từ vựng</a></li>
                             <li><a href="/quizlet/ngu-phap/<%= level %>?mode=unlearned">Ngữ pháp</a></li>
+                        </ul>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+
+        <!-- Dropdown Từ Đã Thuộc -->
+        <div class="nav-item">
+            <span class="nav-btn" style="color: #5fb891; font-weight: 700;">✓ Đã thuộc ▾</span>
+            <ul class="dropdown-menu">
+                <% ['n1','n2','n3','n4','n5'].forEach(level => { %>
+                    <li class="dropdown-item">
+                        <a href="#"><%= level.toUpperCase() %> ▸</a>
+                        <ul class="sub-dropdown">
+                            <li><a href="/quizlet/tu-vung/<%= level %>?mode=learned">Từ vựng</a></li>
+                            <li><a href="/quizlet/ngu-phap/<%= level %>?mode=learned">Ngữ pháp</a></li>
                         </ul>
                     </li>
                 <% }); %>
@@ -58,5 +89,72 @@
         <h1>HỌC ĐÊ LÊ HỒNG!</h1>
         <p>Hãy chọn mục học trên Thanh Menu để bắt đầu.</p>
     </div>
+
+    <script>
+    (function () {
+        var TYPES = ['tu-vung', 'ngu-phap'];
+        var LEVELS = ['n1', 'n2', 'n3', 'n4', 'n5'];
+        var cachedCounts = null; // Tổng số thẻ/level không đổi trong phiên, nên chỉ cần fetch 1 lần
+
+        function getLearnedCount(type, level) {
+            try {
+                var list = JSON.parse(localStorage.getItem('learned_' + type + '_' + level) || '[]');
+                return Array.isArray(list) ? list.length : 0;
+            } catch (e) {
+                return 0;
+            }
+        }
+
+        function paint(type, level, percent) {
+            var fill = document.getElementById('progress-' + type + '-' + level);
+            var label = document.getElementById('progress-label-' + type + '-' + level);
+            if (fill) fill.style.width = percent + '%';
+            if (label) label.innerText = percent + '%';
+        }
+
+        // Đọc lại localStorage (có thể vừa thay đổi) và tô lại tất cả progress bar
+        function repaintAll(counts) {
+            TYPES.forEach(function (type) {
+                LEVELS.forEach(function (level) {
+                    var total = (counts[type] && counts[type][level]) || 0;
+                    var learned = getLearnedCount(type, level);
+                    var percent = total > 0 ? Math.round((learned / total) * 100) : 0;
+                    paint(type, level, percent);
+                });
+            });
+        }
+
+        // Gọi hàm này bất cứ khi nào muốn cập nhật % (hover, load trang, sau khi học xong...)
+        function refreshProgress() {
+            if (cachedCounts) {
+                repaintAll(cachedCounts);
+                return;
+            }
+            fetch('/api/counts')
+                .then(function (res) { return res.json(); })
+                .then(function (counts) {
+                    cachedCounts = counts;
+                    repaintAll(counts);
+                })
+                .catch(function () { /* Không lấy được dữ liệu, giữ nguyên 0% */ });
+        }
+
+        // Cập nhật ngay khi trang tải xong
+        refreshProgress();
+
+        // Cập nhật lại NGAY khi hover/chạm vào menu JLPT (N1-N5), để luôn phản ánh đúng % mới nhất
+        var jlptNav = document.querySelector('.nav-jlpt');
+        if (jlptNav) {
+            jlptNav.addEventListener('mouseenter', refreshProgress);
+            jlptNav.addEventListener('focusin', refreshProgress);
+            jlptNav.addEventListener('touchstart', refreshProgress, { passive: true });
+        }
+
+        // Nếu người dùng có nhiều tab, khi quay lại tab này thì cập nhật luôn
+        document.addEventListener('visibilitychange', function () {
+            if (document.visibilityState === 'visible') refreshProgress();
+        });
+    })();
+    </script>
 </body>
 </html>
