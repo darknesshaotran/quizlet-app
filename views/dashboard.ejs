@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - JLPT Quizlet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include('index.ejs') %>
+
+    <div class="container dashboard-container">
+        <h1>📊 Dashboard</h1>
+        <p>Tổng quan tiến độ học tập của bạn.</p>
+
+        <div class="dash-summary-row">
+            <div class="dash-summary-card">
+                <div class="dash-summary-num" id="dash-streak">0</div>
+                <div class="dash-summary-label">🔥 Ngày liên tiếp</div>
+            </div>
+            <div class="dash-summary-card">
+                <div class="dash-summary-num" id="dash-total-learned">0</div>
+                <div class="dash-summary-label">📚 Tổng số từ đã thuộc</div>
+            </div>
+            <div class="dash-summary-card">
+                <div class="dash-summary-num" id="dash-total-cards">0</div>
+                <div class="dash-summary-label">🗂️ Tổng số thẻ có sẵn</div>
+            </div>
+        </div>
+
+        <h2 style="margin-top:36px;">Từ vựng theo cấp độ</h2>
+        <div class="dash-bars" id="dash-bars-tu-vung"></div>
+
+        <h2 style="margin-top:28px;">Ngữ pháp theo cấp độ</h2>
+        <div class="dash-bars" id="dash-bars-ngu-phap"></div>
+    </div>
+
+    <script>
+    const TYPES = ['tu-vung', 'ngu-phap'];
+    const LEVELS = ['n1', 'n2', 'n3', 'n4', 'n5'];
+    const LEVEL_COLORS = { n1: '#8f3b46', n2: '#c9a24d', n3: '#1f6f52', n4: '#2f6fa8', n5: '#6b5aa8' };
+
+    function getLearnedCount(type, level) {
+        try {
+            const list = JSON.parse(localStorage.getItem('learned_' + type + '_' + level) || '[]');
+            return Array.isArray(list) ? list.length : 0;
+        } catch (e) { return 0; }
+    }
+
+    function computeStreak() {
+        let dates;
+        try { dates = JSON.parse(localStorage.getItem('studyDates') || '[]'); } catch (e) { dates = []; }
+        const set = new Set(dates);
+        let streak = 0;
+        let cursor = new Date();
+
+        // Nếu hôm nay chưa học, vẫn cho phép tính streak tính đến hôm qua
+        const todayStr = cursor.toISOString().slice(0, 10);
+        if (!set.has(todayStr)) {
+            cursor.setDate(cursor.getDate() - 1);
+        }
+
+        while (true) {
+            const s = cursor.toISOString().slice(0, 10);
+            if (set.has(s)) {
+                streak++;
+                cursor.setDate(cursor.getDate() - 1);
+            } else {
+                break;
+            }
+        }
+        return streak;
+    }
+
+    function renderBars(containerId, type, counts) {
+        const el = document.getElementById(containerId);
+        el.innerHTML = '';
+        LEVELS.forEach(level => {
+            const total = (counts[type] && counts[type][level]) || 0;
+            const learned = getLearnedCount(type, level);
+            const percent = total > 0 ? Math.round((learned / total) * 100) : 0;
+
+            const row = document.createElement('div');
+            row.className = 'dash-bar-row';
+            row.innerHTML = `
+                <div class="dash-bar-label">${level.toUpperCase()}</div>
+                <div class="dash-bar-track">
+                    <div class="dash-bar-fill" style="width:${percent}%; background:${LEVEL_COLORS[level]};"></div>
+                </div>
+                <div class="dash-bar-value">${learned}/${total} (${percent}%)</div>
+            `;
+            el.appendChild(row);
+        });
+    }
+
+    fetch('/api/counts').then(r => r.json()).then(counts => {
+        renderBars('dash-bars-tu-vung', 'tu-vung', counts);
+        renderBars('dash-bars-ngu-phap', 'ngu-phap', counts);
+
+        let totalCards = 0, totalLearned = 0;
+        TYPES.forEach(type => {
+            LEVELS.forEach(level => {
+                totalCards += (counts[type] && counts[type][level]) || 0;
+                totalLearned += getLearnedCount(type, level);
+            });
+        });
+        document.getElementById('dash-total-cards').innerText = totalCards;
+        document.getElementById('dash-total-learned').innerText = totalLearned;
+    }).catch(() => {});
+
+    document.getElementById('dash-streak').innerText = computeStreak();
+    </script>
+</body>
+</html>

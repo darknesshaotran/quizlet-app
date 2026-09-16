@@ -437,6 +437,273 @@ button.btn:active { transform: translateY(0) scale(0.97); }
 
 #stats { color: var(--ink-soft); font-weight: 600; letter-spacing: 0.3px; }
 
+/* =========================================================
+   NAV: progress item row (Từ vựng/Ngữ pháp + icon Quiz)
+   ========================================================= */
+.progress-item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+.quiz-quicklink {
+    text-decoration: none;
+    font-size: 13px;
+    opacity: 0.75;
+    padding: 2px 6px;
+    border-radius: 6px;
+    transition: opacity 0.2s, background 0.2s;
+}
+.quiz-quicklink:hover {
+    opacity: 1;
+    background: rgba(201,162,77,0.18);
+}
+
+/* =========================================================
+   TOOLBAR (Shuffle / Undo / SRS / Reset)
+   ========================================================= */
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 6px 0 18px;
+}
+
+.btn-tool {
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.btn-tool:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--gold);
+}
+.btn-tool:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.btn-tool-active {
+    background: linear-gradient(135deg, var(--navy), var(--navy-soft));
+    color: var(--gold-soft);
+    border-color: var(--navy);
+}
+.btn-tool-ghost {
+    background: transparent;
+    color: var(--ink-soft);
+}
+.btn-tool-danger {
+    background: transparent;
+    color: var(--ruby);
+    border-color: rgba(143,59,70,0.4);
+}
+.btn-tool-danger:hover:not(:disabled) {
+    background: rgba(143,59,70,0.08);
+    border-color: var(--ruby);
+}
+
+.hint-row {
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    opacity: 0.75;
+    margin-top: -10px;
+    margin-bottom: 14px;
+}
+
+.kbd-hint {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 1px 6px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.25);
+    font-size: 11px;
+    font-weight: 800;
+    opacity: 0.85;
+}
+
+/* =========================================================
+   SRS grade buttons
+   ========================================================= */
+.srs-btn-group .btn-srs {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13.5px;
+    color: #fff;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    flex: 1;
+}
+.srs-btn-group .btn-srs:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.btn-srs-again { background: linear-gradient(135deg, #8f3b46, #b6535f); }
+.btn-srs-hard  { background: linear-gradient(135deg, #a8722f, #cf9a4f); }
+.btn-srs-good  { background: linear-gradient(135deg, #1f6f52, #2f9c72); }
+.btn-srs-easy  { background: linear-gradient(135deg, #2f6fa8, #5a9bd4); }
+
+/* =========================================================
+   Swipe hints (mobile Tinder-style)
+   ========================================================= */
+.card-scene { position: relative; }
+.swipe-hint {
+    position: absolute;
+    top: 20px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.05s linear;
+    z-index: 5;
+}
+.swipe-hint-left {
+    left: 16px;
+    color: #8f3b46;
+    border: 2px solid #8f3b46;
+    transform: rotate(-8deg);
+}
+.swipe-hint-right {
+    right: 16px;
+    color: #1f6f52;
+    border: 2px solid #1f6f52;
+    transform: rotate(8deg);
+}
+
+/* =========================================================
+   QUIZ PAGE
+   ========================================================= */
+.quiz-stats {
+    font-weight: 700;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+}
+.quiz-prompt h3 {
+    font-size: 1.8rem;
+    color: var(--navy);
+    margin: 6px 0;
+}
+.quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 18px;
+}
+.quiz-option-btn {
+    padding: 16px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--paper-alt);
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: left;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.quiz-option-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+    border-color: var(--gold);
+}
+.quiz-option-btn:disabled { cursor: not-allowed; }
+.quiz-option-correct {
+    background: linear-gradient(135deg, rgba(31,111,82,0.18), rgba(47,156,114,0.18));
+    border-color: var(--emerald);
+    color: var(--emerald);
+}
+.quiz-option-wrong {
+    background: linear-gradient(135deg, rgba(143,59,70,0.18), rgba(182,83,95,0.18));
+    border-color: var(--ruby);
+    color: var(--ruby);
+}
+.quiz-feedback {
+    margin-top: 16px;
+    font-weight: 800;
+    min-height: 22px;
+}
+.quiz-feedback-correct { color: var(--emerald); }
+.quiz-feedback-wrong { color: var(--ruby); }
+
+@media (max-width: 600px) {
+    .quiz-options { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   DASHBOARD PAGE
+   ========================================================= */
+.dashboard-container { max-width: 760px; text-align: left; }
+.dashboard-container h1, .dashboard-container > p { text-align: center; }
+
+.dash-summary-row {
+    display: flex;
+    gap: 14px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+.dash-summary-card {
+    flex: 1;
+    min-width: 140px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+.dash-summary-num {
+    font-family: var(--font-heading);
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+.dash-summary-label {
+    margin-top: 4px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-weight: 700;
+}
+
+.dash-bars { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+.dash-bar-row {
+    display: grid;
+    grid-template-columns: 50px 1fr 130px;
+    align-items: center;
+    gap: 12px;
+}
+.dash-bar-label { font-weight: 800; color: var(--navy); }
+.dash-bar-track {
+    height: 16px;
+    background: var(--border);
+    border-radius: 999px;
+    overflow: hidden;
+}
+.dash-bar-fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.6s cubic-bezier(0.4,0.1,0.2,1);
+}
+.dash-bar-value {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    font-weight: 700;
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    .dash-bar-row { grid-template-columns: 40px 1fr; }
+    .dash-bar-value { grid-column: 1 / -1; text-align: left; }
+}
+
 /* ==========================================
    RESPONSIVE — TABLET (dưới 1024px)
    ========================================== */

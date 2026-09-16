@@ -44,6 +44,29 @@ app.get('/quizlet/:type/:level', (req, res) => {
     res.render('quizlet', { type, level, cards, isUnlearned, isLearned });
 });
 
+// Trang Quiz trắc nghiệm (chọn nghĩa đúng trong 4 đáp án)
+app.get('/quiz/:type/:level', (req, res) => {
+    const { type, level } = req.params;
+    const filePath = path.join(__dirname, '../data', type, `${level}.json`);
+    let cards = [];
+
+    if (fs.existsSync(filePath)) {
+        try {
+            const fileData = fs.readFileSync(filePath, 'utf-8').trim();
+            cards = fileData ? JSON.parse(fileData) : [];
+        } catch (e) {
+            console.error("Lỗi đọc file JSON:", e);
+        }
+    }
+
+    res.render('quiz', { type, level, cards });
+});
+
+// Trang Dashboard tổng quan (tiến độ N1-N5, streak, tổng số từ đã học)
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard');
+});
+
 // API: Trả về tổng số thẻ (từ vựng / ngữ pháp) của từng cấp N1-N5
 // Dùng để FE tính % tiến độ học (đã thuộc / tổng số * 100)
 app.get('/api/counts', (req, res) => {

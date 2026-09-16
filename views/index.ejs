@@ -25,14 +25,20 @@
                         <a href="#"><%= level.toUpperCase() %> ▸</a>
                         <ul class="sub-dropdown">
                             <li class="progress-item">
-                                <a href="/quizlet/tu-vung/<%= level %>">Từ vựng</a>
+                                <div class="progress-item-row">
+                                    <a href="/quizlet/tu-vung/<%= level %>">Từ vựng</a>
+                                    <a class="quiz-quicklink" href="/quiz/tu-vung/<%= level %>" title="Chế độ Quiz trắc nghiệm">🎯</a>
+                                </div>
                                 <div class="progress-bar-mini">
                                     <div class="progress-fill-mini" id="progress-tu-vung-<%= level %>"></div>
                                 </div>
                                 <span class="progress-label" id="progress-label-tu-vung-<%= level %>">0%</span>
                             </li>
                             <li class="progress-item">
-                                <a href="/quizlet/ngu-phap/<%= level %>">Ngữ pháp</a>
+                                <div class="progress-item-row">
+                                    <a href="/quizlet/ngu-phap/<%= level %>">Ngữ pháp</a>
+                                    <a class="quiz-quicklink" href="/quiz/ngu-phap/<%= level %>" title="Chế độ Quiz trắc nghiệm">🎯</a>
+                                </div>
                                 <div class="progress-bar-mini">
                                     <div class="progress-fill-mini" id="progress-ngu-phap-<%= level %>"></div>
                                 </div>
@@ -82,6 +88,10 @@
 
         <div class="nav-item">
             <a href="/import">Import</a>
+        </div>
+
+        <div class="nav-item">
+            <a href="/dashboard">📊 Dashboard</a>
         </div>
     </nav>
 

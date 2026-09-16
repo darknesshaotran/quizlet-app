@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz <%= type %> - <%= level.toUpperCase() %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <%- include('index.ejs') %>
+
+    <div class="container" id="app">
+        <h2>🎯 Quiz: <%= type.toUpperCase() %> - <%= level.toUpperCase() %></h2>
+        <div id="quiz-stats" class="quiz-stats"></div>
+
+        <div id="quiz-question-box">
+            <div id="quiz-prompt" class="quiz-prompt"></div>
+            <div id="quiz-options" class="quiz-options"></div>
+            <div id="quiz-feedback" class="quiz-feedback"></div>
+        </div>
+
+        <div class="btn-group" id="quiz-next-wrap" style="display:none;">
+            <button class="btn btn-primary" id="btn-quiz-next">Câu tiếp theo →</button>
+        </div>
+
+        <div id="quiz-result" style="display:none;">
+            <h3>Kết quả</h3>
+            <p id="quiz-result-text" style="font-size: 1.1rem; font-weight: 700;"></p>
+            <div class="btn-group">
+                <button class="btn btn-primary" id="btn-quiz-restart">Làm lại</button>
+                <a class="btn btn-danger" href="/quizlet/<%= type %>/<%= level %>" style="text-decoration:none; display:inline-flex; align-items:center;">Về học Flashcard</a>
+            </div>
+        </div>
+
+        <% if (!cards || cards.length < 2) { %>
+            <p style="color: var(--ink-soft);">Cần ít nhất 2 thẻ trong danh mục này để tạo Quiz.</p>
+        <% } %>
+    </div>
+
+    <script>
+    const cards = <%- JSON.stringify(cards || []) %>;
+    const typeKey = '<%= type %>';
+    const levelKey = '<%= level %>';
+
+    function labelOf(card) {
+        return card.meaning || card.structure || '(không rõ)';
+    }
+    function promptOf(card) {
+        if (card.kanji) return `${card.kanji}${card.furigana ? ' (' + card.furigana + ')' : ''}`;
+        return card.structure || '';
+    }
+
+    function shuffle(arr) {
+        const a = [...arr];
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
+    let queue = [];
+    let qIndex = 0;
+    let correctCount = 0;
+    let answered = false;
+
+    function buildQueue() {
+        queue = shuffle(cards);
+        qIndex = 0;
+        correctCount = 0;
+    }
+
+    function renderStats() {
+        document.getElementById('quiz-stats').innerText = `Câu ${Math.min(qIndex + 1, queue.length)} / ${queue.length} · Đúng: ${correctCount}`;
+    }
+
+    function renderQuestion() {
+        answered = false;
+        document.getElementById('quiz-feedback').innerText = '';
+        document.getElementById('quiz-feedback').className = 'quiz-feedback';
+        document.getElementById('quiz-next-wrap').style.display = 'none';
+
+        if (qIndex >= queue.length) {
+            document.getElementById('quiz-question-box').style.display = 'none';
+            document.getElementById('quiz-result').style.display = 'block';
+            const pct = queue.length ? Math.round((correctCount / queue.length) * 100) : 0;
+            document.getElementById('quiz-result-text').innerText = `Bạn trả lời đúng ${correctCount}/${queue.length} câu (${pct}%).`;
+            if (pct === 100 && typeof confetti === 'function') {
+                confetti({ particleCount: 160, spread: 90, origin: { y: 0.6 } });
+            }
+            return;
+        }
+
+        renderStats();
+        const card = queue[qIndex];
+        document.getElementById('quiz-prompt').innerHTML = `<h3>${promptOf(card)}</h3><p style="color:var(--ink-soft);">Chọn nghĩa đúng:</p>`;
+
+        const distractorPool = cards.filter(c => c.id !== card.id);
+        const distractors = shuffle(distractorPool).slice(0, Math.min(3, distractorPool.length));
+        const options = shuffle([card, ...distractors]);
+
+        const optionsBox = document.getElementById('quiz-options');
+        optionsBox.innerHTML = '';
+        options.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'quiz-option-btn';
+            btn.innerText = labelOf(opt);
+            btn.addEventListener('click', () => selectAnswer(btn, opt.id === card.id));
+            optionsBox.appendChild(btn);
+        });
+    }
+
+    function selectAnswer(btn, isCorrect) {
+        if (answered) return;
+        answered = true;
+        const buttons = document.querySelectorAll('.quiz-option-btn');
+        buttons.forEach(b => b.disabled = true);
+
+        if (isCorrect) {
+            btn.classList.add('quiz-option-correct');
+            correctCount++;
+            document.getElementById('quiz-feedback').innerText = '✅ Chính xác!';
+            document.getElementById('quiz-feedback').className = 'quiz-feedback quiz-feedback-correct';
+        } else {
+            btn.classList.add('quiz-option-wrong');
+            document.getElementById('quiz-feedback').innerText = '❌ Chưa đúng.';
+            document.getElementById('quiz-feedback').className = 'quiz-feedback quiz-feedback-wrong';
+            buttons.forEach(b => { if (b.innerText === labelOf(queue[qIndex])) b.classList.add('quiz-option-correct'); });
+        }
+        document.getElementById('quiz-next-wrap').style.display = 'flex';
+        renderStats();
+    }
+
+    document.getElementById('btn-quiz-next').addEventListener('click', () => {
+        qIndex++;
+        renderQuestion();
+    });
+
+    document.getElementById('btn-quiz-restart').addEventListener('click', () => {
+        document.getElementById('quiz-question-box').style.display = 'block';
+        document.getElementById('quiz-result').style.display = 'none';
+        buildQueue();
+        renderQuestion();
+    });
+
+    if (cards && cards.length >= 2) {
+        buildQueue();
+        renderQuestion();
+    } else {
+        document.getElementById('quiz-question-box').style.display = 'none';
+    }
+    </script>
+</body>
+</html>
