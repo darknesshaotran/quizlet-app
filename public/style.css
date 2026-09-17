@@ -392,7 +392,6 @@ h1, h2, h3 {
     border-radius: var(--radius-md);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding: 24px;
     box-sizing: border-box;
@@ -400,6 +399,8 @@ h1, h2, h3 {
 }
 
 .card-front {
+    /* Mặt trước hiếm khi tràn chữ (chỉ kanji + phiên âm) nên canh giữa cho đẹp */
+    justify-content: center;
     background:
         radial-gradient(600px 300px at 50% -10%, rgba(201,162,77,0.10), transparent 60%),
         var(--paper-alt);
@@ -422,10 +423,13 @@ h1, h2, h3 {
 }
 
 .card-back {
+    justify-content: flex-start;
     background: linear-gradient(160deg, var(--card-back-bg-1) 0%, var(--card-back-bg-2) 100%);
     color: var(--card-back-text);
     transform: rotateY(180deg);
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* cuộn mượt bằng quán tính trên Safari/iOS cũ */
+    touch-action: pan-y; /* đảm bảo thao tác kéo trong thẻ luôn là cuộn dọc, không bị JS lật/vuốt thẻ nuốt mất cử chỉ */
     border-color: rgba(201,162,77,0.4);
 }
 

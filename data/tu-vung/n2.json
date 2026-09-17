@@ -907,17 +907,17 @@
     "id": "109",
     "kanji": "悲しむ",
     "furigana": "かなしむ",
-    "hanviet": "□ Kanojo wa neko no shi o kanashinda    - 彼女は猫の死を悲しんだ    - Bà ta đã đau khổ trước cái chết của con mèo.        □ Ryoushin wa jiko de shiida musuko no koto o kanashinde imasu    - 両親は事故で死んだ息子のことを悲しんでいます    - Hai ông bà đang đau buồn trước cái chết của con trai mình trong vụ tai nạn.        □ Koutsuu-jiko ga zouka shite iru no wa kanashimu beki koto da    - 交通事故が増加しているのは悲しむべきことだ    - Việc các vụ tai nạn giao thông đang gia tăng là điều khiến chúng ta phải đau buồn.",
-    "example": "(nội động từ) ●Cảm thấy buồn, đau buồn, đau khổ, xót xa.",
-    "meaning": ""
+    "hanviet": "BI",
+    "example": "□ Kanojo wa neko no shi o kanashinda    - 彼女は猫の死を悲しんだ    - Bà ta đã đau khổ trước cái chết của con mèo.        □ Ryoushin wa jiko de shiida musuko no koto o kanashinde imasu    - 両親は事故で死んだ息子のことを悲しんでいます    - Hai ông bà đang đau buồn trước cái chết của con trai mình trong vụ tai nạn.        □ Koutsuu-jiko ga zouka shite iru no wa kanashimu beki koto da    - 交通事故が増加しているのは悲しむべきことだ    - Việc các vụ tai nạn giao thông đang gia tăng là điều khiến chúng ta phải đau buồn.",
+    "meaning": "(nội động từ) ●Cảm thấy buồn, đau buồn, đau khổ, xót xa."
   },
   {
     "id": "110",
     "kanji": "がっかり",
     "furigana": "がっかり",
-    "hanviet": "□ lchi-do kurai no shippai de sonna ni gakkari suru koto wa arimasen    - 一度くらいの失敗でそんなにがっかりすることはありません    - Chỉ thất bại có một lần mà thất vọng như thế thì tôi chưa từng.        □ Shiai ga ame de chuushi ni nari, gakkari shita    - 試合が雨で中止になり、がっかりした    - Buổi thi đấu đã bị ngưng nửa chừng do trời mưa, thật là chán quá.",
-    "example": "(trạng từ) ●Tuyệt vọng, chán nản, mất lòng tin.",
-    "meaning": ""
+    "hanviet": "",
+    "example": "□ lchi-do kurai no shippai de sonna ni gakkari suru koto wa arimasen    - 一度くらいの失敗でそんなにがっかりすることはありません    - Chỉ thất bại có một lần mà thất vọng như thế thì tôi chưa từng.        □ Shiai ga ame de chuushi ni nari, gakkari shita    - 試合が雨で中止になり、がっかりした    - Buổi thi đấu đã bị ngưng nửa chừng do trời mưa, thật là chán quá.",
+    "meaning": "(trạng từ) ●Tuyệt vọng, chán nản, mất lòng tin."
   },
   {
     "id": "111",
@@ -971,9 +971,9 @@
     "id": "117",
     "kanji": "しゃがむ",
     "furigana": "しゃがむ",
-    "hanviet": "□ Mae ni iru hito wa shagan de kudasai    - 前にいる人はしゃがんでください    - Yêu cầu những người đằng trước ngồi xổm xuống.",
-    "example": "(nội động từ) ●Ngồi xổm.",
-    "meaning": ""
+    "hanviet": "",
+    "example": "□ Mae ni iru hito wa shagan de kudasai    - 前にいる人はしゃがんでください    - Yêu cầu những người đằng trước ngồi xổm xuống.",
+    "meaning": "(nội động từ) ●Ngồi xổm."
   },
   {
     "id": "118",
@@ -1003,9 +1003,9 @@
     "id": "121",
     "kanji": "かじる",
     "furigana": "かじる",
-    "hanviet": "□ Inu ga hone o kajitte iru    - 犬が骨をかじっている    - Con chó đang gặm một cục xương.        □ Sono kaki o kajittara, shibukatta    - その柿をかじったら、渋かった    - Khi tôi cắn trái hồng thì thấy nó chát lè.       □ Watashi wa Ratengo o sukoshi kajirimashita    - 私はラテン語を少しかじりました    - Tôi có biết được chút ít tiếng La tinh.",
-    "example": "(ngoại động từ) ●1. Gặm, ăn mòn cắn.   ●2. Biết chút ít, học được chút ít.",
-    "meaning": ""
+    "hanviet": "",
+    "example": "□ Inu ga hone o kajitte iru    - 犬が骨をかじっている    - Con chó đang gặm một cục xương.        □ Sono kaki o kajittara, shibukatta    - その柿をかじったら、渋かった    - Khi tôi cắn trái hồng thì thấy nó chát lè.       □ Watashi wa Ratengo o sukoshi kajirimashita    - 私はラテン語を少しかじりました    - Tôi có biết được chút ít tiếng La tinh.",
+    "meaning": "(ngoại động từ) ●1. Gặm, ăn mòn cắn.   ●2. Biết chút ít, học được chút ít."
   },
   {
     "id": "122",
@@ -1077,15 +1077,15 @@
     "furigana": "まく",
     "hanviet": "thì (thi)-BÁ",
     "example": "この畑には小麦をまきます gieo hạt lúa mì xuống cánh đồng này 自分で蒔いた種 nguyên nhân do chính mình gây ra",
-    "meaning": "他  １．種を散らしてうめる。 gieo; rắc; vãi (hạt giống)  ２．物事の原因を作る。 gieo; gieo rắc; gây ra  ３．まき絵をする。漆器に金銀で絵もようをつける。 làm đồ sơn mài maki-e"
+    "meaning": " １．種を散らしてうめる。 gieo; rắc; vãi (hạt giống)  ２．物事の原因を作る。 gieo; gieo rắc; gây ra  ３．まき絵をする。漆器に金銀で絵もようをつける。 làm đồ sơn mài maki-e"
   },
   {
     "id": "131",
     "kanji": "はかる",
     "furigana": "はかる",
-    "hanviet": "□ Himo no nagasa o hakaru    - ひもの長さを測る    - Đo chiều dài của sợi dây.        □ Kawa no fukasa o hakaru    - 川の深さを測る    - Đo độ sâu của con sông.        □ Ki no takasa o hakaru    - 木の高さを測る    - Đo chiều cao cái cây.",
-    "example": "(ngoại động từ) ●Đo đạc",
-    "meaning": ""
+    "hanviet": "",
+    "example": "□ Himo no nagasa o hakaru    - ひもの長さを測る    - Đo chiều dài của sợi dây.        □ Kawa no fukasa o hakaru    - 川の深さを測る    - Đo độ sâu của con sông.        □ Ki no takasa o hakaru    - 木の高さを測る    - Đo chiều cao cái cây.",
+    "meaning": "(ngoại động từ) ●Đo đạc"
   },
   {
     "id": "132",
@@ -1163,9 +1163,9 @@
     "id": "141",
     "kanji": "ひく",
     "furigana": "ひく",
-    "hanviet": "□ Kare no kuruma wa neko o hiita    - 彼の車は猫をひいた    - Chiếc xe của anh ta đã cán phải con mèo.",
-    "example": "(ngoại động từ) ●Cán qua, đụng.",
-    "meaning": ""
+    "hanviet": "",
+    "example": "□ Kare no kuruma wa neko o hiita    - 彼の車は猫をひいた    - Chiếc xe của anh ta đã cán phải con mèo.",
+    "meaning": "(ngoại động từ) ●Cán qua, đụng."
   },
   {
     "id": "142",
@@ -1184,12 +1184,12 @@
     "meaning": "(ngoại động từ) ●1. Đau, bị đau, bị nhức.   ●2. (Trái tim) Đau."
   },
   {
-    "id": "144",
-    "kanji": "インフルエンザにかかる",
-    "furigana": "インフルエンザにかかる",
-    "hanviet": "",
-    "example": "",
-    "meaning": ""
+  "id": "144",
+  "kanji": "インフルエンザにかかる",
+  "furigana": "インフルエンザにかかる",
+  "hanviet": "Cảm cúm (In-fu-ru-en-za)",
+  "example": "インフルエンザにかかって、学校を休んだ。",
+  "meaning": "Bị mắc bệnh cúm (influenza)"
   },
   {
     "id": "145",
@@ -1208,12 +1208,12 @@
     "meaning": "(ngoại động từ) ●1. Nôn, mửa, phun ra, khạc, nhổ.     ●2. Bốc ra, tỏa ra, ợ, thở ra."
   },
   {
-    "id": "147",
-    "kanji": "診る",
-    "furigana": "みる",
-    "hanviet": "CHẨN",
-    "example": "(v1) to examine-(p)",
-    "meaning": ""
+  "id": "147",
+  "kanji": "診る",
+  "furigana": "みる",
+  "hanviet": "CHẨN",
+  "example": "医者に診てもらう。",
+  "meaning": "Khám bệnh, chẩn đoán (bác sĩ khám cho bệnh nhân)"
   },
   {
     "id": "148",
@@ -1244,8 +1244,8 @@
     "kanji": "支払う",
     "furigana": "しはらう",
     "hanviet": "CHI PHẤT",
-    "example": "(ngoại động từ) ●Trả tiền, thanh toán tiền.",
-    "meaning": ""
+    "example": "",
+    "meaning": "(ngoại động từ) ●Trả tiền, thanh toán tiền."
   },
   {
     "id": "152",
@@ -1259,9 +1259,9 @@
     "id": "153",
     "kanji": "払い込む",
     "furigana": "はらいこむ",
-    "hanviet": "借金を全額払い込む Trả hết khoản tiền vay （〜について）保険料を払い込む Nộp tiền bảo hiểm về",
-    "example": "◆ Giao nộp; giao tiền ◆ Đóng ◆ Giao nạp ◆ Nộp .",
-    "meaning": ""
+    "hanviet": "",
+    "example": "借金を全額払い込む Trả hết khoản tiền vay （〜について）保険料を払い込む Nộp tiền bảo hiểm về",
+    "meaning": "◆ Giao nộp; giao tiền ◆ Đóng ◆ Giao nạp ◆ Nộp ."
   },
   {
     "id": "154",
@@ -1272,12 +1272,12 @@
     "meaning": "◆ Trả lại; hoàn trả; trả"
   },
   {
-    "id": "155",
-    "kanji": "引き出す",
-    "furigana": "ひきだす",
-    "hanviet": "DẪN XUẤT",
-    "example": "□ Ketsuron o hikidasu    - 結論を引き出す    - Rút ra kết luận.       □ Kare wa ginkou kara hyakuman en hikidashita    - 彼は銀行から１００万円引き出した    - Anh ta đã rút 1. 000.000 yên từ ngân hàng.",
-    "meaning": "引き出す"
+  "id": "155",
+  "kanji": "引き出す",
+  "furigana": "ひきだす",
+  "hanviet": "DẪN XUẤT",
+  "example": "銀行からお金を引き出す。",
+  "meaning": "Rút (tiền), kéo ra, rút ra (kết luận/tiềm năng)"
   },
   {
     "id": "156",
@@ -1323,17 +1323,17 @@
     "id": "161",
     "kanji": "くっ付く",
     "furigana": "「 くっつく」",
-    "hanviet": "ピッタリと〜 dính chặt khó gỡ ra được 母親にぴったりくっつく quấn quýt bên mẹ 先輩に〜いて行く。 Đi theo đuôi đàn anh. .",
-    "example": "◆ Dính chặt; bám vào; khớp vào   ◆ Quấn quýt; quấn lấy nhau không rời   ◆ Theo sát nút; bám sát; bám đuôi",
-    "meaning": ""
+    "hanviet": "",
+    "example": "ピッタリと〜 dính chặt khó gỡ ra được 母親にぴったりくっつく quấn quýt bên mẹ 先輩に〜いて行く。 Đi theo đuôi đàn anh. .",
+    "meaning": "◆ Dính chặt; bám vào; khớp vào   ◆ Quấn quýt; quấn lấy nhau không rời   ◆ Theo sát nút; bám sát; bám đuôi"
   },
   {
     "id": "162",
     "kanji": "くっ付ける",
     "furigana": "「 くっつける」",
-    "hanviet": "割れた皿を接着剤で〜た。 Gắn đĩa vỡ bằng keo dính. 二人を〜 làm mối cho 2 người .",
-    "example": "◆ Làm cho dính chặt vào; dán vào; ghép vào; gắn lại   ◆ Làm mối; vun vào",
-    "meaning": ""
+    "hanviet": "",
+    "example": "割れた皿を接着剤で〜た。 Gắn đĩa vỡ bằng keo dính. 二人を〜 làm mối cho 2 người .",
+    "meaning": "◆ Làm cho dính chặt vào; dán vào; ghép vào; gắn lại   ◆ Làm mối; vun vào"
   },
   {
     "id": "163",
@@ -1524,8 +1524,8 @@
     "kanji": "解ける",
     "furigana": "ほどける",
     "hanviet": "GIẢI",
-    "example": "Tuột, hở ra",
-    "meaning": ""
+    "example": "",
+    "meaning": "Tuột, hở ra"
   },
   {
     "id": "187",
@@ -1756,8 +1756,8 @@
     "kanji": "務まる",
     "furigana": "つとまる",
     "hanviet": "VỤ",
-    "example": "自  役目として、その任務が果たせる。 có thể hoàn thành nhiệm vụ; có thể đảm nhiệm",
-    "meaning": ""
+    "example": "",
+    "meaning": "役目として、その任務が果たせる。 có thể hoàn thành nhiệm vụ; có thể đảm nhiệm"
   },
   {
     "id": "216",
@@ -1765,7 +1765,7 @@
     "furigana": "つとめる",
     "hanviet": "VỤ",
     "example": "代理人を務める đảm nhiệm công việc người đại diện",
-    "meaning": "他  ある役割や任務を引き受けて、その仕事をする。 đảm nhiệm công việc; giữ vai trò; giữ chức"
+    "meaning": "ある役割や任務を引き受けて、その仕事をする。 đảm nhiệm công việc; giữ vai trò; giữ chức"
   },
   {
     "id": "217",
@@ -1827,9 +1827,9 @@
     "id": "224",
     "kanji": "幸い",
     "furigana": "さいわい",
-    "hanviet": "□ Sono hon o okashi itadakereba saiwai desu    - その本をお貸しいただければ幸いです    - Tôi rất hạnh phúc nếu ông cho mượn cuốn sách đó.        □ Kare ga ie ni ita no wa saiwai datta    - 彼が家にいたのは幸いだった    - May mắn thay là ông ta đã có ở nhà.        □ Saishuu densha ni maniatta no wa saiwai desu    - 最終電車に陶に合ったのは幸いだった    - Thật là may mắn vì tôi đã bắt kịp được chuyến tàu cuối cùng.   □ Saiwai chichi no shujutsu wa seikou shimashita    - 幸い父の手術成功しました    - May mắn thay ca phẫu thuật cho cha tôi đã thành công.        □ Saiwai (ni mo) o tenki ni megumaremashita    - 幸い（にも）を天気に恵まれました    - Thật may mắn cho chúng ta đã được cho thời tiết tốt.",
-    "example": "\"(tính từ) ●Hạnh phúc, may mắn.       (trạng từ) ●Một cách hạnh phúc, một cách may mắn. Thường được dùng rong dạng \"\"... ni mo\"\".\"",
-    "meaning": ""
+    "hanviet": "",
+    "example": "□ Sono hon o okashi itadakereba saiwai desu    - その本をお貸しいただければ幸いです    - Tôi rất hạnh phúc nếu ông cho mượn cuốn sách đó.        □ Kare ga ie ni ita no wa saiwai datta    - 彼が家にいたのは幸いだった    - May mắn thay là ông ta đã có ở nhà.        □ Saishuu densha ni maniatta no wa saiwai desu    - 最終電車に陶に合ったのは幸いだった    - Thật là may mắn vì tôi đã bắt kịp được chuyến tàu cuối cùng.   □ Saiwai chichi no shujutsu wa seikou shimashita    - 幸い父の手術成功しました    - May mắn thay ca phẫu thuật cho cha tôi đã thành công.        □ Saiwai (ni mo) o tenki ni megumaremashita    - 幸い（にも）を天気に恵まれました    - Thật may mắn cho chúng ta đã được cho thời tiết tốt.",
+    "meaning": "\"(tính từ) ●Hạnh phúc, may mắn.       (trạng từ) ●Một cách hạnh phúc, một cách may mắn. Thường được dùng rong dạng \"\"... ni mo\"\".\""
   },
   {
     "id": "225",
@@ -1923,17 +1923,17 @@
     "id": "236",
     "kanji": "しつこい",
     "furigana": "しつこい",
-    "hanviet": "□ Shitsukoi hito    - しつこい人    - Người ngoan cố.        □ Onaji koto o shitsukoku iwanai de kudasai    - 同じことをしつこく言わないでください    - Đừng có cố chấp nhắc mãi một chuyện như vậy nữa.       □ Saikin shitsukoi mono wa iya ni natte kimashita    - 最近しつこい物はいやになってきました    - Gần đây tôi trở nên ghét các đồ ăn béo.",
-    "example": "(tính từ) ●1. Cứng đầu, ngoan cố, khăng khăng, cố chấp.   ●2. (Thức ăn) béo, ngậy.",
-    "meaning": ""
+    "hanviet": "",
+    "example": "□ Shitsukoi hito    - しつこい人    - Người ngoan cố.        □ Onaji koto o shitsukoku iwanai de kudasai    - 同じことをしつこく言わないでください    - Đừng có cố chấp nhắc mãi một chuyện như vậy nữa.       □ Saikin shitsukoi mono wa iya ni natte kimashita    - 最近しつこい物はいやになってきました    - Gần đây tôi trở nên ghét các đồ ăn béo.",
+    "meaning": "(tính từ) ●1. Cứng đầu, ngoan cố, khăng khăng, cố chấp.   ●2. (Thức ăn) béo, ngậy."
   },
   {
-    "id": "237",
-    "kanji": "くどい",
-    "furigana": "くどい",
-    "hanviet": "形  １．同じことを何度も繰り返し言って、うんざりさせる。話がしつこい。長々しくてうるさい。 nói dai; dài dòng; lắm lời  ２．食べ物の味付けがしつこい。 đậm; mặn (nêm gia vị)  ３．配色や模様がどぎつい。 loè loẹt; sặc sỡ (màu sắc)",
-    "example": "",
-    "meaning": ""
+  "id": "237",
+  "kanji": "くどい",
+  "furigana": "くどい",
+  "hanviet": "",
+  "example": "同じことを何度も言われて、くどいと感じた。",
+  "meaning": "Dài dòng, lắm lời; (vị) quá đậm, ngấy; (màu sắc) lòe loẹt"
   },
   {
     "id": "238",
@@ -1969,19 +1969,19 @@
   },
   {
     "id": "242",
-    "kanji": "慌しい",
-    "furigana": "慌しい １．急いでいて落ち着かない。せわしい。 tất bật; tất tả; tất tưởi; lật đật; vội vàng; vội vã; hối hả",
+    "kanji": "慌ただしい",
+    "furigana": "あわただしい",
     "hanviet": "HOẢNG",
-    "example": "１．急いでいて落ち着かない。せわしい。 tất bật; tất tả; tất tưởi; lật đật; vội vàng; vội vã; hối hả  ２．世情が不安で、状況の変化が激しい。 lộn xộn; rối ren",
-    "meaning": ""
+    "example": "年末は何かと慌ただしい。",
+    "meaning": "Bận rộn, hối hả, tất bật, lật đật"
   },
   {
     "id": "243",
     "kanji": "そそっかしい",
     "furigana": "そそっかしい",
-    "hanviet": "□ Kare wa sosokkashikute, yoku shippai suru    - 彼はそそっかしくて、よく失敗する    - Anh ta hấp tấp, vì thế mà thất bại luôn.        □ Shiken de sosokkashii machigai o shite shimatta    - 試験でそそっかしい間違いをしてしまった    - Do hấp tấp khi làm bài kiểm tra nên đã mắc phải lỗi.",
-    "example": "(tính từ) ●Vội vã, hấp tấp, khinh suất, thiếu suy nghĩ.",
-    "meaning": ""
+    "hanviet": "",
+    "example": "彼はそそっかしくて、よく hủypai (失敗) する。",
+    "meaning": "Hấp tấp, cẩu thả, hậu đậu, thiếu cẩn thận"
   },
   {
     "id": "244",
@@ -1994,58 +1994,58 @@
   {
     "id": "245",
     "kanji": "何気ない",
-    "furigana": "何気ない",
-    "hanviet": "彼の何気ない一言が彼女を傷つけた。 Lời nói vô tình của anh ta đã gây tổn thương cô ấy.",
-    "example": "何の考えもなくふるまうさま。なにげない。  vô tình; không cố ý; không chủ ý; không chủ tâm; không chủ định",
-    "meaning": ""
+    "furigana": "なにげない",
+    "hanviet": "HÀ KHÍ",
+    "example": "彼の何気ない一言が彼女を傷つけた。",
+    "meaning": "Vô tình, tình cờ, vô tư (không cố ý)"
   },
   {
     "id": "246",
     "kanji": "とんでもない",
     "furigana": "とんでもない",
-    "hanviet": "\"□ Tonde mo nai koto ga okita    - とんでもないことが起きた    - Điều bất ngờ đã xảy ra.        □ Sonna koto o iu nante tonde mo nai yatsu da    - そんな事を言うなんてとんでもないやつだ    - Đi nói ra một điều như vậy thì thật là một gã kỳ quặc.       □ \"\"Watanabe san wa rikon shitasou desu ne\"\" \"\"Tonde mo nai\"\"    - 「渡辺さんは離婚したそうですね」「とんでもない」    - \"\"Nghe nói Watanabe đã ly dị rồi nhỉ\"\" \"\"Ồ, không!\"\"        □ \"\"Moukatte iru you desu ne\"\" \"\"Tonde mo nai. Shakkin darake desu\"\"    - 「もうかっているようですね」「とんでもない。借金だらけです」    - \"\"Có vẻ cậu đang phất lên phải không?\"\" \"\"Không dám đâu, tôi đang nợ ngập cổ ra đây\"\".        □ \"\"Taihen o sewa ni narimashita\"\" \"\"Tonde mo arimasen\"\"    - 「大変お世話になりました」「とんでもありません」    - \"\"Cảm ơn sự giúp đỡ của anh.\"\" \"\"Không có chi đâu\"\".\"",
-    "example": "●1. Ngớ ngẩn, vô lý, kỳ quặc, khủng khiếp, bất ngờ.   ●2. Được dùng để diễn tả sự phủ nhận mạnh mẽ.",
-    "meaning": ""
+    "hanviet": "",
+    "example": "「大変お世話になりました」「とんでもないです。」",
+    "meaning": "Không ngờ tới, khủng khiếp; (khiêm tốn) Không có gì, đâu có đâu"
   },
   {
     "id": "247",
     "kanji": "くだらない",
     "furigana": "くだらない",
-    "hanviet": "□ Kudaranai koto ni kane o tsukau na    - くだらないことに金を使うな    - Không được tiêu tiền vào những chuyện không đâu.        □ Karera wa kudaranai mondai de kenka o shita    - 彼らはくだらない問題でけんかをした    - Họ đã cãi cọ nhau vì một chuyện không đâu.       □ Kudaranai koto o iu na    - くだらないことを言うな    - Đừng có nói vớ vẩn.",
-    "example": "(tính từ) ●1. Không đáng, bình thường, tầm thường.   ●2. Ngớ ngẩn, vớ vẩn.",
-    "meaning": ""
+    "hanviet": "",
+    "example": "くだらない lộn xộn (こと) に金を使うな。",
+    "meaning": "Vớ vẩn, nhảm nhí, không đáng quan tâm"
   },
   {
     "id": "248",
     "kanji": "ばかばかしい",
     "furigana": "ばかばかしい",
-    "hanviet": "手間ばかりかかるばかばかしい仕事 công việc ngớ ngẩn chỉ tổ mất thời gian công sức  ばかばかしい安値 giá rẻ kinh khủng",
-    "example": "１．無意味でくだらなく見えるさま。ばからしい。 ngớ ngẩn; điên rồ; nhảm   ２．程度がはなはだしい。普通では考えられないほどひどい。 lố; quá thể; quá đáng; quá mức; khủng khiếp; kinh khủng; dễ sợ",
-    "meaning": ""
+    "hanviet": "MÃ LỘC",
+    "example": "手間ばかりかかるばかばかしい仕事。",
+    "meaning": "Ngớ ngẩn, điên rồ, lố bịch, vô lý"
   },
   {
     "id": "249",
     "kanji": "出鱈目",
-    "furigana": "だたらめ OR でたらめ",
+    "furigana": "でたらめ",
     "hanviet": "XUẤT TUYẾT MỤC",
-    "example": "□ Detarame o oshieru    - でたらめを教える    - Đưa ra thông tin thiếu chính xác.        □ Detarame o iu na!    - だたらめを言うな    - Đừng có nói vớ vẩn nữa!       □ Detarame ni erandara, seikai datta    - でたらめに選んだら、正解だった    - Tôi đã đoán đại ấy vậy mà trúng.        □ Ano uwasa wa detarame da    - あのううわさはでたらめだ    - Lời đồn đại đó không đúng sự thật.        □ Anna detarame na hito to issho ni shigoto wa dekinai    - あんなでたらめな人と一緒に仕事はできない    - Tôi không thể làm việc chung với một người thiếu trách nhiệm, ẩu tả như vậy.        □ Kono fuku no tsukuri kata wa detarame da    - この服の作り方はでたらめだ    - Cái áo này may ẩu quá.",
-    "meaning": "(danh từ) ●Điều vớ vẩn, nhận định thiếu trách nhiệm, nói ẩu.      (tính từ) Ngẫu nhiên, ẩu tả, thiếu trách nhiệm."
+    "example": "あの噂はでたらめだ。",
+    "meaning": "Nhảm nhí, vớ vẩn, bừa bãi, không đúng sự thật"
   },
   {
     "id": "250",
     "kanji": "だらしない",
     "furigana": "だらしない",
-    "hanviet": "□ Fukusou ga darashinai to darashinai ningen da to omowareru    - 服装がだらしないとだらしない人間だと思われる    - Nếu bạn ăn mặc lôi thôi, bạn sẽ bị đánh giá là một con người luộm thuộm.        □ Kare no heya wa darashinaku chirakatte ita    - 彼の部屋はだらしなく散らかっていた    - Căn pḥng anh ta rất bừa băi.   □ Sono-gurai de akirameru nante darashinai na    - そのぐらいであきらめるなんてだらしないな    - Có bấy nhiêu đó thôi mà đã đầu hàng thì thật là nhu nhược quá.",
-    "example": "\"(tính từ) ●1. Lôi thôi, nhếch nhác, luộm thuộm.   ●2. Nhu nhược, nhụt chí.    ●CÁCH DÙNG: cũng có thể dùng là \"\"darashi (ga) nai\"\". Có 2 dạng lịch sự \"\"darashi wa (ga) nai desu\"\" và \"\"darashi (ga) arimasen\"\"\"",
-    "meaning": ""
+    "hanviet": "",
+    "example": "彼の部屋はだらしなく散らかっていた。",
+    "meaning": "Lôi thôi, luộm thuộm, bừa bãi; nhu nhược"
   },
   {
     "id": "251",
     "kanji": "図々しい",
     "furigana": "ずうずうしい",
-    "hanviet": "□ Nante zuuzuushii hito darou    - なんてずうずうしい人だろう    - Đúng là kẻ trơ trẽn.        □ Sono otoko wa zuuzuushiku, uchi ni hairikonda    - その男はずうずうしく家に入り込んだ    - Gã đàn ông đã trơ trẽn xông vào nhà chúng tôi.",
-    "example": "(tính từ) ●Trơ trẽn, vô liêm sỉ, trâng tráo.",
-    "meaning": ""
+    "hanviet": "ĐỒ",
+    "example": "あいつは本当に図々しいやつだ。",
+    "meaning": "Trơ trẽn, mặt dày, vô liêm sỉ"
   },
   {
     "id": "252",
@@ -2091,9 +2091,9 @@
     "id": "257",
     "kanji": "きつい",
     "furigana": "きつい",
-    "hanviet": "□ Kono sukaato wa sukoshi kitsui    - このスカートは少しきつい    - Chiếc váy này hơi bị chật.        □ Kare wa sono tsutsumi o kitsuku shibatta    - 彼はその包をきつく縛った    - Anh ấy đã cột gói hàng thật chặt.       □ Kitsui shigoto    - きつい仕事    - Công việc khó khăn.        □ Kitsui nittei    - きつい日程    - Thời khóa biểu khít khao.        □ Kono goro no samusa wa kitsui    - この頃の寒さはきついThời    - tiết lạnh dạo này rất khắc nghiệt.       □ Kitsui seikaku    - きつい性格    - Tính cách cứng cỏ",
-    "example": "(tính từ) ●1. Khít, chật, bó sát.   ●2. Khó khăn, khắc nghiệt, khít khao.   ●3. Nghiêm khắc, cứng cỏi, kiên quyết.",
-    "meaning": ""
+    "hanviet": "",
+    "example": "□ Kono sukaato wa sukoshi kitsui    - このスカートは少しきつい    - Chiếc váy này hơi bị chật.        □ Kare wa sono tsutsumi o kitsuku shibatta    - 彼はその包をきつく縛った    - Anh ấy đã cột gói hàng thật chặt.       □ Kitsui shigoto    - きつい仕事    - Công việc khó khăn.        □ Kitsui nittei    - きつい日程    - Thời khóa biểu khít khao.        □ Kono goro no samusa wa kitsui    - この頃の寒さはきついThời    - tiết lạnh dạo này rất khắc nghiệt.       □ Kitsui seikaku    - きつい性格    - Tính cách cứng cỏ",
+    "meaning": "(tính từ) ●1. Khít, chật, bó sát.   ●2. Khó khăn, khắc nghiệt, khít khao.   ●3. Nghiêm khắc, cứng cỏi, kiên quyết."
   },
   {
     "id": "258",
@@ -2227,9 +2227,9 @@
     "id": "274",
     "kanji": "記憶",
     "furigana": "きおく",
-    "hanviet": "□ Kioku ni todomeru (nokoru)    - 記憶にとどめる（残る）    - Ghi vào còn đọng lại trong ký ức.        □ Kioku kara kieru    - 記゛憶から消え    - Phai nhạt khỏi ký ức.        □ Dou shite kenka ni natta no ka kioku ga nai    - どうしてけんかになったのか記憶がない    - Tôi không còn nhớ là tại sao chúng tôi đã cãi nhau nữa.        □ Sono jiken wa mada minna no kioku ni atarashii    - その事件はまだみんなの記憶に新しい    - Sự kiện ấy vẫn còn mới trong trí nhớ của mọi người.        □ Kioku-ryoku    - 記憶力    - Sức nhớ.        □ Kioku soushitsu    - 記憶喪失    - Mất trí nhớ.        □ Kioku souchi    - 記憶装置    - Bộ nhớ của máy tính.       □ Ano futari wa sono go, kekkon shita to kioku shite imasu    - あの二人はその後、結婚したと記憶しています    - Tôi nhớ là sau đó 2 người ấy đã lấy nhau.",
-    "example": "(danh từ) ●Ký ức, hồi ức, trí nhớ.      □ Kioku suru    - ～する    (ngoại động từ) ●Nhớ, nhớ lại, ghi nhớ.",
-    "meaning": ""
+    "hanviet": "",
+    "example": "□ Kioku ni todomeru (nokoru)    - 記憶にとどめる（残る）    - Ghi vào còn đọng lại trong ký ức.        □ Kioku kara kieru    - 記゛憶から消え    - Phai nhạt khỏi ký ức.        □ Dou shite kenka ni natta no ka kioku ga nai    - どうしてけんかになったのか記憶がない    - Tôi không còn nhớ là tại sao chúng tôi đã cãi nhau nữa.        □ Sono jiken wa mada minna no kioku ni atarashii    - その事件はまだみんなの記憶に新しい    - Sự kiện ấy vẫn còn mới trong trí nhớ của mọi người.        □ Kioku-ryoku    - 記憶力    - Sức nhớ.        □ Kioku soushitsu    - 記憶喪失    - Mất trí nhớ.        □ Kioku souchi    - 記憶装置    - Bộ nhớ của máy tính.       □ Ano futari wa sono go, kekkon shita to kioku shite imasu    - あの二人はその後、結婚したと記憶しています    - Tôi nhớ là sau đó 2 người ấy đã lấy nhau.",
+    "meaning": "(danh từ) ●Ký ức, hồi ức, trí nhớ.      □ Kioku suru    - ～する    (ngoại động từ) ●Nhớ, nhớ lại, ghi nhớ."
   },
   {
     "id": "275",
@@ -2298,10 +2298,10 @@
   {
     "id": "283",
     "kanji": "ほんき",
-    "furigana": "BẢN/BỔN KHÍ",
-    "hanviet": "□ Tanaka san wa joudan o honki ni shita    - 田中さんは冗談を本気にした    - Tanaka đã cho câu nói đùa là thật.       □ Honki desu ka    - 本気ですか    - Thật đấy chứ?        □ Shiken ga chikai no de ani wa honki de benkyou shite iru    - 試験が近いので兄は本気で勉強している    - Vì kỳ thi đã đến gần nên anh tôi đang học hành một cách nghiêm túc.        □ Kare ra wa honki ni natte, chousa o hajimeta    - 彼らは本気になって、調査を始めた    - Họ nghiêm túc lại và bắt đầu điều tra.",
-    "example": "(danh từ) ●Tính đứng đắn, tính nghiêm chỉnh.      (nội động từ) ●Đứng đắn, nghiêm túc.",
-    "meaning": ""
+    "furigana": "",
+    "hanviet": "BẢN/BỔN KHÍ",
+    "example": "□ Tanaka san wa joudan o honki ni shita    - 田中さんは冗談を本気にした    - Tanaka đã cho câu nói đùa là thật.       □ Honki desu ka    - 本気ですか    - Thật đấy chứ?        □ Shiken ga chikai no de ani wa honki de benkyou shite iru    - 試験が近いので兄は本気で勉強している    - Vì kỳ thi đã đến gần nên anh tôi đang học hành một cách nghiêm túc.        □ Kare ra wa honki ni natte, chousa o hajimeta    - 彼らは本気になって、調査を始めた    - Họ nghiêm túc lại và bắt đầu điều tra.",
+    "meaning": "(danh từ) ●Tính đứng đắn, tính nghiêm chỉnh.      (nội động từ) ●Đứng đắn, nghiêm túc."
   },
   {
     "id": "284",
@@ -2355,9 +2355,9 @@
     "id": "290",
     "kanji": "ようきゅう",
     "furigana": "YẾU CẦU",
-    "hanviet": "□ Youkyuu o mitasu    - 要求を満たす    - Thoả mãn nhu cầu.        □ Kare wa wareware no youkyuu ni oujita    - 彼はわれわれの要求に応じた    - Anh ta đã đáp ứng yêu cầu của chúng tôi.       □ Kumiai wa chingin no neage o youkyuu shite iru    - 組合は賃金の値上げを要求している    - Công đoàn đã yêu cầu tăng lương.        □ Watashi tachi wa sono shitsumon ni taisuru kaitou o youkyuu shita    - 私たちはその質問に対する回答を要求した    - Chúng tôi đã yêu cầu trả lời cho câu hỏi đó.",
-    "example": "(danh từ) ●Nhu cầu, yêu cầu, sự thỉnh cầu.      □ Youkyuu suru    - ～する    (ngoại động từ) ●Yêu cầu, đòi hỏi, thỉnh cầu.   ●Xem motomeru",
-    "meaning": ""
+    "hanviet": "",
+    "example": "□ Youkyuu o mitasu    - 要求を満たす    - Thoả mãn nhu cầu.        □ Kare wa wareware no youkyuu ni oujita    - 彼はわれわれの要求に応じた    - Anh ta đã đáp ứng yêu cầu của chúng tôi.       □ Kumiai wa chingin no neage o youkyuu shite iru    - 組合は賃金の値上げを要求している    - Công đoàn đã yêu cầu tăng lương.        □ Watashi tachi wa sono shitsumon ni taisuru kaitou o youkyuu shita    - 私たちはその質問に対する回答を要求した    - Chúng tôi đã yêu cầu trả lời cho câu hỏi đó.",
+    "meaning": "(danh từ) ●Nhu cầu, yêu cầu, sự thỉnh cầu.      □ Youkyuu suru    - ～する    (ngoại động từ) ●Yêu cầu, đòi hỏi, thỉnh cầu.   ●Xem motomeru"
   },
   {
     "id": "291",
@@ -2420,8 +2420,8 @@
     "kanji": "天候",
     "furigana": "てんこう",
     "hanviet": "THIÊN HẬU",
-    "example": "(danh từ) ●Khí hậu, điều kiện thời tiết. Xem tenki",
-    "meaning": ""
+    "example": "",
+    "meaning": "(danh từ) ●Khí hậu, điều kiện thời tiết"
   },
   {
     "id": "299",
@@ -2445,7 +2445,7 @@
     "furigana": "そうなん",
     "hanviet": "TAO NẠN/NAN",
     "example": "遭難船 tàu gặp nạn    そうなんしゃ @遭難者 [そうなんしゃ]  victim-survivor-sufferer-(P)",
-    "meaning": "名(スル)  山や海などで命を落とすような災難にあうこと。わざわいにあうこと。 sự gặp nạn; sự mắc nạn; sự lâm nạn"
+    "meaning": " sự gặp nạn; sự mắc nạn; sự lâm nạn"
   },
   {
     "id": "302",
@@ -2613,7 +2613,7 @@
     "furigana": "にちじょう",
     "hanviet": "NHẬT THƯỜNG",
     "example": "日常会話 @にちじょうかいわ【日常会話】nhật thường thoại    (danh từ) ●Đàm thoại hàng ngày    日常生活 @にちじょうせいかつ【日常生活】nhật thường sanh (sinh) hoạt (quạt)    (danh từ) ●Sinh hoạt hàng ngày",
-    "meaning": "(adj-no,n-adv,n-t) ordinary-regular-everyday-usual-(P)  hàng ngày"
+    "meaning": " hàng ngày"
   },
   {
     "id": "323",
@@ -2635,9 +2635,9 @@
     "id": "325",
     "kanji": "ことわざ",
     "furigana": "ことわざ",
-    "hanviet": "\"□ \"\"Toki wa kane nari\"\" to iu furui kotowaza ga arimasu    - 時は金なりという古いことわざがあります    - Có câu tục ngữ cổ nói rằng \"\"Thời giờ là tiền bạc\"\".\"",
-    "example": "(danh từ) ●Tục ngữ, cách ngôn.",
-    "meaning": ""
+    "hanviet": "",
+    "example": "\"□ \"\"Toki wa kane nari\"\" to iu furui kotowaza ga arimasu    - 時は金なりという古いことわざがあります    - Có câu tục ngữ cổ nói rằng \"\"Thời giờ là tiền bạc\"\".\"",
+    "meaning": "(danh từ) ●Tục ngữ, cách ngôn."
   },
   {
     "id": "326",
@@ -2859,9 +2859,9 @@
     "id": "353",
     "kanji": "実物",
     "furigana": "じつぶつ",
-    "hanviet": "□ Kono e wa jitsubutsu sokkuri da    - この絵は実物そっくりだ    - Bức tranh này giống hệt với bản gốc.        □ Kore wa jitsubutsu de naku, kopii desu    - これは実物でなく、コピーです    - Đây không phải là bản gốc mà là bản sao chép đấy.        □ Kono shashin wa jitsubutsu dai desu    - この写真は実物大です    - Tấm hình này to bằng kích cỡ thật.",
-    "example": "(danh từ) ●Nguyên bản, bản gốc, bản chính.",
-    "meaning": ""
+    "hanviet": "",
+    "example": "□ Kono e wa jitsubutsu sokkuri da    - この絵は実物そっくりだ    - Bức tranh này giống hệt với bản gốc.        □ Kore wa jitsubutsu de naku, kopii desu    - これは実物でなく、コピーです    - Đây không phải là bản gốc mà là bản sao chép đấy.        □ Kono shashin wa jitsubutsu dai desu    - この写真は実物大です    - Tấm hình này to bằng kích cỡ thật.",
+    "meaning": "(danh từ) ●Nguyên bản, bản gốc, bản chính."
   },
   {
     "id": "354",
@@ -3020,16 +3020,16 @@
     "kanji": "浮かび上がる",
     "furigana": "うかびあがる",
     "hanviet": "PHÙ THƯỢNG",
-    "example": "◆ Nổi lên .",
-    "meaning": ""
+    "example": ".",
+    "meaning": "◆ Nổi lên "
   },
   {
     "id": "374",
     "kanji": "舞い上がる",
     "furigana": "まいあがる",
     "hanviet": "VŨ THƯỢNG",
-    "example": "◆ Sự bay vút lên, tầm bay vút lên, bay lên, bay cao, vút lên cao, bay liệng",
-    "meaning": ""
+    "example": "",
+    "meaning": "◆ Sự bay vút lên, tầm bay vút lên, bay lên, bay cao, vút lên cao, bay liệng"
   },
   {
     "id": "375",
@@ -3052,8 +3052,8 @@
     "kanji": "沸きあがる",
     "furigana": "わきあがる",
     "hanviet": "PHÍ/PHẤT",
-    "example": "◆ xuất hiện, nảy sinh ra, xảy ra, phát sinh do; do bởi, sống lạ...",
-    "meaning": ""
+    "example": "",
+    "meaning": "◆ xuất hiện, nảy sinh ra, xảy ra, phát sinh do; do bởi, sống lạ..."
   },
   {
     "id": "378",
@@ -3069,7 +3069,7 @@
     "furigana": "ふるえあがる",
     "hanviet": "CHẤN THƯỢNG",
     "example": "寒さに震え上がる rét run lập cập",
-    "meaning": "自 恐ろしかったり寒かったりして体がひどくふるえる。 run lập cập; run bần bật; (run) lật bật"
+    "meaning": " run lập cập; run bần bật; (run) lật bật"
   },
   {
     "id": "380",
@@ -3100,8 +3100,8 @@
     "kanji": "出来上がり",
     "furigana": "できあがり",
     "hanviet": "□ Dekiagari wa itsu desu ka?    - 出来上がりはいつですか    - Khi nào nó được hoàn tất?        □ Dekiagari wa joujou da    - 出来上がりは上々だ    - Kỹ năng đã tới mức điêu luyện.",
-    "example": "(danh từ) ●Sự hoàn tất, kỹ năng.",
-    "meaning": ""
+    "example": "",
+    "meaning": "(danh từ) ●Sự hoàn tất, kỹ năng."
   },
   {
     "id": "383",
@@ -3115,9 +3115,9 @@
     "id": "384",
     "kanji": "見上げる",
     "furigana": "みあげる",
-    "hanviet": "□ Sora sanchou o miageru    - 空（山頂）を見上げる    - Ngẩng lên bầu trời (ngọn núi).",
-    "example": "(ngoại động từ) ●Nhìn lên, trông lên, ngẩng lên.",
-    "meaning": ""
+    "hanviet": "",
+    "example": ".□ Sora sanchou o miageru    - 空（山頂）を見上げる    - Ngẩng lên bầu trời (ngọn núi).",
+    "meaning": "(ngoại động từ) ●Nhìn lên, trông lên, ngẩng lên"
   },
   {
     "id": "385",
@@ -3156,8 +3156,8 @@
     "kanji": "繰り上げる",
     "furigana": "くりあげる",
     "hanviet": "TAO/TÀO THƯỢNG",
-    "example": "他  １．順に従って前に送る。 (lần lượt) chuyển lên; dồn lên; đẩy lên; đưa lên  ２． tiến hành sớm hơn; thực hiện sớm hơn (so với dự định)  ３．四則演算においてある位の数の和が二けたになったとき、上の桁に、数字を移すこと。 (toán học) nhớ",
-    "meaning": ""
+    "example": "",
+    "meaning": "他  １．順に従って前に送る。 (lần lượt) chuyển lên; dồn lên; đẩy lên; đưa lên  ２． tiến hành sớm hơn; thực hiện sớm hơn (so với dự định)  ３．四則演算においてある位の数の和が二けたになったとき、上の桁に、数字を移すこと。 (toán học) nhớ"
   },
   {
     "id": "390",
@@ -3179,393 +3179,393 @@
     "id": "392",
     "kanji": "書き上げる",
     "furigana": "かきあげる",
-    "hanviet": "小説を書き上げる viết xong cuốn tiểu thuyết 必要な品を書き上げる viết liệt kê ra những thứ cần thiết。",
-    "example": "他  １．すっかり書きおえる。 viết xong; viết hết   ２．一つ一つ取り出して書きしるす。書き立てる viết liệt kê ra; ghi liệt kê ra",
-    "meaning": ""
+    "hanviet": "THƯ THƯỢNG",
+    "example": "小説を書き上げる。",
+    "meaning": "Viết xong, hoàn thành (bài viết/tiểu thuyết); viết liệt kê"
   },
   {
     "id": "393",
     "kanji": "育て上げる",
     "furigana": "そだてあげる",
-    "hanviet": "女手一つで三人の子供を育て上げる một tay người phụ nữ nuôi 3 đứa con lớn khôn",
-    "example": "他  育てて一人前にする。りっぱに成長させる。 nuôi khôn lớn; nuôi trưởng thành; nuôi dạy nên người",
-    "meaning": ""
+    "hanviet": "DỤC THƯỢNG",
+    "example": "女手一つで3人の子供を育て上げた。",
+    "meaning": "Nuôi khôn lớn, nuôi dạy trưởng thành"
   },
   {
     "id": "394",
     "kanji": "読み上げる",
     "furigana": "よみあげる",
-    "hanviet": "合格者名を読み上げる đọc to tên người thi đậu １日で読み上げる đọc hết trong một ngày",
-    "example": "他  １．声高く読む。 đọc to  ２．終わりまで読み通す。 đọc xong; đọc hết",
-    "meaning": ""
+    "hanviet": "ĐỘC THƯỢNG",
+    "example": "合格者の名前を読み上げる。",
+    "meaning": "Đọc to lên; đọc hết/đọc xong"
   },
   {
     "id": "395",
     "kanji": "数え上げる",
     "furigana": "かぞえあげる",
-    "hanviet": "彼は私の欠点を数え上げた。 Anh ta đã nêu ra từng khuyết điểm của tôi.  倉庫の荷物をやっと数え上げた。 Cuối cùng cũng đã đếm hết được toàn bộ hàng hoá trong kho.",
-    "example": "他  １．一つ一つ数える。一つ一つ取り上げて示す。 đếm từng cái một; nêu lên từng cái; nêu ra từng cái; kê ra; liệt kê  ２．すべて数える。数えおわる đếm hết; đếm toàn bộ; đếm tất cả",
-    "meaning": ""
+    "hanviet": "SỔ THƯỢNG",
+    "example": "彼の欠点を数え上げる。",
+    "meaning": "Liệt kê, đếm từng cái một, nêu ra từng mục"
   },
   {
     "id": "396",
     "kanji": "投げ出す",
     "furigana": "なげだす",
     "hanviet": "ĐẦU XUẤT",
-    "example": "物を床に投げ出す thảy đồ xuống sàn  足を投げ出す ngồi duỗi chân ra 全財産を孤児救済に投げ出す bỏ ra tất cả tài sản để cứu giúp trẻ mồ côi  仕事を投げ出す bỏ dở công việc",
-    "meaning": "他   1.投げて外へ出す。また、投げるようにして物を置く。ほうり出す。 ném ra; liệng ra; quăng ra; thảy   2.他につくすため自分の身や財産などを差し出す。 đưa ra; bỏ ra (tài sản, thân mạng mình vì mục đích khác)    3.物事を成就しないうちにあきらめて止める。放棄する。 bỏ dở; bỏ ngang"
+    "example": "途中で仕事を投げ出す。",
+    "meaning": "Ném ra ngoài; từ bỏ, bỏ dở giữa chừng; hy sinh (tiền bạc/mạng sống)"
   },
   {
     "id": "397",
     "kanji": "持ち出す",
     "furigana": "もちだす",
-    "hanviet": "火の回りが早くて何も持ち出すことができなかった vì lửa lan nhanh nên đã không thể mang cái gì ra ngoài được   疑いを持ち出す bắt đầu có nghi ngờ  会議に持ち出す đề xuất tại hội nghị 足りない分を持ち出した tự lo phần thiếu hụt",
-    "example": "他  １．持って外へ出す。中にある物を外へ出す。 mang ra (ngoài); cầm ra; đem ra; xách ra  ２．持ち始める。 bắt đầu có   ３．ある事柄を言い出す。話題として出す。 nêu ra; đưa ra; nói ra; đề xuất  ４．不足した費用を、自腹を切って出す。 tự bỏ tiền túi ra; tự lo; tự chịu; tự đảm nhiệm",
-    "meaning": ""
+    "hanviet": "TRÌ XUẤT",
+    "example": "会議に新しい đề án (提案) を持ち出す。",
+    "meaning": "Mang/đem ra ngoài; đề xuất, đưa chủ đề ra thảo luận; tự bỏ tiền túi"
   },
   {
     "id": "398",
     "kanji": "追い出す",
     "furigana": "おいだす",
-    "hanviet": "部屋から追い出す đuổi ra khỏi phòng   連盟から追い出す khai trừ ra khỏi liên minh",
-    "example": "他  １．追い立てて外へ出す。追いはらう。 đuổi ra; đuổi ra ngoài ２．属している集団・社会などから締め出して、関係を絶つ。 trục xuất; khai trừ; đuổi khỏi; cắt đứt quan hệ",
-    "meaning": ""
+    "hanviet": "TRUY XUẤT",
+    "example": "部屋から追い出される。",
+    "meaning": "Đuổi ra ngoài, trục xuất, đuổi khỏi nhóm/tổ chức"
   },
   {
     "id": "399",
     "kanji": "放り出す",
     "furigana": "ほうりだす",
-    "hanviet": "窓からごみを放り出す vứt rác ra cửa sổ  車から放り出される bị ném ra khỏi xe  酔漢を店から放り出す lôi gã say xỉn ra khỏi quán  小銭を机の上に放り出す thảy tiền lẻ lên bàn  泣きじゃくる子供を放り出したまま家事を始める bắt tay làm việc nhà, mặc cho đứa bé khóc toáng 仕事を中途で放り出す bỏ dở công việc giữa chừng 奉公先から放り出された bị đuổi cổ khỏi nơi giúp việc",
-    "example": "他  １．勢いよく投げて外へ出す。また、激しい勢いで位置を移動させる。  ném ra; liệng ra; quăng ra; vứt ra; lôi ra  ２．投げるようにして置く。無造作に手からはなす。 liệng; quẳng; thảy  ３．無関係なものとして捨てておく。うち捨ててかえりみない。 kệ; mặc; bỏ mặc; mặc thây; vứt mặc  ４．いやになって中途で止めてしまう。 (làm việc gì) bỏ dở; bỏ mứa  ５．仲間・職場から追い出す。 thải; đuổi; tống cổ; thải hồi",
-    "meaning": ""
+    "hanviet": "PHÓNG XUẤT",
+    "example": "仕事を途中で放り出す。",
+    "meaning": "Quẳng/ném ra ngoài; bỏ mặc; bỏ dở giữa chừng; sa thải/tống cổ"
   },
   {
     "id": "400",
     "kanji": "貸し出す",
     "furigana": "かしだす",
-    "hanviet": "図書館が本をを貸し出す thư viện cho mượn sách  住宅資金を貸し出す cho vay tiền mua nhà",
-    "example": "他  １．公共機関などが物を貸して、外部へ持ち出すことを認める。 cho mượn (từ tổ chức, cơ quan công cộng...)   ２．銀行などが金残を貸すために支出する。 cho vay; cho thuê (từ ngân hàng...)",
-    "meaning": ""
+    "hanviet": "THẢI XUẤT",
+    "example": "図書館で本を貸し出す。",
+    "meaning": "Cho mượn (mang ra ngoài); cho vay (tiền vốn)"
   },
   {
     "id": "401",
     "kanji": "聞き出す",
     "furigana": "ききだす",
-    "hanviet": "他  １．自分の知りたいことを聞いて探りだす。 dò hỏi cho ra chuyện muốn biết  ２．聞きはじめる。 bắt đầu nghe",
-    "example": "",
-    "meaning": ""
+    "hanviet": "VĂN XUẤT",
+    "example": "相手から本音を聞き出す。",
+    "meaning": "Hỏi thăm/dò hỏi lấy thông tin; bắt đầu nghe"
   },
   {
     "id": "402",
     "kanji": "連れ出す",
     "furigana": "つれだす",
-    "hanviet": "散歩に連れ出す dẫn ra ngoài tản bộ",
-    "example": "他  外に連れて出る。誘い出す。 dẫn ra ngoài; rủ đi",
-    "meaning": ""
+    "hanviet": "LIÊN XUẤT",
+    "example": "友達を散歩に連れ出す。",
+    "meaning": "Dẫn ra ngoài, rủ ra ngoài"
   },
   {
     "id": "403",
     "kanji": "引っ張り出す",
     "furigana": "ひっぱりだす",
-    "hanviet": "押し入れから夏物を引っ張り出す kéo lôi đồ dùng mùa hè ra khỏi tủ (tủ âm tường)",
-    "example": "他  １．引っ張って外へ出す。 kéo ra; lôi ra  ２．無理に連れ出す。 lôi ra; kéo ra; dẫn ra; ép ra (mang tính cưỡng ép)",
-    "meaning": ""
+    "hanviet": "DẪN TRƯƠNG XUẤT",
+    "example": "押し入れから古い服を引っ張り出す。",
+    "meaning": "Lôi ra, kéo ra (ngoài); lôi kéo/ép ai đó ra ngoài"
   },
   {
     "id": "404",
     "kanji": "逃げ出す",
     "furigana": "にげだす",
-    "hanviet": "授業を逃げ出すしたい気分 tâm trạng muốn chạy trốn khỏi nơi đó",
-    "example": "自  １．逃げてその場を去る。のがれる。 chạy thoát; chạy trốn ２．逃げ始める。 bắt đầu bỏ trốn; bắt đầu chạy trốn; bắt đầu đào tẩu",
-    "meaning": ""
+    "hanviet": "ĐÀO XUẤT",
+    "example": "危険を感じて現場から逃げ出した。",
+    "meaning": "Chạy trốn, đào tẩu; bắt đầu bỏ chạy"
   },
   {
     "id": "405",
     "kanji": "飛び出す",
     "furigana": "とびだす",
-    "hanviet": "□ Seito tachi wa kyoushitsu kara koutei e tobidashita    - 生徒たちは教室から校庭へ飛び出した    - Các học sinh phóng khỏi lớp ùa ra sân chơi.        □ Douro ni tobidasu no wa kiken desu    - 道路に飛び出すのは危険です    - Chạy phóng ra ngoài đường lộ thì nguy hiểm.",
-    "example": "(nội động từ) ●Nhảy ra, phóng ra, chạy ra.",
-    "meaning": ""
+    "hanviet": "PHI XUẤT",
+    "example": "道路に急に飛び出すな。",
+    "meaning": "Nảy ra, lao ra, lao vọt ra đường"
   },
   {
     "id": "406",
     "kanji": "見つけ出す",
     "furigana": "みつけだす",
-    "hanviet": "なくした財布を見つけ出す tìm thấy cái ví đã làm mất",
-    "example": "他  発見する。見いだす。 tìm thấy; phát hiện",
-    "meaning": ""
+    "hanviet": "KIẾN XUẤT",
+    "example": "なくした鍵を見つけ出した。",
+    "meaning": "Tìm thấy, phát hiện ra (sau khi tìm kiếm)"
   },
   {
     "id": "407",
     "kanji": "探し出す",
     "furigana": "さがしだす",
-    "hanviet": "他  目的の人・物をさがして見つける。さがしあてる tìm thấy; tìm ra。",
-    "example": "",
-    "meaning": ""
+    "hanviet": "THẢM XUẤT",
+    "example": " thư viện (図書館) で古い meibun (名文) を探し出す。",
+    "meaning": "Tìm ra, tìm thấy (người/vật mong muốn)"
   },
   {
     "id": "408",
     "kanji": "書き出す",
     "furigana": "かきだす",
-    "hanviet": "小説を書き出す bắt đầu viết tiểu thuyết  正解を黒板に書き出す viết công bố lời giải đúng lên bảng 要点を書き出す viết rút ra những điểm chính",
-    "example": "他  １．書き始める bắt đầu viết   ２． viết lên; trình bày lên; viết công bố  ３．必要な箇所を抜き出して書く。 rút ra những điểm cần thiết để viết; viết rút ra những điểm chính",
-    "meaning": ""
+    "hanviet": "THƯ XUẤT",
+    "example": "会議の要点をノートに書き出す。",
+    "meaning": "Bắt đầu viết; trích xuất/liệt kê ra giấy"
   },
   {
     "id": "409",
     "kanji": "飛び込む",
     "furigana": "とびこむ",
-    "hanviet": "□ Kare wa puuru ni tobikonda    - 彼はプールに飛び込んだ    - Anh ta phóng mình xuống hồ.        □ Tsubame ga ie ni tobikonde kita    - つばめが家に飛び込んで来た    - Con chim én đã lao mình bay vào nhà.",
-    "example": "(nội động từ) ●Nhảy vào, phóng mình xuống, lao vào.",
-    "meaning": ""
+    "hanviet": "PHI NHẬP",
+    "example": "彼は海に飛び込んだ。",
+    "meaning": "Nhảy vào, lao mình xuống (nước/phòng...)"
   },
   {
     "id": "410",
     "kanji": "駆け込む",
     "furigana": "かけこむ",
-    "hanviet": "軒先に駆け込む chạy vào trước hiên nhà",
-    "example": "自  １．走って中に入る chạy vào  ２．押しかける。援助・保護・相談を求めて関係のある所へ走り込む。 chạy lao vào  ３．駆け込み訴えをする。 việc tố tụng trực tiếp lên lãnh chúa hay quan trọng thần của Mạc phủ... mà không qua các thủ tục quy định thời Edo",
-    "meaning": ""
+    "hanviet": "KHU NHẬP",
+    "example": "大雨が降ってきたので、軒下に駆け込んだ。",
+    "meaning": "Chạy vội vào, lao vào (tìm sự giúp đỡ/tránh mưa)"
   },
   {
     "id": "411",
     "kanji": "割り込む",
     "furigana": "わりこむ",
-    "hanviet": "行列の間に割り込む chen ngang vào giữa hàng",
-    "example": "他  間にむりやりはいりこむ。むりやりかかわってくる。 chen ngang; chen vào; xen vào; xen ngang",
-    "meaning": ""
+    "hanviet": "CÁT NHẬP",
+    "example": "行列の間に割り込む。",
+    "meaning": "Chen ngang, chen hàng, xen vào câu chuyện"
   },
   {
     "id": "412",
     "kanji": "差し込む",
     "furigana": "さしこむ",
-    "hanviet": "胃を差し込む đau thắt dạ dày 部屋に朝日が差し込む mặt trời buổi sáng chiếu vào căn phòng プラグを差し込む cắm phích cắm vào",
-    "example": "自  １．胸・腹などが物を突っ込んだように痛む。 đau thắt; đau quặn; đau quặn thắt; đau co thắt (vùng bụng, ngực...)  ２．光などがはいって来る。中まで照らす。さしいる。（「射し込む」とも書く） chiếu vào; rọi vào   他  （穴・すきまなどに）突き入れる。差し入れる。 cắm vào; cài vào",
-    "meaning": ""
+    "hanviet": "SAI NHẬP",
+    "example": "部屋に日の光が差し込む。",
+    "meaning": "Cắm vào, gài vào; (ánh sáng) chiếu vào; (bụng) đau co thắt"
   },
   {
     "id": "413",
     "kanji": "染み込む",
     "furigana": "しみこむ",
-    "hanviet": "靴の中に水が染み込んでくる nước ngấm vào bên trong giày",
-    "example": "自  色・味・匂いなどが物の中まで深く染まる。しみとおる。 thấm vào; ngấm vào",
-    "meaning": ""
+    "hanviet": "NHIỄM NHẬP",
+    "example": "服に醤油が染み込む。",
+    "meaning": "Thấm vào, ngấm vào (màu, vị, chất lỏng)"
   },
   {
     "id": "414",
     "kanji": "引っ込む",
     "furigana": "ひっこむ",
-    "hanviet": "故郷に引っ込む lui về cố hương  自分の部屋に引っ込んだきり出てこない rút vào phòng mình và cứ ở suốt trong đó 通りから引っ込んだ店 cửa tiệm thụt vào từ ngoài đường  頭の瘤が引っ込む cục u trên đầu xẹp xuống 寝不足で引っ込んだ目 mắt trũng sâu do thiếu ngủ",
-    "example": "自  １．家の中や目立たないところに退いてこもる。 rút vào; lui về ,về hưu, thôi việc.  ２．後方、奥のほうに下がる。 thụt; thụt vào; lùi vào (nằm lùi sâu vào bên trong)   ３．突き出していた物が元の状態にもどる。また、本来の面よりも内側にくぼむ。へこむ。 xẹp; trở lại như cũ (vật đã nhô ra); trũng; lõm; hõm; hóp",
-    "meaning": ""
+    "hanviet": "DẪN NHẬP",
+    "example": "彼は自分の部屋に引っ込んだ。",
+    "meaning": "Rút về, lui về ở ẩn; thụt vào bên trong; (u/mụn) xẹp xuống"
   },
   {
     "id": "415",
     "kanji": "詰め込む",
     "furigana": "つめこむ",
-    "hanviet": "CẬT (nhập)",
-    "example": "知識を詰め込む nhồi nhét kiến thức",
-    "meaning": "他  １．物を入れ物にできるだけたくさん入れる。 nhồi nhét; nhồi; ních  ２．たくさん食べる。腹いっぱい食べる。 ăn đầy bụng  ３．いろいろな知識をむやみに覚えさせる。 nhồi nhét (kiến thức)"
+    "hanviet": "CẬT NHẬP",
+    "example": "頭に nhồi nhét (知識) を詰め込む。",
+    "meaning": "Nhồi nhét (hành lý, kiến thức); ăn no căng"
   },
   {
     "id": "416",
     "kanji": "飲み込む",
     "furigana": "のみこむ",
-    "hanviet": "錠剤を飲み込む nuốt chửng viên thuốc  津波が一瞬のうちに家々を飲み込む cơn sóng thần nuốt chửng nhà cửa chỉ trong nháy mắt",
-    "example": "他  １．飲んでのどを通す。また、また、かまずにまる飲みにする。 nuốt; nuốt chửng; nuốt trộng  ２．理解すること。会得する。 hiểu được; nắm được; lĩnh hội  ３．出そうになった言葉・あくびなどを出さずにおさえる。 kìm lại; nén lại; nín (lời định nói ra, cơn ngáp v.v)  ４．自然現象や大きな建造物などが、すっかり取り囲んでしまう。中に引き込んで、外に出さないようにする chứa; nuốt chửng; nuốt gọn (cách nói ví về các kiến trúc lớn hay hiện tượng tự nhiên)",
-    "meaning": ""
+    "hanviet": "ẨM NHẬP",
+    "example": "薬を水で飲み込む。",
+    "meaning": "Nuốt chửng; hiểu rõ/nắm bắt vấn đề; nén/kìm lại (cảm xúc)"
   },
   {
     "id": "417",
     "kanji": "運び込む",
     "furigana": "はこびこむ",
-    "hanviet": "他  運んで中に入れる chuyển vào; mang vào; khiêng vào; khuân vào",
-    "example": "",
-    "meaning": ""
+    "hanviet": "VẬN NHẬP",
+    "example": "部屋に荷物を運び込む。",
+    "meaning": "Vận chuyển vào, khiêng/mang vào bên trong"
   },
   {
     "id": "418",
     "kanji": "打ち込む",
     "furigana": "うちこむ",
-    "hanviet": "くぎを打ち込む đóng đinh  弾丸を敵陣に打ち込む bắn đạn vào trận địa kẻ thù  胴へ打ち込む chém vào người 練習に打ち込む chuyên tâm vào luyện tập  仕事に打ち込む chuyên tâm vào công việc 容赦なく打ち込んでくる tấn công vào điểm yếu một cách tàn nhẫn  ビルの基礎を打ち込む đổ bê tông vào móng toà nhà バッティングマシーンで打ち込む luyện tập đánh bóng nhiều lần bằng máy bắn banh",
-    "example": "他  １．たたいたり打ったりして中へ入れる。 đóng vào; đập vào; gõ vào   ２．球・弾丸などを相手の陣に入れる。「撃ち込む」とも書く。 bắn vào; phóng vào; ném vào  ３．剣道・ボクシングなどで、相手のすきをついて打ってかかる。 chém vào; bổ vào; đánh vào; đấm vào (kiếm đạo, đấm bốc...)  ４．精・ を集中する。夢中になる。 chuyên tâm; chăm chú; tập trung; miệt mài; say mê; làm mê mải   ５．人の弱みを的確に突く。急所を突く đánh vào điểm yếu   ６．囲碁で、相手の陣の中に自分の石を置く。 đặt quân cờ của mình vào trận cờ của đối thủ (trong cờ vây)  ７．コンクリートを所定の場所に流し込む。 đổ vào; rót vào; cho chảy vào (bê tông) ８．野球・テニスなどで、時間をかけて、多くの球を打つ練習をする。 luyện tập đánh bóng nhiều lần (bóng chày, quần vợt...)",
-    "meaning": ""
+    "hanviet": "ĐẢ NHẬP",
+    "example": "仕事に打ち込む。",
+    "meaning": "Đóng vào (đinh); nhập (dữ liệu); tập trung/chuyên tâm vào; tấn công"
   },
   {
     "id": "419",
     "kanji": "注ぎ込む",
     "furigana": "そそぎこむ",
-    "hanviet": "ポットに水を注ぎ込む rót nước vào chai  石膏を型に注ぎ込む đổ thạch cao vào khuôn 新製品の開発に全力をを注ぎ込む dốc hết sức vào việc phát triển sản phẩm mới",
-    "example": "他   1.流し入れる。流し込む。 rót vào; đổ vào; trút vô; rót; chế   2.心や力を目標に集中する。 dốc; dồn; tập trung (tâm sức)",
-    "meaning": ""
+    "hanviet": "CHÚ NHẬP",
+    "example": "新しい事業に全力を注ぎ込む。",
+    "meaning": "Rót/đổ vào (chất lỏng); dồn/dốc hết (sức lực, tiền bạc)"
   },
   {
     "id": "420",
     "kanji": "引き込む",
     "furigana": "ひきこむ",
-    "hanviet": "田に水を引き込む dẫn nước vào ruộng 悪の道に引き込む lôi kéo vào con đường xấu 風邪を引き込む bị cảm nặng 壁の引き込んだところ chỗ tường lõm",
-    "example": "他  １．引いて中に入れる kéo vào; dẫn vào 。  ２．仲間に誘い込む。 lôi kéo; rủ rê   ３．ひどく風邪をひく cảm; cảm mạo (nặng)   自  １．内にこもっている。中に入って出てこない。 ru rú; ro ró; rúc mình; giam mình; nhốt mình (trong nhà)  ２．閑居する。隠退する。 ẩn cư; ẩn dật; ở ẩn; lánh đời ở ẩn  ３．目立たない場所に退く。奥へ入る。ひっこむ。 lùi vào trong  ４．さがって低くなる。くぼむ。ひっこむ。 hóp; tóp; móp; lõm; hõm; hũm",
-    "meaning": ""
+    "hanviet": "DẪN NHẬP",
+    "example": "友人を悪の道に引き込む。",
+    "meaning": "Kéo vào, lôi kéo (vào con đường xấu); dẫn (nước); giam mình trong nhà"
   },
   {
     "id": "421",
     "kanji": "書き込む",
     "furigana": "かきこむ",
-    "hanviet": "欄外に注を書き込む viết chèn ghi chú vào ngoài lề 時代背景もよく書き込まれている bối cảnh thời đại cũng được viết rất tường tận 作成したプログラムをフロッピーディスクに書き込む chép chương trình đã làm vào đĩa mềm",
-    "example": "他  １．文章の行間や余白に字などを書き加える。書き入れる。 viết vào; ghi vào; viết chèn vào; ghi chèn vào  ２．書き入れる。記入する。 viết vào; điền vào (ghi vào những chỗ quy định)   ３．すみずみまで目を届かせて書く。 viết tường tận; viết chi tiết   ４．コンピューターで、メモリー上にあるデータなどを外部記憶装置に移し入れる。 (tin học) chép; ghi; chép vào; ghi vào (ghi dữ liệu,...trong bộ nhớ máy vào bộ nhớ ngoài)",
-    "meaning": ""
+    "hanviet": "THƯ NHẬP",
+    "example": "ノートにメモを書き込む。",
+    "meaning": "Điền vào, ghi chép vào, viết chèn vào; (máy tính) ghi dữ liệu"
   },
   {
     "id": "422",
     "kanji": "巻き込む",
     "furigana": "まきこむ",
-    "hanviet": "車輪に巻き込まれる cuốn vào bánh xe 彼は知らないうちに犯罪行為に巻きこまれた anh ấy đã bị lôi kéo vào hành vi phạm tội trong lúc không hay biết",
-    "example": "他  １．巻いて中に入れる。 cuộn vào; cuốn vào  ２．本人の希望しないつきあい･関係に引き入れる。 lôi kéo; lôi kéo vào",
-    "meaning": ""
+    "hanviet": "QUYỂN NHẬP",
+    "example": "事件に巻き込まれる。",
+    "meaning": "Cuốn vào, lôi kéo/dính dấp vào (vụ án, rắc rối)"
   },
   {
     "id": "423",
     "kanji": "追い込む",
     "furigana": "おいこむ",
-    "hanviet": "牛を囲いの中に追い込む lùa bò vào chuồng 窮地に追い込む dồn vào đường cùng 期日までに追い込んで完成させる nỗ lực hết sức làm cho xong đến tận ngày hạn định",
-    "example": "他  １．動物などを追い詰めてある場所に入れる。 lùa vào; đuổi vào   ２．相手を苦しい立場に立たせる。 dồn vào; ép vào (chỗ khó khăn)   ３．物事の最後の段階になっていっそう努力する。 nỗ lực hết sức; cố gắng hết sức (vào giai đoạn cuối)   ４．印刷で、行やページを変えずに前に続けて活字を組む。 in dồn; in tiếp theo (không xuống dòng, không sang trang)",
-    "meaning": ""
+    "hanviet": "TRUY NHẬP",
+    "example": "相手を窮地に追い込む。",
+    "meaning": "Dồn vào (đường cùng/thế khó); lùa vào; nỗ lực chặng cuối"
   },
   {
     "id": "424",
     "kanji": "呼び込む",
     "furigana": "よびこむ",
-    "hanviet": "店に客を呼び込む gọi khách vào tiệm 幸運を呼び込む dẫn vận may vào 管に水を呼び込む dẫn nước vào ống",
-    "example": "他  １．呼んで中に入れる。呼び入れる。 gọi vào; kêu vô; kêu vào   ２．その方へ引き入れる。引き込む。 kéo vào; dẫn vào; đưa vào",
-    "meaning": ""
+    "hanviet": "HÔ NHẬP",
+    "example": "店内に客を呼び込む。",
+    "meaning": "Mời gọi vào, thu hút (khách hàng/vận may)"
   },
   {
     "id": "425",
     "kanji": "座り込む",
     "furigana": "すわりこむ",
-    "hanviet": "自   1.入り込んで座る ngồi vào   2.座ったままその場を動かずにいる。 ngồi im; ngồi yên; ngồi lì; ngồi bất động",
-    "example": "",
-    "meaning": ""
+    "hanviet": "TỌA NHẬP",
+    "example": "疲れて mệt quá (道端) に座り込んだ。",
+    "meaning": "Ngồi bệt xuống, ngồi lì một chỗ"
   },
   {
     "id": "426",
     "kanji": "寝込む",
     "furigana": "ねこむ",
-    "hanviet": "ぐっすりと寝込む ngủ say như chết 風邪で１週間寝込んだ",
-    "example": "自  １．寝入る。熟睡する。 ngủ say; ngủ sâu; ngủ vùi   ２．病気になって床につく。 nằm; nằm bệnh; nằm liệt giường (do bệnh); ốm liệt giường",
-    "meaning": ""
+    "hanviet": "TẨM NHẬP",
+    "example": "風邪をひいて一週間寝込んだ。",
+    "meaning": "Nằm liệt giường (vì bệnh); ngủ say sưa"
   },
   {
     "id": "427",
     "kanji": "話し込む",
     "furigana": "はなしこむ",
-    "hanviet": "他  時間のたつのを忘れて話に夢中になる。 say sưa nói chuyện; mải mê trò chuyện",
-    "example": "",
-    "meaning": ""
+    "hanviet": "THOẠI NHẬP",
+    "example": "友達と夜遅くまで話し込んだ。",
+    "meaning": "Mải mê nói chuyện, trò chuyện say sưa quên thời gian"
   },
   {
     "id": "428",
     "kanji": "黙り込む",
     "furigana": "だまりこむ",
-    "hanviet": "急に黙り込む đột nhiên im lặng",
-    "example": "自  まったく黙ってしまう。一言も言わなくなる。 câm lặng; im lặng; lặng câm; lặng thinh; nín thinh",
-    "meaning": ""
+    "hanviet": "MẶC NHẬP",
+    "example": "彼は gì đó (何も) 言わずに黙り込んだ。",
+    "meaning": "Im lặng hoàn toàn, lặng thinh không nói một lời"
   },
   {
     "id": "429",
     "kanji": "泊まり込む",
     "furigana": "とまりこむ",
-    "hanviet": "仕事で会社に泊まり込む vì công việc nên phải ngủ lại ở công ty  病院に泊り込んで看病する ở lại bệnh viện để chăm sóc người bệnh",
-    "example": "自  帰宅せずに他所に泊まる。 ở lại; trọ lại ngủ lại",
-    "meaning": ""
+    "hanviet": "BẠC NHẬP",
+    "example": "会社に泊まり込んで láy (仕事) をする。",
+    "meaning": "Ở lại, trọ lại, ngủ lại (qua đêm tại nơi làm việc/bệnh viện)"
   },
   {
     "id": "430",
     "kanji": "住み込む",
     "furigana": "すみこむ",
-    "hanviet": "住み込んで働く làm việc và ở tại nhà chủ",
-    "example": "使用人が雇い主の家や職場に寝泊まりする cư trú tại nơi làm việc; sống tại nhà chủ; ở tại nhà chủ (chủ thuê,...)",
-    "meaning": ""
+    "hanviet": "TRÚ NHẬP",
+    "example": "住み込みで làm việc (働く)。",
+    "meaning": "Sống và làm việc tại nhà chủ/nơi làm việc"
   },
   {
     "id": "431",
     "kanji": "煮込む",
     "furigana": "にこむ",
-    "hanviet": "他  １．時間をかけて十分に煮る。 hầm; ninh; bung  ２．いろいろなものをまぜて煮る。 nấu chung nhiều vật liệu với nhau",
-    "example": "",
-    "meaning": ""
+    "hanviet": "CHỬ NHẬP",
+    "example": "野菜と肉を kỹ (じっくり) 煮込む。",
+    "meaning": "Ninh, hầm (thức ăn); nấu chung nhiều nguyên liệu"
   },
   {
     "id": "432",
     "kanji": "売り込む",
     "furigana": "うりこむ",
-    "hanviet": "新製品を売り込む mở rộng thị trường tiêu thụ sản phẩm mới  店の名前を売り込む quảng cáo tên tuổi của cửa hiệu  志望する会社に自分を売り込む quảng cáo chính mình với công ty mong muốn vào làm 敵の秘密を売り込む bán tin tức bí mật của kẻ địch  味で売り込んだ店 tiệm ăn nổi tiếng nhờ hương  vị",
-    "example": "他  １．うまく宣伝したり勧めたりして品物を売る。また、販路を広げる。 bán hàng (tuyên truyền quảng cáo, mời mọc... để bán được hàng); mở rộng nơi tiêu thụ; mở rộng thị trường ２．宣伝したり相手にうまく取り入ったりして、名前や信用を広め、有利な立場にする quảng cáo; quảng bá; làm cho biết đến rộng rãi tên tuổi hay uy tín  ３．自分の利益になることを目的にして情報を提供する。 cung cấp thông tin; bán tin tức; bán thông tin   ４．名声や信用を得る。評判をとる。 có tên tuổi; có uy tín; được tín nhiệm; nổi tiếng",
-    "meaning": ""
+    "hanviet": "MẠI NHẬP",
+    "example": "新商品を láy (市場) に売り込む。",
+    "meaning": "Bán hàng/tiếp thị sản phẩm; quảng bá tên tuổi; bán tin tức"
   },
   {
     "id": "433",
     "kanji": "頼み込む",
     "furigana": "たのみこむ",
-    "hanviet": "就職の世話を頼み込む cầu khẩn sự giúp đỡ công ăn việc làm",
-    "example": "他  熱心に人に頼む。 cầu khẩn; nhờ vả thống thiết",
-    "meaning": ""
+    "hanviet": "LẠI NHẬP",
+    "example": "社長に khẩn khoản (頭を下げて) 頼み込んだ。",
+    "meaning": "Năn nỉ, khẩn khoản nhờ vả, cầu xin"
   },
   {
     "id": "434",
     "kanji": "教え込む",
     "furigana": "おしえこむ",
-    "hanviet": "挨拶のし方を教え込む dạy thấu đáo cách chào hỏi",
-    "example": "他  相手が完全に理解し身につけるまで徹底して教える。 dạy kỹ; dạy thấu đáo; dạy thuần thục",
-    "meaning": ""
+    "hanviet": "GIÁO NHẬP",
+    "example": "新人にお tác phong (マナー) を thấu đáo (しっかり) 教え込む。",
+    "meaning": "Dạy dỗ kỹ lưỡng, rèn luyện chu đáo cho thuần thục"
   },
   {
     "id": "435",
     "kanji": "話し合う",
     "furigana": "はなしあう",
-    "hanviet": "楽しそうに話し合っている若い二人 hai người trẻ tuổi nói chuyện với nhau trông thật vui vẻ  よく話し合って決める bàn bạc kỹ  rồi mới quyết định",
-    "example": "他  １．互いに話をする。 nói chuyện với nhau; trò chuyện cùng nhau  ２．相談する。 bàn bạc; thảo luận; bàn luận; bàn thảo; đàm luận; hội đàm",
-    "meaning": ""
+    "hanviet": "THOẠI HỢP",
+    "example": "問題について kĩ (じっくり) 話し合う。",
+    "meaning": "Bàn bạc, thảo luận, trao đổi ý kiến với nhau"
   },
   {
     "id": "436",
     "kanji": "言い合う",
     "furigana": "いいあう",
-    "hanviet": "冗談を言い合う nói đùa với nhau 同僚と言い合う cãi nhau với đồng nghiệp",
-    "example": "他  １．お互いに言いたいことを言う。 nói với nhau   ２．言い争う。口げんかをする。 cãi nhau; tranh cãi",
-    "meaning": ""
+    "hanviet": "NGÔN HỢP",
+    "example": "互いに ý kiến (意見) を言い合う。",
+    "meaning": "Nói chuyện qua lại với nhau; tranh cãi, cãi lộn"
   },
   {
     "id": "437",
     "kanji": "語り合う",
     "furigana": "かたりあう",
-    "hanviet": "友と将来の夢を語り合う trò chuyện qua lại với bạn bè về mơ ước tương lai",
-    "example": "他  互いに話る。語らう。 nói chuyện lẫn nhau; trò chuyện qua lại",
-    "meaning": ""
+    "hanviet": "NGỮ HỢP",
+    "example": "旧友と 夢 (将来の夢) を語り合う。",
+    "meaning": "Cùng nhau tâm sự, trò chuyện, chia sẻ kinh nghiệm/mơ ước"
   },
   {
     "id": "438",
     "kanji": "見つめ合う",
     "furigana": "みつめあう",
-    "hanviet": "",
-    "example": "",
-    "meaning": ""
+    "hanviet": "KIẾN HỢP",
+    "example": "二人は mỉm cười (微笑みながら) 見つめ合った。",
+    "meaning": "Nhìn chằm chằm vào mắt nhau, nhìn nhau âu ếm"
   },
   {
     "id": "439",
     "kanji": "向かい合う",
     "furigana": "むかいあう",
-    "hanviet": "自  互いに正面を向いて対する。向き合う。 đối mặt nhau; quay mặt vào nhau; đối diện; mặt đối mặt",
-    "example": "",
-    "meaning": ""
+    "hanviet": "HƯỚNG HỢP",
+    "example": "机を挟んで 向かい合う。",
+    "meaning": "Đối diện nhau, mặt đối mặt"
   },
   {
     "id": "440",
     "kanji": "助け合う",
     "furigana": "たすけあう",
-    "hanviet": "助け合って危機を乗り切る giúp đỡ nhau vượt qua nguy khó",
-    "example": "他  互いに助けたり助けられたりする。 giúp đỡ lẫn nhau; trợ giúp lẫn nhau; hỗ trợ lẫn nhau; tương trợ lẫn nhau; tương thân tương ái",
-    "meaning": ""
+    "hanviet": "TRỢ HỢP",
+    "example": "困った時は 助け合う ことが大切だ。",
+    "meaning": "Giúp đỡ lẫn nhau, tương trợ lẫn nhau"
   },
   {
     "id": "441",
@@ -3573,7 +3573,7 @@
     "furigana": "わけあう",
     "hanviet": "",
     "example": "一個の握り飯を分け合って食べる chia một vắt cơm nắm ra ăn",
-    "meaning": " 一つのものやひとまとまりのものを分割して取得したり負担したりする。 chia; phân chia; chia sẻ"
+    "meaning": "  chia; phân chia; chia sẻ"
   },
   {
     "id": "442",
@@ -3581,7 +3581,7 @@
     "furigana": "だしあう",
     "hanviet": "",
     "example": "",
-    "meaning": " 客自が互いに金品などを出す。 hùn; hùn hạp; góp chung; đóng chung; cùng nhau bỏ ra"
+    "meaning": " hùn; hùn hạp; góp chung; đóng chung; cùng nhau bỏ ra"
   },
   {
     "id": "443",
@@ -3755,17 +3755,17 @@
     "id": "514",
     "kanji": "割に、割と、割合に、割合と",
     "furigana": "わりに、わりと、わりあいに、わりあいと",
-    "hanviet": "副  わりあいに。比較的。思ったよりも。わりと。 tương đối; kha 年の割に若い́ khá trẻ",
-    "example": "",
-    "meaning": ""
+    "hanviet": "CÁT / CÁT TỈ",
+    "example": "年の割に若く見える。",
+    "meaning": "Tương đối, so với... thì khá (hơn so với dự đoán)"
   },
   {
     "id": "515",
     "kanji": "多少",
     "furigana": "たしょう",
-    "hanviet": "□ Sankasha no tashou de ryoukin ga kawarimasu    - 参加者の多少で料金が変わります    - Chi phí sẽ thay đổi tùy theo người tham gia.        □ Kingaku no tashou wa kamaimasen ga, go kifu o o negai itashimasu    - 金額の多少のはかまいませんが、ご寄付をお願いいたします    - Chúng tôi mong muốn được quý ngài đóng góp cho số tiền bao nhiêu tùy hỉ.        □ Tashou no fuben wa gaman shite kudasai    - 多少の不便はがまんしてください    - Hãy chịu đựng một chút bất tiện.       □ Nihon ni wa tashou shiriai ga imasu    - 日本には多少知合いがいます    - Tôi có một vài người quen ở Nhật Bản.        □ Sake wa mada tashou nokotte imasu    - 酒はまだ多少残っています    - Vẫn còn lại một ít rượu.",
-    "example": "(danh từ) ●Số lượng, con số.    (trạng từ) ●Một vài, một ít.",
-    "meaning": ""
+    "hanviet": "ĐA THIỂU",
+    "example": "多少の不便はがまんしてください。",
+    "meaning": "Một ít, một chút, đôi chút; (danh từ) số lượng nhiều ít"
   },
   {
     "id": "516",
