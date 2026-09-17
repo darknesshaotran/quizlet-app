@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Áp dụng theme (sáng/tối) đã lưu NGAY LẬP TỨC, trước khi trang vẽ ra,
+        // để tránh bị nháy sáng 1 khoảnh khắc rồi mới chuyển tối.
+        try {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        } catch (e) {}
+    </script>
     <title>Dashboard - JLPT Quizlet</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

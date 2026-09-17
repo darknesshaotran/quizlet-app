@@ -17,6 +17,17 @@
     --ruby-soft:  #b6535f;
     --border:     #e7e2d6;
 
+    /* Màu tiêu đề/chữ đậm trên nền --paper-alt (thẻ, container...).
+       Tách riêng khỏi --navy vì --navy còn dùng làm NỀN navbar (luôn tối ở cả 2 theme);
+       --ink-strong thì phải đảo màu theo theme để chữ luôn đọc được trên nền đổi màu. */
+    --ink-strong: var(--navy);
+
+    /* Mặt sau flashcard — tách riêng để dark mode đổi được mà không đụng --paper-alt chung */
+    --card-back-bg-1: #fbf7ec;
+    --card-back-bg-2: #f3e9d0;
+    --card-back-text: #3a2f18;
+    --card-back-muted: #6b5a3d;
+
     --shadow-sm: 0 2px 10px rgba(13,20,36,0.06);
     --shadow-md: 0 14px 34px rgba(13,20,36,0.10);
     --shadow-lg: 0 24px 60px rgba(13,20,36,0.18);
@@ -27,6 +38,30 @@
 
     --font-heading: 'Playfair Display', Georgia, serif;
     --font-body: 'Manrope', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================================================
+   DARK MODE — chỉ cần đổi giá trị token, mọi rule khác dùng
+   var(--...) ở trên sẽ tự động đổi theo, không cần sửa lại từng chỗ.
+   Bật bằng thuộc tính data-theme="dark" trên thẻ <html> (xem navbar.js).
+   ========================================================= */
+:root[data-theme="dark"] {
+    --ink:        #e6e4de;
+    --ink-soft:   #9aa0ad;
+    --paper:      #0b0f1a;
+    --paper-alt:  #171d2c;
+    --border:     rgba(255,255,255,0.10);
+
+    --ink-strong: #f1ead9;
+
+    --card-back-bg-1: #26210f;
+    --card-back-bg-2: #1a160a;
+    --card-back-text: #f1e6c8;
+    --card-back-muted: #b7ac8c;
+
+    --shadow-sm: 0 2px 10px rgba(0,0,0,0.35);
+    --shadow-md: 0 14px 34px rgba(0,0,0,0.45);
+    --shadow-lg: 0 24px 60px rgba(0,0,0,0.55);
 }
 
 * { box-sizing: border-box; }
@@ -42,6 +77,14 @@ body {
     background-attachment: fixed;
     color: var(--ink);
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+:root[data-theme="dark"] body {
+    /* Nền tối bớt hoạ tiết radial cho đỡ rối, giữ lại chút ánh vàng cho đồng bộ tông "sang trọng" */
+    background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(201,162,77,0.06), transparent 60%),
+        var(--paper);
 }
 
 h1, h2, h3 {
@@ -80,6 +123,30 @@ h1, h2, h3 {
     position: relative;
     transition: color 0.25s ease;
 }
+
+/* Nút chuyển giao diện sáng/tối, đặt cuối navbar */
+.theme-toggle-btn {
+    margin-left: auto;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border: 1px solid var(--navy-line);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.9);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+.theme-toggle-btn:hover {
+    background: rgba(201,162,77,0.18);
+    border-color: var(--gold);
+    transform: translateY(-1px);
+}
+.theme-toggle-btn:active { transform: translateY(0) scale(0.94); }
 
 .nav-item a::after, .nav-btn::after {
     content: '';
@@ -231,13 +298,13 @@ h1, h2, h3 {
 
 .container h1 {
     font-size: 2rem;
-    color: var(--navy);
+    color: var(--ink-strong);
     margin-bottom: 8px;
 }
 
 .container h2 {
     font-size: 1.35rem;
-    color: var(--navy);
+    color: var(--ink-strong);
     margin: 0 0 6px;
 }
 
@@ -261,7 +328,7 @@ h1, h2, h3 {
     border-radius: 50%;
     border: 1px solid var(--border);
     background: var(--paper-alt);
-    color: var(--navy);
+    color: var(--ink-strong);
     font-size: 24px;
     line-height: 1;
     display: flex;
@@ -336,7 +403,7 @@ h1, h2, h3 {
     background:
         radial-gradient(600px 300px at 50% -10%, rgba(201,162,77,0.10), transparent 60%),
         var(--paper-alt);
-    color: var(--navy);
+    color: var(--ink-strong);
 }
 
 .card-front h3 {
@@ -344,7 +411,7 @@ h1, h2, h3 {
     font-weight: 700;
     font-size: 40px;
     margin: 0 0 10px 0;
-    color: var(--navy);
+    color: var(--ink-strong);
 }
 
 .card-front p {
@@ -355,8 +422,8 @@ h1, h2, h3 {
 }
 
 .card-back {
-    background: linear-gradient(160deg, #fbf7ec 0%, #f3e9d0 100%);
-    color: #3a2f18;
+    background: linear-gradient(160deg, var(--card-back-bg-1) 0%, var(--card-back-bg-2) 100%);
+    color: var(--card-back-text);
     transform: rotateY(180deg);
     overflow-y: auto;
     border-color: rgba(201,162,77,0.4);
@@ -589,7 +656,7 @@ button.btn:active { transform: translateY(0) scale(0.97); }
 }
 .quiz-prompt h3 {
     font-size: 1.8rem;
-    color: var(--navy);
+    color: var(--ink-strong);
     margin: 6px 0;
 }
 .quiz-options {
@@ -664,7 +731,7 @@ button.btn:active { transform: translateY(0) scale(0.97); }
     font-family: var(--font-heading);
     font-size: 2.1rem;
     font-weight: 700;
-    color: var(--navy);
+    color: var(--ink-strong);
 }
 .dash-summary-label {
     margin-top: 4px;
@@ -680,7 +747,7 @@ button.btn:active { transform: translateY(0) scale(0.97); }
     align-items: center;
     gap: 12px;
 }
-.dash-bar-label { font-weight: 800; color: var(--navy); }
+.dash-bar-label { font-weight: 800; color: var(--ink-strong); }
 .dash-bar-track {
     height: 16px;
     background: var(--border);

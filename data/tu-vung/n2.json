@@ -5970,6 +5970,406 @@
     "example": "落ち込んでいる友人を慰める - An ủi người bạn đang suy sụp."
   },
   {
+    "id": "791",
+    "kanji": "インテリア",
+    "furigana": "いんてりあ",
+    "hanviet": "",
+    "example": "□ Interior shop - インテリアショップ - Cửa hàng đồ nội thất. □ Interior o kōkan - インテリアを交換する - Thay đổi nội thất.",
+    "meaning": "Nội thất, trang trí trong nhà (Interior)"
+  },
+  {
+    "id": "792",
+    "kanji": "コーナー",
+    "furigana": "こーなー",
+    "hanviet": "",
+    "example": "□ Corner ni oku - コーナーに置く - Đặt ở góc. □ Special corner - 特設コーナー - Góc trưng bày đặc biệt.",
+    "meaning": "Góc, khu vực/góc bán hàng (Corner)"
+  },
+  {
+    "id": "793",
+    "kanji": "カウンター",
+    "furigana": "かうんたー",
+    "hanviet": "",
+    "example": "□ Counter seki - カウンター席 - Ghế ở quầy. □ Service counter - サービスカウンター - Quầy dịch vụ.",
+    "meaning": "Quầy thu ngân, quầy phục vụ, bàn quầy (Counter)"
+  },
+  {
+    "id": "794",
+    "kanji": "スペース",
+    "furigana": "すぺーす",
+    "hanviet": "",
+    "example": "□ Space ga nai - スペースがない - Không có khoảng trống/không gian. □ Free space - フリースペース - Không gian tự do.",
+    "meaning": "Khoảng trống, không gian (Space)"
+  },
+  {
+    "id": "795",
+    "kanji": "オープン",
+    "furigana": "おーぷん",
+    "hanviet": "",
+    "example": "□ Open suru - オープンする - Mở cửa / Khai trương. □ Open space - オープンスペース - Không gian mở.",
+    "meaning": "Mở cửa, khai trương, cởi mở (Open)"
+  },
+  {
+    "id": "796",
+    "kanji": "センター",
+    "furigana": "せんたー",
+    "hanviet": "",
+    "example": "□ Shopping center - ショッピングセンター - Trung tâm thương mại. □ Center ni oku - センターに置く - Đặt ở trung tâm.",
+    "meaning": "Trung tâm (Center)"
+  },
+  {
+    "id": "797",
+    "kanji": "カルチャー",
+    "furigana": "かるちゃー",
+    "hanviet": "",
+    "example": "□ Culture shock - カルチャーショック - Sốc văn hóa. □ Culture center - カルチャーセンター - Trung tâm văn hóa.",
+    "meaning": "Văn hóa (Culture)"
+  },
+  {
+    "id": "798",
+    "kanji": "ブーム",
+    "furigana": "ぶーむ",
+    "hanviet": "",
+    "example": "□ Boom ga kuru - ブームが来る - Trào lưu kéo đến. □ Boom ni naru - ブームになる - Trở thành trào lưu/sốt.",
+    "meaning": "Trào lưu, sự bùng nổ, bùng nổ cơn sốt (Boom)"
+  },
+  {
+    "id": "799",
+    "kanji": "インフォメーション",
+    "furigana": "いんふぉめーしょん",
+    "hanviet": "",
+    "example": "□ Information desk - インフォメーションデスク - Quầy thông tin. □ Information o madoru - インフォメーションを得る - Nhận thông tin.",
+    "meaning": "Thông tin, quầy hướng dẫn thông tin (Information)"
+  },
+  {
+    "id": "800",
+    "kanji": "キャッチ",
+    "furigana": "きゃっち",
+    "hanviet": "",
+    "example": "□ Ball o catch - ボールをキャッチする - Bắt bóng. □ Catch copy - キャッチコピー - Câu khẩu hiệu thu hút (Tagline/Slogan).",
+    "meaning": "Bắt lấy, nắm bắt, thu hút (Catch)"
+  },
+  {
+    "id": "801",
+    "kanji": "メディア",
+    "furigana": "めでぃあ",
+    "hanviet": "",
+    "example": "□ Mass media - マスメディア - Truyền thông đại chúng. □ Media ni取り上げられる - メディアに取り上げられる - Được phương tiện truyền thông đưa tin.",
+    "meaning": "Phương tiện truyền thông, truyền thông (Media)"
+  },
+  {
+    "id": "802",
+    "kanji": "コメント",
+    "furigana": "こめんと",
+    "hanviet": "",
+    "example": "□ Comment o残す - コメントを残す - Để lại bình luận. □ Comment o kikanai - コメントを控える - Hạn chế bình luận.",
+    "meaning": "Bình luận, nhận xét, lời bình (Comment)"
+  },
+  {
+    "id": "803",
+    "kanji": "コラム",
+    "furigana": "こらむ",
+    "hanviet": "",
+    "example": "□ Shinbun no column - 新聞のコラム - Cột báo / Chuyên mục trên báo. □ Column o kaku - コラムを書く - Viết chuyên mục.",
+    "meaning": "Chuyên mục, cột báo (Column)"
+  },
+  {
+    "id": "804",
+    "kanji": "エピソード",
+    "furigana": "えぴそーど",
+    "hanviet": "",
+    "example": "□ Omoshiroi episode - 面白いエピソード - Tình tiết/câu chuyện thú vị. □ Episode o hanasu - エピソードを話す - Kể lại một kỷ niệm/tình tiết.",
+    "meaning": "Tình tiết, câu chuyện, kỷ niệm nhỏ (Episode)"
+  },
+  {
+    "id": "805",
+    "kanji": "アリバイ",
+    "furigana": "ありばい",
+    "hanviet": "",
+    "example": "□ Alibi ga aru - アリバイがある - Có bằng chứng ngoại phạm. □ Alibi o tsukuru - アリバイを作る - Tạo bằng chứng ngoại phạm.",
+    "meaning": "Bằng chứng ngoại phạm (Alibi)"
+  },
+  {
+    "id": "806",
+    "kanji": "シリーズ",
+    "furigana": "しりーず",
+    "hanviet": "",
+    "example": "□ Anime no series - アニメのシリーズ - Chuỗi/loạt phim anime. □ Shin series - 新シリーズ - Dòng sản phẩm / Series mới.",
+    "meaning": "Loạt, chuỗi, tập dài kỳ (Series)"
+  },
+  {
+    "id": "807",
+    "kanji": "ポイント",
+    "furigana": "ぽいんと",
+    "hanviet": "",
+    "example": "□ Point o tameru - ポイントをためる - Tích điểm. □ Important point - 重要なポイント - Điểm mấu chốt quan trọng.",
+    "meaning": "Điểm, điểm mấu chốt (Point)"
+  },
+  {
+    "id": "808",
+    "kanji": "キー",
+    "furigana": "きー",
+    "hanviet": "",
+    "example": "□ Key word - キーワード - Từ khóa. □ Key person - キーパーソン - Người nắm vai trò mấu chốt.",
+    "meaning": "Chìa khóa, phím, mấu chốt (Key)"
+  },
+  {
+    "id": "809",
+    "kanji": "マスター",
+    "furigana": "ますたー",
+    "hanviet": "",
+    "example": "□ Skill o master suru - スキルをマスターする - Thành thạo kỹ năng. □ Mise no master - 店のマスター - Chủ quán.",
+    "meaning": "Thành thạo, chủ quán, thạc sĩ (Master)"
+  },
+  {
+    "id": "810",
+    "kanji": "ビジネス",
+    "furigana": "びじねす",
+    "hanviet": "",
+    "example": "□ Business man - ビジネスマン - Doanh nhân / Nhân viên văn phòng. □ Business model - ビジネスモデル - Mô hình kinh doanh.",
+    "meaning": "Kinh doanh, công việc (Business)"
+  },
+  {
+    "id": "811",
+    "kanji": "キャリア",
+    "furigana": "きゃりあ",
+    "hanviet": "",
+    "example": "□ Career o積む - キャリアを積む - Tích lũy kinh nghiệm nghề nghiệp. □ Career up - キャリアアップ - Phát triển sự nghiệp.",
+    "meaning": "Sự nghiệp, kinh nghiệm làm việc (Career)"
+  },
+  {
+    "id": "812",
+    "kanji": "ベテラン",
+    "furigana": "べてらん",
+    "hanviet": "",
+    "example": "□ Veteran no shain - ベテランの社員 - Nhân viên giàu kinh nghiệm/lành nghề. □ Veteran driver - ベテランドライバー - Tài xế kỳ cựu.",
+    "meaning": "Người kỳ cựu, người có nhiều kinh nghiệm (Veteran)"
+  },
+  {
+    "id": "813",
+    "kanji": "フリー",
+    "furigana": "ふりー",
+    "hanviet": "",
+    "example": "□ Free size - フリーサイズ - Kích cỡ tự do. □ Freelance - フリーランス - Làm nghề tự do.",
+    "meaning": "Tự do, miễn phí (Free)"
+  },
+  {
+    "id": "814",
+    "kanji": "エコノミー",
+    "furigana": "えこのみー",
+    "hanviet": "",
+    "example": "□ Economy class - エコノミークラス - Hạng phổ thông. □ World economy - 世界のエコノミー - Kinh tế thế giới.",
+    "meaning": "Kinh tế, tiết kiệm, hạng phổ thông (Economy)"
+  },
+  {
+    "id": "815",
+    "kanji": "キャッシュ",
+    "furigana": "きゃっしゅ",
+    "hanviet": "",
+    "example": "□ Cash de harau - キャッシュで払う - Thanh toán bằng tiền mặt. □ Cash card - キャッシュカード - Thẻ rút tiền mặt.",
+    "meaning": "Tiền mặt (Cash)"
+  },
+  {
+    "id": "816",
+    "kanji": "インフレ",
+    "furigana": "いんふれ",
+    "hanviet": "",
+    "example": "□ Inflation ga進む - インフレが進む - Lạm phát gia tăng. □ Inflation no ảnh hưởng - インフレの影響 - Ảnh hưởng của lạm phát.",
+    "meaning": "Lạm phát (Inflation)"
+  },
+  {
+    "id": "817",
+    "kanji": "デモ",
+    "furigana": "でも",
+    "hanviet": "",
+    "example": "□ Demo o koi - デモを行う - Tổ chức biểu tình. □ Demo play - デモプレイ - Chơi thử / Thử nghiệm.",
+    "meaning": "Cuộc biểu tình (Demonstration), thử nghiệm (Demo)"
+  },
+  {
+    "id": "818",
+    "kanji": "メーカー",
+    "furigana": "めーかー",
+    "hanviet": "",
+    "example": "□ Jidōsha maker - 自動車メーカー - Nhà sản xuất ô tô. □ Maker mei - メーカー名 - Tên nhà sản xuất.",
+    "meaning": "Nhà sản xuất, hãng chế tạo (Maker)"
+  },
+  {
+    "id": "819",
+    "kanji": "システム",
+    "furigana": "しすてむ",
+    "hanviet": "",
+    "example": "□ System o kaihatsu - システムを開発する - Phát triển hệ thống. □ System error - システムエラー - Lỗi hệ thống.",
+    "meaning": "Hệ thống (System)"
+  },
+  {
+    "id": "820",
+    "kanji": "ケース",
+    "furigana": "けーす",
+    "hanviet": "",
+    "example": "□ Pencil case - ペンケース - Hộp bút. □ Sōiu case - そういうケース - Trường hợp như vậy.",
+    "meaning": "Trường hợp, hộp/vỏ bảo vệ (Case)"
+  },
+  {
+    "id": "821",
+    "kanji": "パターン",
+    "furigana": "ぱたーん",
+    "hanviet": "",
+    "example": "□ Action pattern - 行動パターン - Mô hình / Kiểu hành động. □ Onaji pattern - 同じパターン - Mẫu/kiểu giống nhau.",
+    "meaning": "Mẫu, kiểu, mô hình (Pattern)"
+  },
+  {
+    "id": "822",
+    "kanji": "プラン",
+    "furigana": "ぷらん",
+    "hanviet": "",
+    "example": "□ Plan o tatero - プランを立てる - Lập kế hoạch. □ Travel plan - 旅行プラン - Kế hoạch du lịch.",
+    "meaning": "Kế hoạch, chương trình (Plan)"
+  },
+  {
+    "id": "823",
+    "kanji": "トラブル",
+    "furigana": "とらぶる",
+    "hanviet": "",
+    "example": "□ Trouble ga okoru - トラブルが起こる - Xảy ra sự cố/rắc rối. □ Trouble o giải quyết - トラブルを解決する - Giải quyết rắc rối.",
+    "meaning": "Rắc rối, sự cố, trục trặc (Trouble)"
+  },
+  {
+    "id": "824",
+    "kanji": "エラー",
+    "furigana": "えらー",
+    "hanviet": "",
+    "example": "□ Error ga deru - エラーが出る - Báo lỗi / Xuất hiện lỗi. □ Error o xử lý - エラーを処理する - Xử lý lỗi.",
+    "meaning": "Lỗi, sai sót (Error)"
+  },
+  {
+    "id": "825",
+    "kanji": "クレーム",
+    "furigana": "くれーむ",
+    "hanviet": "",
+    "example": "□ Claim o iu - クレームを言う - Phàn nàn / Kháng nghị. □ Claim no xử lý - クレームの処理 - Xử lý khiếu nại.",
+    "meaning": "Sự khiếu nại, phàn nàn (Claim)"
+  },
+  {
+    "id": "826",
+    "kanji": "キャンセル",
+    "furigana": "きゃんせる",
+    "hanviet": "",
+    "example": "□ Yoyaku o cancel - 予約をキャンセルする - Hủy đặt chỗ. □ Cancel fee - キャンセル料 - Phí hủy bỏ.",
+    "meaning": "Hủy bỏ, sự hủy bỏ (Cancel)"
+  },
+  {
+    "id": "827",
+    "kanji": "ストップ",
+    "furigana": "すとっぷ",
+    "hanviet": "",
+    "example": "□ Stop suru - ストップする - Dừng lại. □ Bus stop - バスストップ - Trạm xe buýt.",
+    "meaning": "Dừng lại, sự dừng lại (Stop)"
+  },
+  {
+    "id": "828",
+    "kanji": "カット",
+    "furigana": "かっと",
+    "hanviet": "",
+    "example": "□ Hair cut - ヘアカット - Cắt tóc. □ Cost cut - コストカット - Cắt giảm chi phí.",
+    "meaning": "Cắt, cắt giảm (Cut)"
+  },
+  {
+    "id": "829",
+    "kanji": "カバー",
+    "furigana": "かばー",
+    "hanviet": "",
+    "example": "□ Book cover - ブックカバー - Bìa sách. □ Mistake o cover - ミスをカバーする - Bù đắp / Che chắn cho lỗi sai.",
+    "meaning": "Vỏ bọc, bao bọc, bù đắp (Cover)"
+  },
+  {
+    "id": "830",
+    "kanji": "リハビリ",
+    "furigana": "りはびり",
+    "hanviet": "",
+    "example": "□ Rehabili o suru - リハビリをする - TẬp phục hồi chức năng. □ Rehabili hospital - リハビリ病院 - Bệnh viện phục hồi chức năng.",
+    "meaning": "Phục hồi chức năng (Rehabilitation)"
+  },
+  {
+    "id": "831",
+    "kanji": "プレッシャー",
+    "furigana": "ぷれっしゃー",
+    "hanviet": "",
+    "example": "□ Pressure o感じる - プレッシャーを感じる - Cảm thấy áp lực. □ Pressure ni katsu - プレッシャーに勝つ - Vượt qua áp lực.",
+    "meaning": "Sức ép, áp lực (Pressure)"
+  },
+  {
+    "id": "832",
+    "kanji": "カウンセリング",
+    "furigana": "かうんせりんぐ",
+    "hanviet": "",
+    "example": "□ Counseling o ukeru - カウンセリングを受ける - Nhận tư vấn tâm lý. □ Counselor - カウンセラー - Chuyên viên tư vấn.",
+    "meaning": "Tư vấn tâm lý, tham vấn (Counseling)"
+  },
+  {
+    "id": "833",
+    "kanji": "キャラクター",
+    "furigana": "きゃらくたー",
+    "hanviet": "",
+    "example": "□ Anime no character - アニメのキャラクター - Nhân vật anime. □ Koseiteki na character - 個性的なキャラクター - Tính cách độc đáo.",
+    "meaning": "Nhân vật, tính cách (Character)"
+  },
+  {
+    "id": "834",
+    "kanji": "ユニークな",
+    "furigana": "ゆにーくな",
+    "hanviet": "",
+    "example": "□ Unique na idea - ユニークなアイデア - Ý tưởng độc đáo. □ Unique na hito - ユニークな人 - Người độc đáo / Thú vị.",
+    "meaning": "Độc đáo, duy nhất, đặc biệt (Unique)"
+  },
+  {
+    "id": "835",
+    "kanji": "ルーズな",
+    "furigana": "るーずな",
+    "hanviet": "",
+    "example": "□ Jikan ni loose - 時間にルーズな人 - Người cẩu thả/lề mề về giờ giấc. □ Loose na seikaku - ルーズな性格 - Tính cách lỏng lẻo/cẩu thả.",
+    "meaning": "Lề mề, cẩu thả, lỏng lẻo (Loose)"
+  },
+  {
+    "id": "836",
+    "kanji": "ロマンチックな",
+    "furigana": "ろまんちっくな",
+    "hanviet": "",
+    "example": "□ Romantic na eiga - ロマンチックな映画 - Phim lãng mạn. □ Romantic na yoru - ロマンチックな夜 - Đêm lãng mạn.",
+    "meaning": "Lãng mạn (Romantic)"
+  },
+  {
+    "id": "837",
+    "kanji": "センス",
+    "furigana": "せんす",
+    "hanviet": "",
+    "example": "□ Sense ga ii - センスが良い - Có gu thẩm mỹ tốt / Nhạy bén. □ Fashion sense - ファッションセンス - Gu thời trang.",
+    "meaning": "Cảm nhận, gu thẩm mỹ, năng khiếu (Sense)"
+  },
+  {
+    "id": "838",
+    "kanji": "エコロジー",
+    "furigana": "えころじー",
+    "hanviet": "",
+    "example": "□ Ecology no chūshutu - エコロジーの suy nghĩ - Sinh thái học / Thân thiện với môi trường. □ Eco car - エコカー - Xe thân thiện với môi trường.",
+    "meaning": "Sinh thái học, bảo vệ môi trường (Ecology / Eco)"
+  },
+  {
+    "id": "839",
+    "kanji": "ダム",
+    "furigana": "だむ",
+    "hanviet": "",
+    "example": "□ Dam o kensetsu - ダムを建設する - Xây dựng đập thủy điện. □ Dam no mizu - ダムの水 - Nước ở hồ thủy điện.",
+    "meaning": "Đập nước, đập thủy điện (Dam)"
+  },
+  {
+    "id": "840",
+    "kanji": "コンクリート",
+    "furigana": "こんくりーと",
+    "hanviet": "",
+    "example": "□ Concrete no kabe - コンクリートの壁 - Tường bê tông. □ Concrete o固める - コンクリートを固める - Đổ bê tông.",
+    "meaning": "Bê tông (Concrete)"
+  },
+  {
     "id": "841",
     "kanji": "単純",
     "furigana": "たんじゅん",

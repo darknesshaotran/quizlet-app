@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Áp dụng theme (sáng/tối) đã lưu NGAY LẬP TỨC, trước khi trang vẽ ra,
+        // để tránh bị nháy sáng 1 khoảnh khắc rồi mới chuyển tối.
+        try {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        } catch (e) {}
+    </script>
     <title>JLPT Quizlet App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,10 +102,12 @@
         <div class="nav-item">
             <a href="/dashboard">📊 Dashboard</a>
         </div>
+
+        <button class="theme-toggle-btn" id="btn-theme-toggle" type="button" title="Chuyển giao diện sáng/tối" aria-label="Chuyển giao diện sáng/tối">🌙</button>
     </nav>
 
     <div class="container">
-        <h1>HỌC ĐÊ LÊ HỒNG!</h1>
+        <!-- <h1>HỌC ĐÊ LÊ HỒNG!</h1> -->
         <p>Hãy chọn mục học trên Thanh Menu để bắt đầu.</p>
     </div>
 
@@ -164,6 +175,47 @@
         document.addEventListener('visibilitychange', function () {
             if (document.visibilityState === 'visible') refreshProgress();
         });
+    })();
+    </script>
+
+    <script>
+    (function () {
+        // ==== Chuyển giao diện Sáng / Tối ====
+        // Trạng thái lưu chung ở localStorage key 'theme' ('dark' hoặc không có = sáng),
+        // áp dụng cho MỌI trang vì đoạn script chống-nháy ở đầu <head> mỗi trang
+        // cũng đọc cùng key này (xem đầu file <head>).
+        var THEME_KEY = 'theme';
+
+        function getTheme() {
+            try { return localStorage.getItem(THEME_KEY) || 'light'; } catch (e) { return 'light'; }
+        }
+        function applyTheme(theme) {
+            if (theme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+            else document.documentElement.removeAttribute('data-theme');
+        }
+        function updateToggleUI() {
+            var btn = document.getElementById('btn-theme-toggle');
+            if (!btn) return;
+            var dark = getTheme() === 'dark';
+            btn.textContent = dark ? '☀️' : '🌙';
+            var label = dark ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối';
+            btn.title = label;
+            btn.setAttribute('aria-label', label);
+        }
+
+        var toggleBtn = document.getElementById('btn-theme-toggle');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function () {
+                var next = getTheme() === 'dark' ? 'light' : 'dark';
+                try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
+                applyTheme(next);
+                updateToggleUI();
+            });
+        }
+
+        // Trang đã được áp data-theme ngay từ đầu <head> (chống nháy) nếu là tối;
+        // ở đây chỉ cần đồng bộ lại icon nút cho khớp trạng thái hiện có.
+        updateToggleUI();
     })();
     </script>
 </body>

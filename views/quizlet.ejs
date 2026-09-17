@@ -3,6 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Áp dụng theme (sáng/tối) đã lưu NGAY LẬP TỨC, trước khi trang vẽ ra,
+        // để tránh bị nháy sáng 1 khoảnh khắc rồi mới chuyển tối.
+        try {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        } catch (e) {}
+    </script>
     <title>Học <%= type %> - <%= level.toUpperCase() %></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,13 +28,14 @@
             <%= type.toUpperCase() %> - <%= level.toUpperCase() %>
         </h2>
 
-        <div id="stats" style="font-weight: 700; color: #6b7280; margin-bottom: 6px; letter-spacing: 0.3px;"></div>
+        <div id="stats" style="font-weight: 700; color: var(--ink-soft); margin-bottom: 6px; letter-spacing: 0.3px;"></div>
 
-        <!-- Thanh công cụ: Trộn thẻ / Hoàn tác / SRS / Học lại từ đầu -->
+        <!-- Thanh công cụ: Trộn thẻ / Hoàn tác / SRS / Phiên âm / Học lại từ đầu -->
         <div class="toolbar" id="toolbar">
             <button class="btn-tool" id="btn-shuffle" title="Trộn ngẫu nhiên các thẻ chưa xem">🔀 Trộn thẻ</button>
             <button class="btn-tool" id="btn-undo" title="Hoàn tác thao tác vừa rồi" disabled>↩️ Hoàn tác</button>
             <button class="btn-tool" id="btn-srs-toggle" title="Bật/tắt chế độ Spaced Repetition (SM-2)">🧠 SRS: TẮT</button>
+            <button class="btn-tool" id="btn-toggle-furigana" title="Ẩn/hiện phiên âm ở mặt trước thẻ">あ Phiên âm: HIỆN</button>
             <button class="btn-tool btn-tool-ghost" id="btn-reset-session" title="Xoá tiến trình phiên này và học lại từ đầu">↺ Học lại từ đầu</button>
             <button class="btn-tool btn-tool-danger" id="btn-clear-all" title="Xoá vĩnh viễn toàn bộ Đã thuộc / Chưa thuộc / lịch SRS của mục này">🗑️ Xoá tiến độ</button>
         </div>
@@ -61,8 +71,8 @@
         </div>
 
         <div id="counter-stats" style="margin-top: 18px; display: flex; justify-content: center; gap: 12px; font-weight: 700;">
-            <span style="color: #1f6f52;">Đã thuộc: <span id="count-known">0</span></span>
-            <span style="color: #8f3b46;">Chưa thuộc: <span id="count-unknown">0</span></span>
+            <span style="color: var(--emerald);">Đã thuộc: <span id="count-known">0</span></span>
+            <span style="color: var(--ruby);">Chưa thuộc: <span id="count-unknown">0</span></span>
         </div>
 
         <!-- Màn hình không còn thẻ nào cần ôn hôm nay (chế độ SRS) -->
@@ -160,6 +170,25 @@ function saveSrsData() { localStorage.setItem(srsStorageKey, JSON.stringify(srsD
 
 function isSrsEnabled() { return localStorage.getItem(srsEnabledKey) === '1'; }
 function setSrsEnabled(val) { localStorage.setItem(srsEnabledKey, val ? '1' : '0'); }
+
+// ==== Bật/tắt hiển thị phiên âm (furigana) ở mặt trước thẻ ====
+// Dùng CHUNG 1 key cho mọi type/level vì đây là sở thích hiển thị chung của người học,
+// không phải tiến độ riêng từng cấp -> bật/tắt 1 lần, áp dụng mọi nơi.
+const FURIGANA_PREF_KEY = 'showFurigana';
+function isFuriganaVisible() {
+    const v = localStorage.getItem(FURIGANA_PREF_KEY);
+    return v === null ? true : v === '1'; // mặc định: HIỆN (giữ đúng hành vi cũ)
+}
+function setFuriganaVisible(val) {
+    localStorage.setItem(FURIGANA_PREF_KEY, val ? '1' : '0');
+}
+function updateFuriganaToggleUI() {
+    const btn = document.getElementById('btn-toggle-furigana');
+    if (!btn) return;
+    const on = isFuriganaVisible();
+    btn.innerText = on ? 'あ Phiên âm: HIỆN' : 'あ Phiên âm: ẨN';
+    btn.classList.toggle('btn-tool-active', on);
+}
 
 function todayStr() { return new Date().toISOString().slice(0, 10); }
 
@@ -343,7 +372,8 @@ function renderCard() {
     const example = card.example || '';
 
     if (kanji) {
-        document.getElementById('card-front').innerHTML = `<h3>${kanji}</h3><p>(${furigana})</p>`;
+        const furiganaHtml = (furigana && isFuriganaVisible()) ? `<p>(${furigana})</p>` : '';
+        document.getElementById('card-front').innerHTML = `<h3>${kanji}</h3>${furiganaHtml}`;
     } else {
         document.getElementById('card-front').innerHTML = `<h3>${card.structure || ''}</h3>`;
     }
@@ -351,7 +381,7 @@ function renderCard() {
     let backHtml = '';
     if (hanviet) backHtml += `<p><strong>Hán Việt:</strong> ${hanviet}</p>`;
     if (meaning) backHtml += `<p><strong>Nghĩa:</strong> ${meaning}</p>`;
-    if (example) backHtml += `<p><small style="color: #475569;">${example}</small></p>`;
+    if (example) backHtml += `<p><small style="color: var(--card-back-muted);">${example}</small></p>`;
 
     document.getElementById('card-back').innerHTML = backHtml || '<p>Chưa có chi tiết</p>';
 
@@ -565,6 +595,11 @@ function restart(onlyUnlearned) {
 document.getElementById('btn-shuffle').addEventListener('click', shuffleRemaining);
 document.getElementById('btn-undo').addEventListener('click', undoLast);
 document.getElementById('btn-srs-toggle').addEventListener('click', () => toggleSrs());
+document.getElementById('btn-toggle-furigana').addEventListener('click', () => {
+    setFuriganaVisible(!isFuriganaVisible());
+    updateFuriganaToggleUI();
+    renderCard(); // vẽ lại thẻ hiện tại ngay để thấy hiệu quả tức thì
+});
 document.getElementById('btn-reset-session').addEventListener('click', () => {
     clearSession();
     restart(false);
@@ -671,6 +706,7 @@ scene.addEventListener('touchend', () => {
 
 // Khởi chạy lần đầu
 updateSrsToggleUI();
+updateFuriganaToggleUI();
 updateCounters();
 updateUndoButton();
 renderCard();
