@@ -108,8 +108,12 @@
             <a href="/dashboard">📊 Dashboard</a>
         </div>
 
+        <button class="header-toggle-btn" id="btn-hide-header" type="button" title="Ẩn thanh menu" aria-label="Ẩn thanh menu">▲</button>
         <button class="theme-toggle-btn" id="btn-theme-toggle" type="button" title="Chuyển giao diện sáng/tối" aria-label="Chuyển giao diện sáng/tối">🌙</button>
     </nav>
+
+    <!-- Nút nổi để hiện lại thanh menu khi đang ẩn -->
+    <button class="header-restore-btn" id="btn-show-header" type="button" title="Hiện lại thanh menu" aria-label="Hiện lại thanh menu" style="display:none;">☰</button>
 
     <div class="container">
         <!-- <h1>HỌC ĐÊ LÊ HỒNG!</h1> -->
@@ -221,6 +225,38 @@
         // Trang đã được áp data-theme ngay từ đầu <head> (chống nháy) nếu là tối;
         // ở đây chỉ cần đồng bộ lại icon nút cho khớp trạng thái hiện có.
         updateToggleUI();
+    })();
+    </script>
+
+    <script>
+    (function () {
+        // ==== Ẩn/hiện thanh menu (header) ====
+        // Hữu ích khi học flashcard trên điện thoại — ẩn header đi để lấy thêm
+        // khoảng trống hiển thị thẻ. Lưu lựa chọn vào localStorage nên ẩn 1 lần
+        // là giữ nguyên khi chuyển sang trang khác, không phải ẩn lại từ đầu.
+        var HEADER_KEY = 'headerHidden';
+        var navbar = document.querySelector('.navbar');
+        var hideBtn = document.getElementById('btn-hide-header');
+        var restoreBtn = document.getElementById('btn-show-header');
+        if (!navbar || !hideBtn || !restoreBtn) return;
+
+        function isHidden() {
+            try { return localStorage.getItem(HEADER_KEY) === '1'; } catch (e) { return false; }
+        }
+        function applyHidden(hidden) {
+            navbar.classList.toggle('is-hidden', hidden);
+            restoreBtn.style.display = hidden ? 'flex' : 'none';
+        }
+        function setHidden(hidden) {
+            try { localStorage.setItem(HEADER_KEY, hidden ? '1' : '0'); } catch (e) {}
+            applyHidden(hidden);
+        }
+
+        hideBtn.addEventListener('click', function () { setHidden(true); });
+        restoreBtn.addEventListener('click', function () { setHidden(false); });
+
+        // Áp dụng ngay trạng thái đã lưu từ lần trước (nếu có)
+        applyHidden(isHidden());
     })();
     </script>
 </body>

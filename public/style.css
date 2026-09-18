@@ -124,9 +124,32 @@ h1, h2, h3 {
     transition: color 0.25s ease;
 }
 
-/* Nút chuyển giao diện sáng/tối, đặt cuối navbar */
-.theme-toggle-btn {
+/* Nút Ẩn thanh menu + nút Chuyển sáng/tối, đặt cuối navbar (nút đầu tiên trong
+   2 nút này giữ margin-left:auto để đẩy cả cụm về sát mép phải) */
+.header-toggle-btn {
     margin-left: auto;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border: 1px solid var(--navy-line);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+.header-toggle-btn:hover {
+    background: rgba(201,162,77,0.18);
+    border-color: var(--gold);
+    transform: translateY(-1px);
+}
+.header-toggle-btn:active { transform: translateY(0) scale(0.94); }
+
+.theme-toggle-btn {
     width: 38px;
     height: 38px;
     flex-shrink: 0;
@@ -147,6 +170,32 @@ h1, h2, h3 {
     transform: translateY(-1px);
 }
 .theme-toggle-btn:active { transform: translateY(0) scale(0.94); }
+
+/* Ẩn hẳn thanh menu khỏi luồng trang (không chỉ ẩn thị giác) để nội dung bên
+   dưới trồi lên chiếm phần không gian navbar vừa nhường lại */
+.navbar.is-hidden { display: none; }
+
+/* Nút nổi để hiện lại thanh menu khi đang ẩn */
+.header-restore-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 250;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(201,162,77,0.4);
+    background: var(--navy);
+    color: var(--gold-soft);
+    font-size: 17px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+.header-restore-btn:hover { transform: translateY(-1px); background: var(--navy-soft); }
+.header-restore-btn:active { transform: translateY(0) scale(0.94); }
 
 .nav-item a::after, .nav-btn::after {
     content: '';
