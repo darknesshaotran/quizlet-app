@@ -431,11 +431,13 @@ function checkLevelCompleteConfetti() {
 // ==== Đánh dấu thẻ: chế độ thường (2 trạng thái) ====
 // Đánh dấu lại một thẻ đã có verdict trước đó (VD: bấm ← quay lại rồi đổi ý) sẽ THAY THẾ
 // verdict cũ chứ không cộng dồn, nhờ sessionVerdict[id] chỉ giữ giá trị mới nhất.
-function markCard(isKnown) {
+function markCard(isKnown, skipSlideAnim) {
     const currentCard = currentQueue[currentIndex];
     if (!currentCard) return;
     const scene = document.getElementById('card-scene');
-    scene.classList.add('slide-next');
+    // skipSlideAnim=true khi được gọi từ thao tác vuốt (đã có hiệu ứng bay thẻ
+    // riêng ở đó rồi) -> tránh chồng thêm animation "slide-next" gây giật màn hình
+    if (!skipSlideAnim) scene.classList.add('slide-next');
 
     const entry = {
         index: currentIndex,
@@ -460,16 +462,21 @@ function markCard(isKnown) {
     updateCounters();
     checkLevelCompleteConfetti();
 
-    setTimeout(() => { currentIndex++; renderCard(); }, 180);
-    setTimeout(() => { scene.classList.remove('slide-next'); }, 350);
+    if (skipSlideAnim) {
+        currentIndex++;
+        renderCard();
+    } else {
+        setTimeout(() => { currentIndex++; renderCard(); }, 180);
+        setTimeout(() => { scene.classList.remove('slide-next'); }, 350);
+    }
 }
 
 // ==== Đánh giá thẻ: chế độ SRS (4 mức độ kiểu Anki) ====
-function gradeCard(grade) {
+function gradeCard(grade, skipSlideAnim) {
     const currentCard = currentQueue[currentIndex];
     if (!currentCard) return;
     const scene = document.getElementById('card-scene');
-    scene.classList.add('slide-next');
+    if (!skipSlideAnim) scene.classList.add('slide-next');
 
     const isKnown = grade >= 2;
     const entry = {
@@ -497,8 +504,13 @@ function gradeCard(grade) {
     updateCounters();
     checkLevelCompleteConfetti();
 
-    setTimeout(() => { currentIndex++; renderCard(); }, 180);
-    setTimeout(() => { scene.classList.remove('slide-next'); }, 350);
+    if (skipSlideAnim) {
+        currentIndex++;
+        renderCard();
+    } else {
+        setTimeout(() => { currentIndex++; renderCard(); }, 180);
+        setTimeout(() => { scene.classList.remove('slide-next'); }, 350);
+    }
 }
 
 // ==== Hoàn tác (Undo) ====
@@ -658,6 +670,7 @@ document.addEventListener('keydown', (e) => {
 const scene = document.getElementById('card-scene');
 const cardInner = document.getElementById('card-inner');
 let touchStartX = 0, touchStartY = 0, touchDX = 0, isDragging = false, justSwiped = false;
+let dragWasFlipped = false; // ghi nhớ thẻ đang ở mặt nào lúc bắt đầu vuốt, để giữ đúng mặt đó khi bay đi
 const SWIPE_THRESHOLD = 80;
 
 scene.addEventListener('touchstart', (e) => {
@@ -666,6 +679,7 @@ scene.addEventListener('touchstart', (e) => {
     touchStartY = e.touches[0].clientY;
     touchDX = 0;
     isDragging = true;
+    dragWasFlipped = scene.classList.contains('is-flipped');
     cardInner.style.transition = 'none';
 }, { passive: true });
 
@@ -676,7 +690,8 @@ scene.addEventListener('touchmove', (e) => {
     if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
         touchDX = dx;
         const rot = Math.max(-15, Math.min(15, dx / 10));
-        cardInner.style.transform = `translateX(${dx}px) rotate(${rot}deg)`;
+        const flipPart = dragWasFlipped ? 'rotateY(180deg) ' : '';
+        cardInner.style.transform = `${flipPart}translateX(${dx}px) rotate(${rot}deg)`;
         document.getElementById('swipe-hint-left').style.opacity = dx < -20 ? Math.min(1, -dx / SWIPE_THRESHOLD) : 0;
         document.getElementById('swipe-hint-right').style.opacity = dx > 20 ? Math.min(1, dx / SWIPE_THRESHOLD) : 0;
     }
@@ -685,21 +700,43 @@ scene.addEventListener('touchmove', (e) => {
 scene.addEventListener('touchend', () => {
     if (!isDragging) return;
     isDragging = false;
-    cardInner.style.transition = '';
     document.getElementById('swipe-hint-left').style.opacity = 0;
     document.getElementById('swipe-hint-right').style.opacity = 0;
+
+    const flipPart = dragWasFlipped ? 'rotateY(180deg) ' : '';
 
     if (Math.abs(touchDX) >= SWIPE_THRESHOLD) {
         justSwiped = true;
         const known = touchDX > 0;
-        cardInner.style.transform = `translateX(${known ? 600 : -600}px) rotate(${known ? 20 : -20}deg)`;
+
+        // QUAN TRỌNG: thẻ bay ra khỏi màn hình bằng 1 hiệu ứng NGẮN, RIÊNG (0.22s)
+        // — không dùng transition 0.65s vốn dành cho hiệu ứng lật thẻ nữa. Trước
+        // đây dùng chung nên khi markCard() chạy giữa chừng, transform bị ép về 0
+        // trong lúc hiệu ứng lật 0.65s vẫn đang chạy dở -> thẻ giật ngược lại.
+        cardInner.style.transition = 'transform 0.22s ease-out, opacity 0.22s ease-out';
+        cardInner.style.opacity = '0';
+        cardInner.style.transform = `${flipPart}translateX(${known ? 600 : -600}px) rotate(${known ? 20 : -20}deg)`;
+
         setTimeout(() => {
+            // Đặt thẻ về đúng vị trí gốc NGAY LẬP TỨC (transition:none) TRƯỚC KHI
+            // đổi sang thẻ mới, để thẻ mới hiện ra sạch sẽ, không bị "trôi" theo
+            // phần hiệu ứng còn sót lại của thẻ vừa vuốt.
+            cardInner.style.transition = 'none';
             cardInner.style.transform = '';
-            if (isSrsEnabled()) gradeCard(known ? 2 : 0);
-            else markCard(known);
-        }, 150);
+            cardInner.style.opacity = '';
+
+            if (isSrsEnabled()) gradeCard(known ? 2 : 0, true);
+            else markCard(known, true);
+
+            // Trả lại transition mặc định (cho hiệu ứng lật) ở khung hình kế tiếp
+            requestAnimationFrame(() => { cardInner.style.transition = ''; });
+        }, 220);
     } else {
-        cardInner.style.transform = '';
+        // Vuốt chưa đủ xa -> bật thẻ về lại vị trí cũ bằng 1 hiệu ứng ngắn riêng
+        // (0.25s), không mượn transition 0.65s của lật thẻ khiến nó bị ì.
+        cardInner.style.transition = 'transform 0.25s ease-out';
+        cardInner.style.transform = flipPart;
+        setTimeout(() => { cardInner.style.transition = ''; }, 260);
     }
     touchDX = 0;
 });
