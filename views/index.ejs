@@ -108,6 +108,17 @@
             <a href="/dashboard">📊 Dashboard</a>
         </div>
 
+        <div class="nav-item">
+            <% if (typeof user !== 'undefined' && user) { %>
+                <span style="opacity: 0.85; margin-right: 8px;">👤 <%= user.email %></span>
+                <form action="/logout" method="POST" style="display: inline;">
+                    <button type="submit" class="nav-btn" style="background: none; border: none; cursor: pointer; font: inherit; color: inherit; padding: 0;">Đăng xuất</button>
+                </form>
+            <% } else { %>
+                <a href="/login">Đăng nhập</a>
+            <% } %>
+        </div>
+
         <button class="header-toggle-btn" id="btn-hide-header" type="button" title="Ẩn thanh menu" aria-label="Ẩn thanh menu">▲</button>
         <button class="theme-toggle-btn" id="btn-theme-toggle" type="button" title="Chuyển giao diện sáng/tối" aria-label="Chuyển giao diện sáng/tối">🌙</button>
     </nav>

@@ -380,8 +380,8 @@ function renderCard() {
 
     let backHtml = '';
     if (hanviet) backHtml += `<p><strong>Hán Việt:</strong> ${hanviet}</p>`;
-    if (meaning) backHtml += `<p><strong>Nghĩa:</strong> ${meaning}</p>`;
-    if (example) backHtml += `<p><small style="color: var(--card-back-muted);">${example}</small></p>`;
+    if (meaning) backHtml += `<p style="white-space: pre-line;"><strong>Nghĩa:</strong> ${meaning}</p>`;
+    if (example) backHtml += `<p style="white-space: pre-line;"><small style="color: var(--card-back-muted);">${example}</small></p>`;
 
     document.getElementById('card-back').innerHTML = backHtml || '<p>Chưa có chi tiết</p>';
 

@@ -1,7 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const multer = require('multer');
+const cookieParser = require('cookie-parser');
+
+const supabase = require('./config/supabaseClient');
+const { attachUser, requireAuth, setSessionCookies, clearSessionCookies } = require('./middleware/auth');
 
 const app = express();
 const upload = multer({ storage: multer.memoryStorage() });
@@ -9,6 +14,11 @@ const upload = multer({ storage: multer.memoryStorage() });
 // Middleware xử lý dữ liệu gửi lên
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
+// Gắn req.user + res.locals.user cho MỌI request (không chặn trang nào ở đây,
+// việc chặn cụ thể do requireAuth đảm nhận ở từng route bên dưới).
+app.use(attachUser);
 
 // Cấu hình View Engine và Thư mục chứa file HTML/EJS (Đi ra ngoài thư mục api)
 app.set('view engine', 'ejs');
@@ -22,9 +32,50 @@ app.get('/', (req, res) => res.render('index'));
 // Trang Import TXT
 app.get('/import', (req, res) => res.render('import'));
 
+// ==== Đăng ký / Đăng nhập / Đăng xuất ====
+app.get('/register', (req, res) => {
+    if (req.user) return res.redirect('/dashboard');
+    res.render('register', { error: null });
+});
+
+app.post('/register', async (req, res) => {
+    const { email, password } = req.body;
+    const { data, error } = await supabase.auth.signUp({ email, password });
+
+    if (error) return res.render('register', { error: error.message });
+
+    // Nếu project bật "Confirm email" (mặc định), session sẽ null cho tới khi
+    // người dùng bấm link xác nhận trong email -> chưa đăng nhập được ngay.
+    if (data.session) {
+        setSessionCookies(res, data.session);
+        return res.redirect('/dashboard');
+    }
+    res.render('login', { error: 'Đăng ký thành công! Vui lòng kiểm tra email để xác nhận, sau đó đăng nhập.' });
+});
+
+app.get('/login', (req, res) => {
+    if (req.user) return res.redirect('/dashboard');
+    res.render('login', { error: null });
+});
+
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+
+    if (error || !data.session) {
+        return res.render('login', { error: 'Sai email hoặc mật khẩu.' });
+    }
+    setSessionCookies(res, data.session);
+    res.redirect('/dashboard');
+});
+
+app.post('/logout', (req, res) => {
+    clearSessionCookies(res);
+    res.redirect('/login');
+});
 
 // Trang Học Quizlet (Chung cho cả bài mới lẫn bài Chưa Thuộc)
-app.get('/quizlet/:type/:level', (req, res) => {
+app.get('/quizlet/:type/:level', requireAuth, (req, res) => {
     const { type, level } = req.params;
     const mode = req.query.mode;
     const isUnlearned = mode === 'unlearned'; // Chế độ xem từ CHƯA THUỘC
@@ -45,7 +96,7 @@ app.get('/quizlet/:type/:level', (req, res) => {
 });
 
 // Trang Quiz trắc nghiệm (chọn nghĩa đúng trong 4 đáp án)
-app.get('/quiz/:type/:level', (req, res) => {
+app.get('/quiz/:type/:level', requireAuth, (req, res) => {
     const { type, level } = req.params;
     const filePath = path.join(__dirname, '../data', type, `${level}.json`);
     let cards = [];
@@ -63,8 +114,103 @@ app.get('/quiz/:type/:level', (req, res) => {
 });
 
 // Trang Dashboard tổng quan (tiến độ N1-N5, streak, tổng số từ đã học)
-app.get('/dashboard', (req, res) => {
+app.get('/dashboard', requireAuth, (req, res) => {
     res.render('dashboard');
+});
+
+// API: Lấy toàn bộ tiến trình (Đã thuộc/Chưa thuộc) của TÀI KHOẢN ĐANG ĐĂNG NHẬP
+// cho 1 type+level. FE dùng để đồng bộ lại localStorage khi vào trang trên thiết bị khác.
+app.get('/api/progress/:type/:level', requireAuth, async (req, res) => {
+    const { type, level } = req.params;
+    const { data, error } = await supabase
+        .from('user_progress')
+        .select('card_id, status, updated_at')
+        .eq('user_id', req.user.id)
+        .eq('type', type)
+        .eq('level', level);
+
+    if (error) return res.status(500).json({ error: error.message });
+    res.json(data);
+});
+
+// API: Lưu (upsert) trạng thái Đã thuộc/Chưa thuộc của 1 thẻ cho tài khoản đang đăng nhập.
+// Yêu cầu bảng user_progress đã có UNIQUE constraint trên (user_id, type, level, card_id),
+// nếu không upsert sẽ chèn trùng dòng thay vì cập nhật.
+app.post('/api/progress', requireAuth, async (req, res) => {
+    const { type, level, card_id, status } = req.body;
+    if (!type || !level || !card_id || !status) {
+        return res.status(400).json({ error: 'Thiếu dữ liệu' });
+    }
+
+    const { error } = await supabase
+        .from('user_progress')
+        .upsert({
+            user_id: req.user.id,
+            type,
+            level,
+            card_id: String(card_id),
+            status,
+            updated_at: new Date().toISOString()
+        }, { onConflict: 'user_id,type,level,card_id' });
+
+    if (error) return res.status(500).json({ error: error.message });
+    res.json({ ok: true });
+});
+
+// API: Xoá toàn bộ tiến độ (Đã thuộc/Chưa thuộc) của 1 type+level cho tài khoản đang đăng nhập.
+app.delete('/api/progress/:type/:level', requireAuth, async (req, res) => {
+    const { type, level } = req.params;
+    const { error } = await supabase
+        .from('user_progress')
+        .delete()
+        .eq('user_id', req.user.id)
+        .eq('type', type)
+        .eq('level', level);
+
+    if (error) return res.status(500).json({ error: error.message });
+    res.json({ ok: true });
+});
+
+// API: Lấy vị trí đang học (thứ tự thẻ, index hiện tại, phán quyết phiên, SRS bật/tắt)
+// riêng cho từng mode (normal / unlearned / learned) của tài khoản đang đăng nhập.
+app.get('/api/session/:type/:level/:mode', requireAuth, async (req, res) => {
+    const { type, level, mode } = req.params;
+    const { data, error } = await supabase
+        .from('user_session_state')
+        .select('order_ids, current_index, session_verdict, srs_on, updated_at')
+        .eq('user_id', req.user.id)
+        .eq('type', type)
+        .eq('level', level)
+        .eq('mode', mode)
+        .maybeSingle();
+
+    if (error) return res.status(500).json({ error: error.message });
+    res.json(data || null);
+});
+
+// API: Lưu (upsert) vị trí đang học hiện tại.
+app.post('/api/session', requireAuth, async (req, res) => {
+    const { type, level, mode, order_ids, current_index, session_verdict, srs_on } = req.body;
+    if (!type || !level || !mode) {
+        return res.status(400).json({ error: 'Thiếu dữ liệu' });
+    }
+
+    const { error } = await supabase
+        .from('user_session_state')
+        .upsert({
+            user_id: req.user.id,
+            type,
+            level,
+            mode,
+            order_ids: order_ids || [],
+            current_index: current_index || 0,
+            session_verdict: session_verdict || {},
+            srs_on: !!srs_on,
+            updated_at: new Date().toISOString()
+        }, { onConflict: 'user_id,type,level,mode' });
+
+    if (error) return res.status(500).json({ error: error.message });
+    res.json({ ok: true });
 });
 
 // API: Trả về tổng số thẻ (từ vựng / ngữ pháp) của từng cấp N1-N5

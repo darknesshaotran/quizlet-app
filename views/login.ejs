@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        try {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        } catch (e) {}
+    </script>
+    <title>Đăng nhập - JLPT Quizlet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container" style="max-width: 420px;">
+        <h2>Đăng nhập</h2>
+
+        <% if (error) { %>
+            <p style="color: var(--ruby, #c0392b); font-weight: 600;"><%= error %></p>
+        <% } %>
+
+        <form method="POST" action="/login" style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
+            <label>
+                Email
+                <input type="email" name="email" required autofocus
+                    style="width: 100%; padding: 10px; margin-top: 4px; border-radius: 8px; border: 1px solid #ccc;">
+            </label>
+            <label>
+                Mật khẩu
+                <input type="password" name="password" required
+                    style="width: 100%; padding: 10px; margin-top: 4px; border-radius: 8px; border: 1px solid #ccc;">
+            </label>
+            <button type="submit" class="btn btn-primary" style="margin-top: 8px;">Đăng nhập</button>
+        </form>
+
+        <p style="margin-top: 16px;">
+            Chưa có tài khoản? <a href="/register">Đăng ký ngay</a>
+        </p>
+    </div>
+</body>
+</html>
