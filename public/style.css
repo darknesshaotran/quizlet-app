@@ -407,6 +407,19 @@ h1, h2, h3 {
 
 .container > p { color: var(--ink-soft); }
 
+/* Ghi chú cho khách (chưa đăng nhập) trên trang học */
+.guest-note {
+    margin: 0 0 14px;
+    padding: 10px 14px;
+    background: rgba(201,162,77,0.10);
+    border: 1px solid rgba(201,162,77,0.35);
+    border-radius: var(--radius-sm);
+    color: var(--ink-soft);
+    font-size: 13px;
+    line-height: 1.5;
+}
+.guest-note a { color: var(--ink-strong); font-weight: 800; }
+
 /* =========================================================
    FLASHCARD NAVIGATION (arrows + scene)
    ========================================================= */

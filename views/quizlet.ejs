@@ -28,6 +28,13 @@
             <%= type.toUpperCase() %> - <%= level.toUpperCase() %>
         </h2>
 
+        <% if (!(typeof user !== 'undefined' && user)) { %>
+        <div class="guest-note">
+            Bạn đang học ở chế độ khách: tiến độ chỉ lưu trên thiết bị này.
+            <a href="/login">Đăng nhập</a> để lưu lên tài khoản và đồng bộ giữa các thiết bị.
+        </div>
+        <% } %>
+
         <div id="stats" style="font-weight: 700; color: var(--ink-soft); margin-bottom: 6px; letter-spacing: 0.3px;"></div>
 
         <!-- Thanh công cụ: Trộn thẻ / Hoàn tác / SRS / Phiên âm / Học lại từ đầu -->
@@ -99,6 +106,9 @@ const typeKey = '<%= type %>';
 const levelKey = '<%= level %>';
 const isUnlearnedMode = <%= isUnlearned %>;
 const isLearnedMode = <%= isLearned %>;
+// Khách (chưa đăng nhập) vẫn học bình thường, tiến độ lưu localStorage trên thiết bị.
+// Đã đăng nhập: lưu lên DB, đồng bộ giữa các thiết bị.
+const isLoggedIn = <%= (typeof user !== 'undefined' && user) ? 'true' : 'false' %>;
 const modeKey = isLearnedMode ? 'learned' : (isUnlearnedMode ? 'unlearned' : 'normal');
 
 // Giá trị cột `status` trong bảng user_progress (đổi ở đây nếu DB của bạn dùng giá trị khác)
@@ -113,6 +123,9 @@ const confettiFlagKey = `confetti_done_${typeKey}_${levelKey}`;
 // Key CŨ trong localStorage — chỉ dùng để chuyển dữ liệu cũ lên DB một lần
 const legacyUnlearnedKey = `unlearned_${typeKey}_${levelKey}`;
 const legacyLearnedKey = `learned_${typeKey}_${levelKey}`;
+// Tiến độ + vị trí học của KHÁCH (chưa đăng nhập)
+const guestProgressKey = `guestProgress_${typeKey}_${levelKey}`;
+const guestSessionKey = `guestSession_${typeKey}_${levelKey}_${modeKey}`;
 
 // Lấy dữ liệu gốc từ Server
 const originalCards = <%- JSON.stringify(cards) %>;
@@ -184,6 +197,7 @@ function setStatus(cardId, status) {
     const id = String(cardId);
     if (progressMap[id] === status) return;
     progressMap[id] = status;
+    if (!isLoggedIn) { saveGuestProgress(); return; }
     enqueue(() => api('POST', '/api/progress',
         { type: typeKey, level: levelKey, card_id: id, status }, { keepalive: true }));
 }
@@ -192,6 +206,7 @@ function clearStatus(cardId, onlyIf) {
     const id = String(cardId);
     if (progressMap[id] !== onlyIf) return;
     delete progressMap[id];
+    if (!isLoggedIn) { saveGuestProgress(); return; }
     enqueue(() => api('DELETE', `/api/progress/${typeKey}/${levelKey}/${encodeURIComponent(id)}`,
         null, { keepalive: true }));
 }
@@ -201,24 +216,57 @@ function removeFromUnlearned(cardId) { clearStatus(cardId, STATUS_UNLEARNED); }
 function saveToLearned(card) { setStatus(card.id, STATUS_LEARNED); }
 function removeFromLearned(cardId) { clearStatus(cardId, STATUS_LEARNED); }
 
-// Chuyển dữ liệu Đã thuộc / Chưa thuộc cũ trong localStorage lên DB (chạy 1 lần).
-// Chỉ chuyển khi tài khoản này CHƯA có tiến độ nào ở mục này, để không ghi đè dữ liệu thật trên DB.
-async function migrateLegacyLocalData() {
-    if (Object.keys(progressMap).length > 0) return;
-    let learned = [], unlearned = [];
-    try { learned = JSON.parse(localStorage.getItem(legacyLearnedKey) || '[]'); } catch (e) {}
-    try { unlearned = JSON.parse(localStorage.getItem(legacyUnlearnedKey) || '[]'); } catch (e) {}
-    if (!learned.length && !unlearned.length) return;
+// ==== Tiến độ của KHÁCH: lưu localStorage dạng { card_id: status } ====
+// Đọc cả dữ liệu kiểu cũ (mảng thẻ, từ thời chưa có DB) lẫn kiểu mới.
+function readLocalProgress() {
+    const map = {};
+    try {
+        JSON.parse(localStorage.getItem(legacyUnlearnedKey) || '[]')
+            .forEach(c => { if (c && c.id != null) map[String(c.id)] = STATUS_UNLEARNED; });
+    } catch (e) {}
+    try {
+        JSON.parse(localStorage.getItem(legacyLearnedKey) || '[]')
+            .forEach(c => { if (c && c.id != null) map[String(c.id)] = STATUS_LEARNED; });
+    } catch (e) {}
+    try { Object.assign(map, JSON.parse(localStorage.getItem(guestProgressKey) || '{}')); } catch (e) {}
+    return map;
+}
 
-    const items = [];
-    const seen = new Set();
-    learned.forEach(c => { const id = String(c.id); seen.add(id); items.push({ card_id: id, status: STATUS_LEARNED }); });
-    unlearned.forEach(c => { const id = String(c.id); if (!seen.has(id)) items.push({ card_id: id, status: STATUS_UNLEARNED }); });
+function saveGuestProgress() {
+    try {
+        localStorage.setItem(guestProgressKey, JSON.stringify(progressMap));
+        return true;
+    } catch (e) {
+        showSyncError('Không lưu được tiến độ trên thiết bị này (bộ nhớ trình duyệt bị chặn hoặc đầy).');
+        return false;
+    }
+}
+
+function clearLocalProgress() {
+    [legacyLearnedKey, legacyUnlearnedKey, guestProgressKey].forEach(k => localStorage.removeItem(k));
+}
+
+function loadGuestProgress() {
+    Object.assign(progressMap, readLocalProgress());
+    // Gộp dữ liệu kiểu cũ sang kiểu mới một lần rồi xoá key cũ (nếu không, Hoàn tác sẽ bị "sống lại")
+    const hasLegacy = localStorage.getItem(legacyLearnedKey) !== null || localStorage.getItem(legacyUnlearnedKey) !== null;
+    if (hasLegacy && saveGuestProgress()) {
+        localStorage.removeItem(legacyLearnedKey);
+        localStorage.removeItem(legacyUnlearnedKey);
+    }
+}
+
+// Sau khi đăng nhập: chuyển tiến độ đang lưu trên thiết bị lên tài khoản (chạy 1 lần).
+// Chỉ chuyển khi tài khoản CHƯA có tiến độ nào ở mục này, để không ghi đè dữ liệu thật trên DB.
+async function migrateLocalToDb() {
+    if (Object.keys(progressMap).length > 0) return;
+    const local = readLocalProgress();
+    const items = Object.keys(local).map(id => ({ card_id: id, status: local[id] }));
+    if (!items.length) return;
 
     await api('POST', '/api/progress/bulk', { type: typeKey, level: levelKey, items });
     items.forEach(i => { progressMap[i.card_id] = i.status; });
-    localStorage.removeItem(legacyLearnedKey);
-    localStorage.removeItem(legacyUnlearnedKey);
+    clearLocalProgress();
 }
 
 // ==== Ghi nhận ngày học (dùng cho streak ở trang Dashboard) ====
@@ -325,11 +373,13 @@ let currentIndex = 0;
 let sessionVerdict = {};
 let actionHistory = [];
 
+// Số Đã thuộc / Chưa thuộc = TỔNG tiến độ của mục này (cùng nguồn với dashboard),
+// không còn đếm theo lượt học. sessionVerdict vẫn giữ để phục vụ "Chỉ học lại các từ CHƯA THUỘC".
 function computeCounts() {
     let known = 0, unknown = 0;
-    Object.keys(sessionVerdict).forEach(id => {
-        if (sessionVerdict[id] === 'known') known++;
-        else if (sessionVerdict[id] === 'unknown') unknown++;
+    Object.keys(progressMap).forEach(id => {
+        if (progressMap[id] === STATUS_LEARNED) known++;
+        else if (progressMap[id] === STATUS_UNLEARNED) unknown++;
     });
     return { known, unknown };
 }
@@ -355,6 +405,10 @@ function flushSession(keepalive) {
     clearTimeout(sessionTimer);
     if (!sessionDirty) return;
     sessionDirty = false;
+    if (!isLoggedIn) {
+        try { localStorage.setItem(guestSessionKey, JSON.stringify(buildSessionPayload())); } catch (e) {}
+        return;
+    }
     api('POST', '/api/session', buildSessionPayload(), keepalive ? { keepalive: true } : null)
         .catch(e => console.error('Lỗi lưu vị trí học:', e));
 }
@@ -371,6 +425,7 @@ function saveSession() {
 function clearSession() {
     clearTimeout(sessionTimer);
     sessionDirty = false;
+    if (!isLoggedIn) { localStorage.removeItem(guestSessionKey); return; }
     api('POST', '/api/session', {
         type: typeKey, level: levelKey, mode: modeKey,
         order_ids: [], current_index: 0, session_verdict: {}, srs_on: isSrsEnabled()
@@ -383,6 +438,9 @@ document.addEventListener('visibilitychange', () => {
 window.addEventListener('pagehide', () => flushSession(true));
 
 async function loadSession() {
+    if (!isLoggedIn) {
+        try { return JSON.parse(localStorage.getItem(guestSessionKey) || 'null'); } catch (e) { return null; }
+    }
     try { return await api('GET', `/api/session/${typeKey}/${levelKey}/${modeKey}`); }
     catch (e) { console.error('Lỗi tải vị trí học:', e); return null; }
 }
@@ -722,8 +780,10 @@ async function clearAllProgress() {
     if (!confirmed) return;
 
     try {
-        await writeChain; // đợi các thao tác ghi đang chờ xong, tránh bị ghi đè ngược lại
-        await api('DELETE', `/api/progress/${typeKey}/${levelKey}`);
+        if (isLoggedIn) {
+            await writeChain; // đợi các thao tác ghi đang chờ xong, tránh bị ghi đè ngược lại
+            await api('DELETE', `/api/progress/${typeKey}/${levelKey}`);
+        }
     } catch (e) {
         console.error(e);
         showSyncError('Không xoá được tiến độ trên máy chủ. Thử lại sau.');
@@ -732,8 +792,7 @@ async function clearAllProgress() {
 
     Object.keys(progressMap).forEach(k => delete progressMap[k]);
     // Xoá luôn key cũ trong localStorage, nếu không lần tải sau sẽ bị "chuyển lên DB" lại
-    localStorage.removeItem(legacyLearnedKey);
-    localStorage.removeItem(legacyUnlearnedKey);
+    clearLocalProgress();
     localStorage.removeItem(srsStorageKey);
     localStorage.removeItem(srsEnabledKey);
     localStorage.removeItem(confettiFlagKey);
@@ -824,15 +883,19 @@ async function init() {
     updateFuriganaToggleUI();
     updateCounters();
     updateUndoButton();
-    document.getElementById('stats').innerText = 'Đang tải tiến trình...';
+    if (isLoggedIn) document.getElementById('stats').innerText = 'Đang tải tiến trình...';
 
-    try {
-        const rows = await api('GET', `/api/progress/${typeKey}/${levelKey}`);
-        rows.forEach(r => { progressMap[String(r.card_id)] = r.status; });
-        await migrateLegacyLocalData();
-    } catch (e) {
-        console.error('Không tải được tiến trình:', e);
-        showSyncError('Không tải được tiến trình từ máy chủ.');
+    if (isLoggedIn) {
+        try {
+            const rows = await api('GET', `/api/progress/${typeKey}/${levelKey}`);
+            rows.forEach(r => { progressMap[String(r.card_id)] = r.status; });
+            await migrateLocalToDb();
+        } catch (e) {
+            console.error('Không tải được tiến trình:', e);
+            showSyncError('Không tải được tiến trình từ máy chủ.');
+        }
+    } else {
+        loadGuestProgress();
     }
 
     currentQueue = buildInitialQueue();

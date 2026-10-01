@@ -76,7 +76,8 @@ app.post('/logout', (req, res) => {
 });
 
 // Trang Học Quizlet (Chung cho cả bài mới lẫn bài Chưa Thuộc)
-app.get('/quizlet/:type/:level', requireAuth, (req, res) => {
+// Học flashcard KHÔNG cần đăng nhập (khách lưu tiến độ trên thiết bị; có tài khoản thì lưu lên DB)
+app.get('/quizlet/:type/:level', (req, res) => {
     const { type, level } = req.params;
     const mode = req.query.mode;
     const isUnlearned = mode === 'unlearned'; // Chế độ xem từ CHƯA THUỘC
@@ -97,7 +98,8 @@ app.get('/quizlet/:type/:level', requireAuth, (req, res) => {
 });
 
 // Trang Quiz trắc nghiệm (chọn nghĩa đúng trong 4 đáp án)
-app.get('/quiz/:type/:level', requireAuth, (req, res) => {
+// Quiz trắc nghiệm cũng không cần đăng nhập
+app.get('/quiz/:type/:level', (req, res) => {
     const { type, level } = req.params;
     const filePath = path.join(__dirname, '../data', type, `${level}.json`);
     let cards = [];
@@ -114,7 +116,7 @@ app.get('/quiz/:type/:level', requireAuth, (req, res) => {
     res.render('quiz', { type, level, cards });
 });
 
-// Trang Dashboard tổng quan (tiến độ N1-N5, streak, tổng số từ đã học)
+// Trang Dashboard tổng quan (tiến độ N1-N5, streak, tổng số từ đã học) — BẮT BUỘC đăng nhập
 app.get('/dashboard', requireAuth, (req, res) => {
     res.render('dashboard');
 });

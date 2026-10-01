@@ -25,6 +25,7 @@
 </head>
 <body>
 
+    <% var isLoggedIn = (typeof user !== 'undefined' && user) ? true : false; %>
     <nav class="navbar">
         <div class="nav-item">
             <a href="https://drive.google.com/drive/u/1/folders/1DrSGyGi_NTzeRsGrJYV-iM9wQVmP8iKC" target="_blank">textBook</a>
@@ -43,20 +44,24 @@
                                     <a href="/quizlet/tu-vung/<%= level %>">Từ vựng</a>
                                     <a class="quiz-quicklink" href="/quiz/tu-vung/<%= level %>" title="Chế độ Quiz trắc nghiệm">🎯</a>
                                 </div>
+                                <% if (isLoggedIn) { %>
                                 <div class="progress-bar-mini">
                                     <div class="progress-fill-mini" id="progress-tu-vung-<%= level %>"></div>
                                 </div>
                                 <span class="progress-label" id="progress-label-tu-vung-<%= level %>">0%</span>
+                                <% } %>
                             </li>
                             <li class="progress-item">
                                 <div class="progress-item-row">
                                     <a href="/quizlet/ngu-phap/<%= level %>">Ngữ pháp</a>
                                     <a class="quiz-quicklink" href="/quiz/ngu-phap/<%= level %>" title="Chế độ Quiz trắc nghiệm">🎯</a>
                                 </div>
+                                <% if (isLoggedIn) { %>
                                 <div class="progress-bar-mini">
                                     <div class="progress-fill-mini" id="progress-ngu-phap-<%= level %>"></div>
                                 </div>
                                 <span class="progress-label" id="progress-label-ngu-phap-<%= level %>">0%</span>
+                                <% } %>
                             </li>
                         </ul>
                     </li>
@@ -133,6 +138,8 @@
 
     <script>
     (function () {
+        // Chỉ người đã đăng nhập mới có tiến độ trên DB -> khách không hiện thanh % và không gọi API
+        var LOGGED_IN = <%= isLoggedIn %>;
         var TYPES = ['tu-vung', 'ngu-phap'];
         var LEVELS = ['n1', 'n2', 'n3', 'n4', 'n5'];
         var cachedCounts = null; // Tổng số thẻ/level không đổi trong phiên, nên chỉ cần fetch 1 lần
@@ -182,6 +189,7 @@
         // Số liệu "đã thuộc" nằm trên DB nên mỗi lần refresh là 1 request -> chặn gọi dồn dập
         // (bấm liên tục) bằng cờ inFlight + khoảng nghỉ tối thiểu 2 giây.
         function refreshProgress() {
+            if (!LOGGED_IN) return;
             var now = Date.now();
             if (inFlight || now - lastFetch < 2000) return;
             inFlight = true;
