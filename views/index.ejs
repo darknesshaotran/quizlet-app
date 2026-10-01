@@ -32,11 +32,11 @@
         
         <!-- Dropdown Bài Học Chính (kèm Progress Bar % đã thuộc) -->
         <div class="nav-item nav-jlpt">
-            <span class="nav-btn">JLPT ▾</span>
+            <button type="button" class="nav-btn" aria-haspopup="true" aria-expanded="false">JLPT ▾</button>
             <ul class="dropdown-menu">
                 <% ['n1','n2','n3','n4','n5'].forEach(level => { %>
                     <li class="dropdown-item">
-                        <a href="#"><%= level.toUpperCase() %> ▸</a>
+                        <a href="#" aria-haspopup="true" aria-expanded="false"><%= level.toUpperCase() %> ▸</a>
                         <ul class="sub-dropdown">
                             <li class="progress-item">
                                 <div class="progress-item-row">
@@ -66,11 +66,11 @@
 
         <!-- Dropdown Từ Chưa Thuộc -->
         <div class="nav-item">
-            <span class="nav-btn" style="color: #d98a92; font-weight: 700;">⚠ Chưa thuộc ▾</span>
+            <button type="button" class="nav-btn" aria-haspopup="true" aria-expanded="false" style="color: #d98a92; font-weight: 700;">⚠ Chưa thuộc ▾</button>
             <ul class="dropdown-menu">
                 <% ['n1','n2','n3','n4','n5'].forEach(level => { %>
                     <li class="dropdown-item">
-                        <a href="#"><%= level.toUpperCase() %> ▸</a>
+                        <a href="#" aria-haspopup="true" aria-expanded="false"><%= level.toUpperCase() %> ▸</a>
                         <ul class="sub-dropdown">
                             <li><a href="/quizlet/tu-vung/<%= level %>?mode=unlearned">Từ vựng</a></li>
                             <li><a href="/quizlet/ngu-phap/<%= level %>?mode=unlearned">Ngữ pháp</a></li>
@@ -82,11 +82,11 @@
 
         <!-- Dropdown Từ Đã Thuộc -->
         <div class="nav-item">
-            <span class="nav-btn" style="color: #5fb891; font-weight: 700;">✓ Đã thuộc ▾</span>
+            <button type="button" class="nav-btn" aria-haspopup="true" aria-expanded="false" style="color: #5fb891; font-weight: 700;">✓ Đã thuộc ▾</button>
             <ul class="dropdown-menu">
                 <% ['n1','n2','n3','n4','n5'].forEach(level => { %>
                     <li class="dropdown-item">
-                        <a href="#"><%= level.toUpperCase() %> ▸</a>
+                        <a href="#" aria-haspopup="true" aria-expanded="false"><%= level.toUpperCase() %> ▸</a>
                         <ul class="sub-dropdown">
                             <li><a href="/quizlet/tu-vung/<%= level %>?mode=learned">Từ vựng</a></li>
                             <li><a href="/quizlet/ngu-phap/<%= level %>?mode=learned">Ngữ pháp</a></li>
@@ -106,19 +106,21 @@
 
         <div class="nav-item">
             <% if (typeof user !== 'undefined' && user) { %>
-                <a href="#"> 
-                    <span style="opacity: 0.85; margin-right: 8px; display: inline-block; max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle;" title="<%= user.email %>">👤 <%= user.email %></span>
-                    <form action="/logout" method="POST" style="display: inline;">
-                        <button type="submit" class="nav-btn" style="background: none; border: none; cursor: pointer; font: inherit; color: inherit; padding: 0;">Đăng xuất</button>
+                <div class="nav-user">
+                    <span class="nav-user-email" title="<%= user.email %>">👤 <%= user.email %></span>
+                    <form action="/logout" method="POST" class="nav-logout-form">
+                        <button type="submit" class="nav-logout-btn">Đăng xuất</button>
                     </form>
-                </a>
+                </div>
             <% } else { %>
                 <a href="/login">Đăng nhập</a>
             <% } %>
         </div>
 
-        <button class="header-toggle-btn" id="btn-hide-header" type="button" title="Ẩn thanh menu" aria-label="Ẩn thanh menu">▲</button>
-        <button class="theme-toggle-btn" id="btn-theme-toggle" type="button" title="Chuyển giao diện sáng/tối" aria-label="Chuyển giao diện sáng/tối">🌙</button>
+        <div class="nav-controls">
+            <button class="header-toggle-btn" id="btn-hide-header" type="button" title="Ẩn thanh menu" aria-label="Ẩn thanh menu"><span class="icon-desktop">▲</span><span class="icon-phone">✕</span></button>
+            <button class="theme-toggle-btn" id="btn-theme-toggle" type="button" title="Chuyển giao diện sáng/tối" aria-label="Chuyển giao diện sáng/tối">🌙</button>
+        </div>
     </nav>
 
     <!-- Nút nổi để hiện lại thanh menu khi đang ẩn -->
@@ -176,9 +178,9 @@
             });
         }
 
-        // Gọi hàm này bất cứ khi nào muốn cập nhật % (hover, load trang, sau khi học xong...)
+        // Gọi hàm này bất cứ khi nào muốn cập nhật % (bấm menu, load trang, sau khi học xong...)
         // Số liệu "đã thuộc" nằm trên DB nên mỗi lần refresh là 1 request -> chặn gọi dồn dập
-        // (hover liên tục) bằng cờ inFlight + khoảng nghỉ tối thiểu 2 giây.
+        // (bấm liên tục) bằng cờ inFlight + khoảng nghỉ tối thiểu 2 giây.
         function refreshProgress() {
             var now = Date.now();
             if (inFlight || now - lastFetch < 2000) return;
@@ -196,13 +198,9 @@
         // Cập nhật ngay khi trang tải xong
         refreshProgress();
 
-        // Cập nhật lại NGAY khi hover/chạm vào menu JLPT (N1-N5), để luôn phản ánh đúng % mới nhất
+        // Cập nhật lại khi BẤM vào menu JLPT (N1-N5), để luôn phản ánh đúng % mới nhất
         var jlptNav = document.querySelector('.nav-jlpt');
-        if (jlptNav) {
-            jlptNav.addEventListener('mouseenter', refreshProgress);
-            jlptNav.addEventListener('focusin', refreshProgress);
-            jlptNav.addEventListener('touchstart', refreshProgress, { passive: true });
-        }
+        if (jlptNav) jlptNav.addEventListener('click', refreshProgress);
 
         // Nếu người dùng có nhiều tab, khi quay lại tab này thì cập nhật luôn
         document.addEventListener('visibilitychange', function () {
@@ -254,16 +252,118 @@
 
     <script>
     (function () {
-        // ==== Ẩn/hiện thanh menu (header) ====
-        // Hữu ích khi học flashcard trên điện thoại — ẩn header đi để lấy thêm
-        // khoảng trống hiển thị thẻ. Lưu lựa chọn vào localStorage nên ẩn 1 lần
-        // là giữ nguyên khi chuyển sang trang khác, không phải ẩn lại từ đầu.
+        // ==== Điều khiển navbar ====
+        // 1) Dropdown mở/đóng bằng CLICK (không dùng hover) -> dùng được trên điện thoại/tablet.
+        // 2) Máy tính/tablet: nút ▲ ẩn thanh menu, nút ☰ nổi hiện lại (nhớ lựa chọn trong localStorage).
+        // 3) Điện thoại (<= 600px): header là menu TOÀN MÀN HÌNH, mở bằng ☰, đóng bằng ✕ hoặc nút Back.
         var HEADER_KEY = 'headerHidden';
         var navbar = document.querySelector('.navbar');
         var hideBtn = document.getElementById('btn-hide-header');
         var restoreBtn = document.getElementById('btn-show-header');
         if (!navbar || !hideBtn || !restoreBtn) return;
 
+        var phoneQuery = window.matchMedia('(max-width: 600px)');
+        function isPhone() { return phoneQuery.matches; }
+
+        // ---------- Dropdown: bấm để mở/đóng ----------
+        function setExpanded(item, open) {
+            item.classList.toggle('is-open', open);
+            var trigger = item.firstElementChild;
+            if (trigger && trigger.hasAttribute('aria-expanded')) {
+                trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            }
+        }
+        function closeItem(item) {
+            setExpanded(item, false);
+            Array.prototype.forEach.call(item.querySelectorAll('.is-open'), function (el) { setExpanded(el, false); });
+        }
+        function closeAllDropdowns() {
+            Array.prototype.forEach.call(navbar.querySelectorAll('.is-open'), function (el) { setExpanded(el, false); });
+        }
+
+        navbar.addEventListener('click', function (e) {
+            var trigger = e.target.closest('.nav-item > .nav-btn, .dropdown-item > a[href="#"]');
+            if (!trigger || !navbar.contains(trigger)) return;
+            e.preventDefault();
+            var item = trigger.parentElement;
+            var willOpen = !item.classList.contains('is-open');
+            // Chỉ mở 1 mục mỗi cấp: đóng các mục cùng cấp trước
+            Array.prototype.forEach.call(item.parentElement.children, function (el) {
+                if (el !== item) closeItem(el);
+            });
+            if (willOpen) setExpanded(item, true); else closeItem(item);
+        });
+
+        // Bấm ra ngoài thanh menu thì đóng dropdown (máy tính/tablet)
+        document.addEventListener('click', function (e) {
+            if (!navbar.contains(e.target) && !restoreBtn.contains(e.target)) closeAllDropdowns();
+        });
+
+        // ---------- Menu toàn màn hình trên điện thoại ----------
+        var menuPushed = false; // đã đẩy 1 mục vào lịch sử để nút Back đóng được menu
+        var afterBack = null;
+
+        function menuOpen() { return navbar.classList.contains('is-open'); }
+
+        function openMenu() {
+            if (menuOpen()) return;
+            navbar.classList.add('is-open');
+            document.body.classList.add('menu-open');
+            try { history.pushState({ navMenu: true }, ''); menuPushed = true; } catch (e) { menuPushed = false; }
+        }
+        function hideMenuUI() {
+            navbar.classList.remove('is-open');
+            document.body.classList.remove('menu-open');
+            closeAllDropdowns();
+        }
+        // Đóng bằng ✕: lùi 1 bước lịch sử để không để lại mục thừa (Back sau đó không bị "kẹt")
+        function closeMenu() {
+            hideMenuUI();
+            if (menuPushed) { menuPushed = false; history.back(); }
+        }
+        function runAfterBack() {
+            var fn = afterBack;
+            afterBack = null;
+            if (fn) fn();
+        }
+        // Chuyển trang từ trong menu: lùi lịch sử trước rồi mới đi, để lịch sử sạch (không dính mục "menu mở")
+        function goAfterBack(fn) {
+            if (!menuPushed) { fn(); return; }
+            afterBack = fn;
+            hideMenuUI();
+            menuPushed = false;
+            history.back();
+            setTimeout(runAfterBack, 400); // phòng khi popstate không bắn
+        }
+
+        // Người dùng bấm Back (nút điện thoại / trình duyệt) -> đóng menu, ở lại trang
+        window.addEventListener('popstate', function () {
+            if (menuOpen()) { menuPushed = false; hideMenuUI(); }
+            runAfterBack();
+        });
+
+        navbar.addEventListener('click', function (e) {
+            if (!isPhone() || !menuOpen()) return;
+            var a = e.target.closest('a[href]');
+            if (!a || a.getAttribute('href') === '#') return;
+            if (a.target === '_blank') { closeMenu(); return; } // mở tab mới, chỉ đóng menu
+            e.preventDefault();
+            var href = a.href;
+            goAfterBack(function () { window.location.href = href; });
+        });
+        navbar.addEventListener('submit', function (e) { // VD: nút Đăng xuất
+            if (!isPhone() || !menuPushed) return;
+            e.preventDefault();
+            var form = e.target;
+            goAfterBack(function () { form.submit(); });
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Escape') return;
+            if (isPhone() && menuOpen()) closeMenu(); else closeAllDropdowns();
+        });
+
+        // ---------- Ẩn/hiện thanh menu trên máy tính/tablet ----------
         function isHidden() {
             try { return localStorage.getItem(HEADER_KEY) === '1'; } catch (e) { return false; }
         }
@@ -276,11 +376,26 @@
             applyHidden(hidden);
         }
 
-        hideBtn.addEventListener('click', function () { setHidden(true); });
-        restoreBtn.addEventListener('click', function () { setHidden(false); });
+        hideBtn.addEventListener('click', function () {
+            if (isPhone()) closeMenu(); else setHidden(true);
+        });
+        restoreBtn.addEventListener('click', function () {
+            if (isPhone()) openMenu(); else setHidden(false);
+        });
 
-        // Áp dụng ngay trạng thái đã lưu từ lần trước (nếu có)
-        applyHidden(isHidden());
+        // Đổi chế độ (xoay màn hình, kéo giãn cửa sổ): dọn trạng thái cho đúng chế độ mới
+        function applyMode() {
+            if (isPhone()) {
+                navbar.classList.remove('is-hidden'); // trên điện thoại menu do nút ☰ điều khiển
+            } else {
+                if (menuOpen()) closeMenu();
+                applyHidden(isHidden());
+            }
+        }
+        if (phoneQuery.addEventListener) phoneQuery.addEventListener('change', applyMode);
+        else if (phoneQuery.addListener) phoneQuery.addListener(applyMode);
+
+        applyMode();
     })();
     </script>
 </body>
