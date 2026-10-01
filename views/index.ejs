@@ -136,14 +136,27 @@
         var TYPES = ['tu-vung', 'ngu-phap'];
         var LEVELS = ['n1', 'n2', 'n3', 'n4', 'n5'];
         var cachedCounts = null; // Tổng số thẻ/level không đổi trong phiên, nên chỉ cần fetch 1 lần
+        var learnedSummary = {}; // Số thẻ ĐÃ THUỘC theo type/level, lấy từ DB: { 'tu-vung': { n1: 12, ... }, ... }
+        var inFlight = false;
+        var lastFetch = 0;
 
         function getLearnedCount(type, level) {
-            try {
-                var list = JSON.parse(localStorage.getItem('learned_' + type + '_' + level) || '[]');
-                return Array.isArray(list) ? list.length : 0;
-            } catch (e) {
-                return 0;
-            }
+            return (learnedSummary[type] && learnedSummary[type][level]) || 0;
+        }
+
+        function loadTotals() {
+            if (cachedCounts) return Promise.resolve(cachedCounts);
+            return fetch('/api/counts')
+                .then(function (res) { return res.json(); })
+                .then(function (counts) { cachedCounts = counts; return counts; });
+        }
+
+        function loadLearned() {
+            return fetch('/api/progress-summary', { credentials: 'same-origin' })
+                .then(function (res) {
+                    if (!res.ok) throw new Error('HTTP ' + res.status); // chưa đăng nhập -> giữ 0%
+                    return res.json();
+                });
         }
 
         function paint(type, level, percent) {
@@ -153,7 +166,7 @@
             if (label) label.innerText = percent + '%';
         }
 
-        // Đọc lại localStorage (có thể vừa thay đổi) và tô lại tất cả progress bar
+        // Tô lại tất cả progress bar theo số liệu mới nhất
         function repaintAll(counts) {
             TYPES.forEach(function (type) {
                 LEVELS.forEach(function (level) {
@@ -166,18 +179,20 @@
         }
 
         // Gọi hàm này bất cứ khi nào muốn cập nhật % (hover, load trang, sau khi học xong...)
+        // Số liệu "đã thuộc" nằm trên DB nên mỗi lần refresh là 1 request -> chặn gọi dồn dập
+        // (hover liên tục) bằng cờ inFlight + khoảng nghỉ tối thiểu 2 giây.
         function refreshProgress() {
-            if (cachedCounts) {
-                repaintAll(cachedCounts);
-                return;
-            }
-            fetch('/api/counts')
-                .then(function (res) { return res.json(); })
-                .then(function (counts) {
-                    cachedCounts = counts;
-                    repaintAll(counts);
+            var now = Date.now();
+            if (inFlight || now - lastFetch < 2000) return;
+            inFlight = true;
+            Promise.all([loadTotals(), loadLearned()])
+                .then(function (r) {
+                    learnedSummary = r[1] || {};
+                    lastFetch = Date.now();
+                    repaintAll(r[0]);
                 })
-                .catch(function () { /* Không lấy được dữ liệu, giữ nguyên 0% */ });
+                .catch(function (e) { console.warn('Không tải được tiến độ:', e); /* giữ nguyên số cũ */ })
+                .then(function () { inFlight = false; });
         }
 
         // Cập nhật ngay khi trang tải xong

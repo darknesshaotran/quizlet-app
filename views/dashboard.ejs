@@ -52,11 +52,10 @@
     const LEVELS = ['n1', 'n2', 'n3', 'n4', 'n5'];
     const LEVEL_COLORS = { n1: '#8f3b46', n2: '#c9a24d', n3: '#1f6f52', n4: '#2f6fa8', n5: '#6b5aa8' };
 
+    // Số thẻ ĐÃ THUỘC theo type/level, lấy từ DB: { 'tu-vung': { n1: 12, ... }, ... }
+    let learnedSummary = {};
     function getLearnedCount(type, level) {
-        try {
-            const list = JSON.parse(localStorage.getItem('learned_' + type + '_' + level) || '[]');
-            return Array.isArray(list) ? list.length : 0;
-        } catch (e) { return 0; }
+        return (learnedSummary[type] && learnedSummary[type][level]) || 0;
     }
 
     function computeStreak() {
@@ -105,7 +104,13 @@
         });
     }
 
-    fetch('/api/counts').then(r => r.json()).then(counts => {
+    Promise.all([
+        fetch('/api/counts').then(r => r.json()),
+        fetch('/api/progress-summary', { credentials: 'same-origin' })
+            .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+            .catch(e => { console.warn('Không tải được tiến độ đã thuộc:', e); return {}; }) // lỗi -> coi như 0, vẫn hiện tổng số thẻ
+    ]).then(([counts, summary]) => {
+        learnedSummary = summary || {};
         renderBars('dash-bars-tu-vung', 'tu-vung', counts);
         renderBars('dash-bars-ngu-phap', 'ngu-phap', counts);
 

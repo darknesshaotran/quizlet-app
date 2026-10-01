@@ -6,13 +6,14 @@ const multer = require('multer');
 const cookieParser = require('cookie-parser');
 
 const supabase = require('./config/supabaseClient');
+const supabaseAdmin = require('./config/supabaseAdmin');
 const { attachUser, requireAuth, setSessionCookies, clearSessionCookies } = require('./middleware/auth');
 
 const app = express();
 const upload = multer({ storage: multer.memoryStorage() });
 
 // Middleware xử lý dữ liệu gửi lên
-app.use(express.json());
+app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
@@ -122,15 +123,24 @@ app.get('/dashboard', requireAuth, (req, res) => {
 // cho 1 type+level. FE dùng để đồng bộ lại localStorage khi vào trang trên thiết bị khác.
 app.get('/api/progress/:type/:level', requireAuth, async (req, res) => {
     const { type, level } = req.params;
-    const { data, error } = await supabase
-        .from('user_progress')
-        .select('card_id, status, updated_at')
-        .eq('user_id', req.user.id)
-        .eq('type', type)
-        .eq('level', level);
+    const PAGE = 1000; // Supabase mặc định chỉ trả tối đa 1000 dòng/truy vấn -> đọc theo từng trang
+    let all = [];
 
-    if (error) return res.status(500).json({ error: error.message });
-    res.json(data);
+    for (let from = 0; ; from += PAGE) {
+        const { data, error } = await supabaseAdmin
+            .from('user_progress')
+            .select('card_id, status, updated_at')
+            .eq('user_id', req.user.id)
+            .eq('type', type)
+            .eq('level', level)
+            .order('card_id')
+            .range(from, from + PAGE - 1);
+
+        if (error) return res.status(500).json({ error: error.message });
+        all = all.concat(data);
+        if (data.length < PAGE) break;
+    }
+    res.json(all);
 });
 
 // API: Lưu (upsert) trạng thái Đã thuộc/Chưa thuộc của 1 thẻ cho tài khoản đang đăng nhập.
@@ -142,7 +152,7 @@ app.post('/api/progress', requireAuth, async (req, res) => {
         return res.status(400).json({ error: 'Thiếu dữ liệu' });
     }
 
-    const { error } = await supabase
+    const { error } = await supabaseAdmin
         .from('user_progress')
         .upsert({
             user_id: req.user.id,
@@ -157,10 +167,87 @@ app.post('/api/progress', requireAuth, async (req, res) => {
     res.json({ ok: true });
 });
 
+// API: Lưu nhiều thẻ một lúc (dùng để chuyển dữ liệu cũ từ localStorage lên DB)
+app.post('/api/progress/bulk', requireAuth, async (req, res) => {
+    const { type, level, items } = req.body;
+    if (!type || !level || !Array.isArray(items)) {
+        return res.status(400).json({ error: 'Thiếu dữ liệu' });
+    }
+    const now = new Date().toISOString();
+    const rows = items
+        .filter(i => i && i.card_id != null && i.status)
+        .map(i => ({
+            user_id: req.user.id,
+            type,
+            level,
+            card_id: String(i.card_id),
+            status: i.status,
+            updated_at: now
+        }));
+    if (!rows.length) return res.json({ ok: true, count: 0 });
+
+    const { error } = await supabaseAdmin
+        .from('user_progress')
+        .upsert(rows, { onConflict: 'user_id,type,level,card_id' });
+
+    if (error) return res.status(500).json({ error: error.message });
+    res.json({ ok: true, count: rows.length });
+});
+
+// API: Xoá trạng thái của 1 thẻ (dùng cho nút Hoàn tác)
+app.delete('/api/progress/:type/:level/:cardId', requireAuth, async (req, res) => {
+    const { type, level, cardId } = req.params;
+    const { error } = await supabaseAdmin
+        .from('user_progress')
+        .delete()
+        .eq('user_id', req.user.id)
+        .eq('type', type)
+        .eq('level', level)
+        .eq('card_id', String(cardId));
+
+    if (error) return res.status(500).json({ error: error.message });
+    res.json({ ok: true });
+});
+
+// API: Số thẻ ĐÃ THUỘC theo từng type+level của tài khoản đang đăng nhập
+// -> { 'tu-vung': { n1: 12, ... }, 'ngu-phap': { ... } }  (dùng cho Dashboard + thanh % ở navbar)
+app.get('/api/progress-summary', requireAuth, async (req, res) => {
+    const types = ['tu-vung', 'ngu-phap'];
+    const levels = ['n1', 'n2', 'n3', 'n4', 'n5'];
+    const result = {};
+    const jobs = [];
+
+    types.forEach(type => {
+        result[type] = {};
+        levels.forEach(level => {
+            jobs.push(
+                supabaseAdmin
+                    .from('user_progress')
+                    .select('card_id', { count: 'exact', head: true })
+                    .eq('user_id', req.user.id)
+                    .eq('type', type)
+                    .eq('level', level)
+                    .eq('status', 'learned') // phải khớp STATUS_LEARNED trong quizlet.ejs
+                    .then(({ count, error }) => {
+                        if (error) throw error;
+                        result[type][level] = count || 0;
+                    })
+            );
+        });
+    });
+
+    try {
+        await Promise.all(jobs);
+        res.json(result);
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
 // API: Xoá toàn bộ tiến độ (Đã thuộc/Chưa thuộc) của 1 type+level cho tài khoản đang đăng nhập.
 app.delete('/api/progress/:type/:level', requireAuth, async (req, res) => {
     const { type, level } = req.params;
-    const { error } = await supabase
+    const { error } = await supabaseAdmin
         .from('user_progress')
         .delete()
         .eq('user_id', req.user.id)
@@ -175,7 +262,7 @@ app.delete('/api/progress/:type/:level', requireAuth, async (req, res) => {
 // riêng cho từng mode (normal / unlearned / learned) của tài khoản đang đăng nhập.
 app.get('/api/session/:type/:level/:mode', requireAuth, async (req, res) => {
     const { type, level, mode } = req.params;
-    const { data, error } = await supabase
+    const { data, error } = await supabaseAdmin
         .from('user_session_state')
         .select('order_ids, current_index, session_verdict, srs_on, updated_at')
         .eq('user_id', req.user.id)
@@ -195,7 +282,7 @@ app.post('/api/session', requireAuth, async (req, res) => {
         return res.status(400).json({ error: 'Thiếu dữ liệu' });
     }
 
-    const { error } = await supabase
+    const { error } = await supabaseAdmin
         .from('user_session_state')
         .upsert({
             user_id: req.user.id,

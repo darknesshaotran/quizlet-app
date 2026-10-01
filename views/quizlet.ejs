@@ -100,52 +100,125 @@ const levelKey = '<%= level %>';
 const isUnlearnedMode = <%= isUnlearned %>;
 const isLearnedMode = <%= isLearned %>;
 const modeKey = isLearnedMode ? 'learned' : (isUnlearnedMode ? 'unlearned' : 'normal');
-const storageKey = `unlearned_${typeKey}_${levelKey}`;
-const learnedStorageKey = `learned_${typeKey}_${levelKey}`;
+
+// Giá trị cột `status` trong bảng user_progress (đổi ở đây nếu DB của bạn dùng giá trị khác)
+const STATUS_LEARNED = 'learned';
+const STATUS_UNLEARNED = 'unlearned';
+
+// SRS + cờ confetti vẫn lưu localStorage (server chưa có bảng/API cho phần này)
 const srsStorageKey = `srs_${typeKey}_${levelKey}`;
 const srsEnabledKey = `srsEnabled_${typeKey}_${levelKey}`;
-const sessionKey = `session_${typeKey}_${levelKey}_${modeKey}`;
 const confettiFlagKey = `confetti_done_${typeKey}_${levelKey}`;
+
+// Key CŨ trong localStorage — chỉ dùng để chuyển dữ liệu cũ lên DB một lần
+const legacyUnlearnedKey = `unlearned_${typeKey}_${levelKey}`;
+const legacyLearnedKey = `learned_${typeKey}_${levelKey}`;
 
 // Lấy dữ liệu gốc từ Server
 const originalCards = <%- JSON.stringify(cards) %>;
 
-// ==== Quản lý LocalStorage: CHƯA THUỘC ====
-function getSavedUnlearned() {
-    try { return JSON.parse(localStorage.getItem(storageKey) || '[]'); } catch (e) { return []; }
-}
-function saveToUnlearned(card) {
-    let list = getSavedUnlearned();
-    if (!list.some(c => c.id === card.id)) {
-        list.push(card);
-        localStorage.setItem(storageKey, JSON.stringify(list));
+// ==== Gọi API ====
+async function api(method, url, body, extra) {
+    const res = await fetch(url, Object.assign({
+        method,
+        credentials: 'same-origin',
+        headers: body ? { 'Content-Type': 'application/json' } : {},
+        body: body ? JSON.stringify(body) : undefined
+    }, extra || {}));
+    // Hết phiên đăng nhập: requireAuth trả 401 hoặc redirect về /login
+    if (res.status === 401 || (res.redirected && /\/login/.test(res.url))) {
+        window.location.href = '/login';
+        throw new Error('Chưa đăng nhập');
     }
-}
-function removeFromUnlearned(cardId) {
-    let list = getSavedUnlearned().filter(c => c.id !== cardId);
-    localStorage.setItem(storageKey, JSON.stringify(list));
-}
-function isInUnlearned(cardId) {
-    return getSavedUnlearned().some(c => c.id === cardId);
+    if (!res.ok) {
+        // Lấy lý do thật từ server (route trả { error: '...' }) để biết vì sao lưu lỗi
+        let detail = '';
+        try { const j = await res.json(); detail = (j && j.error) ? j.error : ''; } catch (e) {}
+        throw new Error(`${method} ${url} -> ${res.status}${detail ? ' | ' + detail : ''}`);
+    }
+    return res.json();
 }
 
-// ==== Quản lý LocalStorage: ĐÃ THUỘC ====
-function getSavedLearned() {
-    try { return JSON.parse(localStorage.getItem(learnedStorageKey) || '[]'); } catch (e) { return []; }
-}
-function saveToLearned(card) {
-    let list = getSavedLearned();
-    if (!list.some(c => c.id === card.id)) {
-        list.push(card);
-        localStorage.setItem(learnedStorageKey, JSON.stringify(list));
+let toastTimer = null;
+function showSyncError(msg) {
+    let el = document.getElementById('sync-toast');
+    if (!el) {
+        el = document.createElement('div');
+        el.id = 'sync-toast';
+        el.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);' +
+            'background:var(--ruby,#b3261e);color:#fff;padding:10px 18px;border-radius:10px;' +
+            'font-weight:700;z-index:9999;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:90vw;text-align:center;';
+        document.body.appendChild(el);
     }
+    el.textContent = msg || 'Không lưu được lên máy chủ. Kiểm tra kết nối rồi thử lại.';
+    el.style.display = 'block';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { el.style.display = 'none'; }, 8000);
 }
-function removeFromLearned(cardId) {
-    let list = getSavedLearned().filter(c => c.id !== cardId);
-    localStorage.setItem(learnedStorageKey, JSON.stringify(list));
+
+// Hàng đợi ghi tuần tự: các thao tác chạy đúng thứ tự bấm, tránh request đến sai thứ tự
+// làm DB lưu trạng thái cũ (VD: bấm Đã thuộc rồi Hoàn tác thật nhanh).
+let writeChain = Promise.resolve();
+function enqueue(task) {
+    writeChain = writeChain.then(task).catch(err => {
+        console.error('Lỗi đồng bộ:', err);
+        showSyncError('Không lưu được lên máy chủ: ' + (err && err.message ? err.message : err));
+    });
 }
-function isInLearned(cardId) {
-    return getSavedLearned().some(c => c.id === cardId);
+
+// ==== Tiến độ Đã thuộc / Chưa thuộc: lưu trên DB, cache trong bộ nhớ ====
+// progressMap: card_id -> STATUS_LEARNED | STATUS_UNLEARNED (mỗi thẻ chỉ có 1 trạng thái -> loại trừ nhau)
+const progressMap = {};
+
+function getSavedLearned() { return originalCards.filter(c => progressMap[String(c.id)] === STATUS_LEARNED); }
+function getSavedUnlearned() { return originalCards.filter(c => progressMap[String(c.id)] === STATUS_UNLEARNED); }
+function isInLearned(cardId) { return progressMap[String(cardId)] === STATUS_LEARNED; }
+function isInUnlearned(cardId) { return progressMap[String(cardId)] === STATUS_UNLEARNED; }
+function learnedCount() {
+    let n = 0;
+    for (const k in progressMap) if (progressMap[k] === STATUS_LEARNED) n++;
+    return n;
+}
+
+function setStatus(cardId, status) {
+    const id = String(cardId);
+    if (progressMap[id] === status) return;
+    progressMap[id] = status;
+    enqueue(() => api('POST', '/api/progress',
+        { type: typeKey, level: levelKey, card_id: id, status }, { keepalive: true }));
+}
+// Chỉ xoá khi thẻ đang đúng trạng thái `onlyIf` (giữ nguyên hành vi của removeFromLearned/Unlearned cũ)
+function clearStatus(cardId, onlyIf) {
+    const id = String(cardId);
+    if (progressMap[id] !== onlyIf) return;
+    delete progressMap[id];
+    enqueue(() => api('DELETE', `/api/progress/${typeKey}/${levelKey}/${encodeURIComponent(id)}`,
+        null, { keepalive: true }));
+}
+
+function saveToUnlearned(card) { setStatus(card.id, STATUS_UNLEARNED); }
+function removeFromUnlearned(cardId) { clearStatus(cardId, STATUS_UNLEARNED); }
+function saveToLearned(card) { setStatus(card.id, STATUS_LEARNED); }
+function removeFromLearned(cardId) { clearStatus(cardId, STATUS_LEARNED); }
+
+// Chuyển dữ liệu Đã thuộc / Chưa thuộc cũ trong localStorage lên DB (chạy 1 lần).
+// Chỉ chuyển khi tài khoản này CHƯA có tiến độ nào ở mục này, để không ghi đè dữ liệu thật trên DB.
+async function migrateLegacyLocalData() {
+    if (Object.keys(progressMap).length > 0) return;
+    let learned = [], unlearned = [];
+    try { learned = JSON.parse(localStorage.getItem(legacyLearnedKey) || '[]'); } catch (e) {}
+    try { unlearned = JSON.parse(localStorage.getItem(legacyUnlearnedKey) || '[]'); } catch (e) {}
+    if (!learned.length && !unlearned.length) return;
+
+    const items = [];
+    const seen = new Set();
+    learned.forEach(c => { const id = String(c.id); seen.add(id); items.push({ card_id: id, status: STATUS_LEARNED }); });
+    unlearned.forEach(c => { const id = String(c.id); if (!seen.has(id)) items.push({ card_id: id, status: STATUS_UNLEARNED }); });
+
+    await api('POST', '/api/progress/bulk', { type: typeKey, level: levelKey, items });
+    items.forEach(i => { progressMap[i.card_id] = i.status; });
+    localStorage.removeItem(legacyLearnedKey);
+    localStorage.removeItem(legacyUnlearnedKey);
 }
 
 // ==== Ghi nhận ngày học (dùng cho streak ở trang Dashboard) ====
@@ -242,10 +315,8 @@ function registerCards(list) {
 registerCards(originalCards);
 
 let srsFilteredEmpty = false;
-let currentQueue = buildInitialQueue();
-registerCards(currentQueue);
-srsFilteredEmpty = (currentQueue.length === 0 && !isLearnedMode && isSrsEnabled() &&
-    (isUnlearnedMode ? getSavedUnlearned().length > 0 : originalCards.length > 0));
+let currentQueue = []; // được dựng trong init() sau khi tải xong tiến trình từ DB
+let ready = false;     // true khi đã tải xong dữ liệu từ DB -> mới cho phép đánh dấu / lưu
 
 let currentIndex = 0;
 
@@ -263,53 +334,86 @@ function computeCounts() {
     return { known, unknown };
 }
 
-// ==== Lưu / khôi phục tiến trình (fix lỗi reload về 0) ====
+// ==== Lưu / khôi phục vị trí đang học (lưu trên DB, riêng từng mode) ====
+let sessionTimer = null;
+let sessionDirty = false;
+
+function buildSessionPayload() {
+    return {
+        type: typeKey,
+        level: levelKey,
+        mode: modeKey,
+        order_ids: currentQueue.map(c => c.id),
+        current_index: currentIndex,
+        session_verdict: sessionVerdict,
+        srs_on: isSrsEnabled()
+    };
+}
+
+// Gửi ngay (dùng khi rời trang / ẩn tab). keepalive để request không bị huỷ khi trang đóng.
+function flushSession(keepalive) {
+    clearTimeout(sessionTimer);
+    if (!sessionDirty) return;
+    sessionDirty = false;
+    api('POST', '/api/session', buildSessionPayload(), keepalive ? { keepalive: true } : null)
+        .catch(e => console.error('Lỗi lưu vị trí học:', e));
+}
+
+// Gọi mỗi lần đổi thẻ -> gom lại (debounce) để không bắn 1 request cho mỗi lần bấm.
 function saveSession() {
-    try {
-        const payload = {
-            orderIds: currentQueue.map(c => c.id),
-            currentIndex: currentIndex,
-            sessionVerdict: sessionVerdict,
-            srsOn: isSrsEnabled(),
-            ts: Date.now()
-        };
-        localStorage.setItem(sessionKey, JSON.stringify(payload));
-    } catch (e) { /* ignore */ }
+    if (!ready) return; // chưa tải xong từ DB thì tuyệt đối không ghi đè
+    sessionDirty = true;
+    clearTimeout(sessionTimer);
+    sessionTimer = setTimeout(() => flushSession(false), 600);
 }
 
+// Server chưa có API xoá session -> ghi đè bằng trạng thái rỗng (restoreSession sẽ bỏ qua).
 function clearSession() {
-    localStorage.removeItem(sessionKey);
+    clearTimeout(sessionTimer);
+    sessionDirty = false;
+    api('POST', '/api/session', {
+        type: typeKey, level: levelKey, mode: modeKey,
+        order_ids: [], current_index: 0, session_verdict: {}, srs_on: isSrsEnabled()
+    }).catch(e => console.error('Lỗi xoá vị trí học:', e));
 }
 
-function restoreSession() {
-    let saved;
-    try { saved = JSON.parse(localStorage.getItem(sessionKey) || 'null'); } catch (e) { saved = null; }
-    if (!saved || !Array.isArray(saved.orderIds)) return;
-    if (saved.srsOn !== isSrsEnabled()) return; // chế độ SRS thay đổi -> hàng đợi khác, bỏ qua khôi phục
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') flushSession(true);
+});
+window.addEventListener('pagehide', () => flushSession(true));
 
+async function loadSession() {
+    try { return await api('GET', `/api/session/${typeKey}/${levelKey}/${modeKey}`); }
+    catch (e) { console.error('Lỗi tải vị trí học:', e); return null; }
+}
+
+function restoreSession(row) {
+    if (!row || !Array.isArray(row.order_ids) || row.order_ids.length === 0) return;
+    if (!!row.srs_on !== isSrsEnabled()) return; // chế độ SRS thay đổi -> hàng đợi khác, bỏ qua khôi phục
+
+    const savedOrder = row.order_ids.map(String);
     const byId = {};
-    currentQueue.forEach(c => { byId[c.id] = c; });
-    const freshIds = new Set(currentQueue.map(c => c.id));
-    const savedIdsPresent = saved.orderIds.filter(id => freshIds.has(id));
+    currentQueue.forEach(c => { byId[String(c.id)] = c; });
+    const freshIds = new Set(currentQueue.map(c => String(c.id)));
+    const savedIdsPresent = savedOrder.filter(id => freshIds.has(id));
 
     // Chỉ khôi phục nếu tập thẻ (theo id) về cơ bản trùng khớp với hàng đợi vừa build
     if (savedIdsPresent.length === 0 || savedIdsPresent.length !== currentQueue.length) return;
 
+    const presentSet = new Set(savedIdsPresent);
     const reordered = savedIdsPresent.map(id => byId[id]);
-    currentQueue.forEach(c => { if (!savedIdsPresent.includes(c.id)) reordered.push(c); });
+    currentQueue.forEach(c => { if (!presentSet.has(String(c.id))) reordered.push(c); });
 
     currentQueue = reordered;
-    currentIndex = Math.min(saved.currentIndex || 0, currentQueue.length);
+    currentIndex = Math.min(row.current_index || 0, currentQueue.length);
 
     sessionVerdict = {};
-    if (saved.sessionVerdict && typeof saved.sessionVerdict === 'object') {
-        Object.keys(saved.sessionVerdict).forEach(id => {
-            if (freshIds.has(id)) sessionVerdict[id] = saved.sessionVerdict[id];
+    if (row.session_verdict && typeof row.session_verdict === 'object') {
+        Object.keys(row.session_verdict).forEach(id => {
+            if (freshIds.has(String(id))) sessionVerdict[id] = row.session_verdict[id];
         });
     }
 }
-
-restoreSession();
 
 function updateCounters() {
     const { known, unknown } = computeCounts();
@@ -402,7 +506,7 @@ function handleCardClick() {
 let cachedTotalCounts = null;
 function checkLevelCompleteConfetti() {
     if (isLearnedMode) return; // trang xem lại "đã thuộc" không cần bắn confetti
-    const learnedTotal = getSavedLearned().length;
+    const learnedTotal = learnedCount();
 
     function fireIfDone(total) {
         if (total > 0 && learnedTotal >= total) {
@@ -606,9 +710,8 @@ document.getElementById('btn-reset-session').addEventListener('click', () => {
 });
 
 // ==== Xoá vĩnh viễn toàn bộ tiến độ (Đã thuộc / Chưa thuộc / SRS) của type+level này ====
-// Khác với "Học lại từ đầu" (chỉ reset lượt xem hiện tại), nút này xoá luôn cả
-// learnedStorageKey / storageKey (unlearned) / srsStorageKey / srsEnabledKey — tức thành tích lâu dài.
-function clearAllProgress() {
+// Khác với "Học lại từ đầu" (chỉ reset lượt xem hiện tại), nút này xoá luôn tiến độ trên DB.
+async function clearAllProgress() {
     const confirmed = window.confirm(
         `Thao tác này sẽ XOÁ VĨNH VIỄN:\n` +
         `- Toàn bộ danh sách "Đã thuộc" và "Chưa thuộc"\n` +
@@ -618,8 +721,19 @@ function clearAllProgress() {
     );
     if (!confirmed) return;
 
-    localStorage.removeItem(learnedStorageKey);
-    localStorage.removeItem(storageKey);
+    try {
+        await writeChain; // đợi các thao tác ghi đang chờ xong, tránh bị ghi đè ngược lại
+        await api('DELETE', `/api/progress/${typeKey}/${levelKey}`);
+    } catch (e) {
+        console.error(e);
+        showSyncError('Không xoá được tiến độ trên máy chủ. Thử lại sau.');
+        return;
+    }
+
+    Object.keys(progressMap).forEach(k => delete progressMap[k]);
+    // Xoá luôn key cũ trong localStorage, nếu không lần tải sau sẽ bị "chuyển lên DB" lại
+    localStorage.removeItem(legacyLearnedKey);
+    localStorage.removeItem(legacyUnlearnedKey);
     localStorage.removeItem(srsStorageKey);
     localStorage.removeItem(srsEnabledKey);
     localStorage.removeItem(confettiFlagKey);
@@ -704,12 +818,36 @@ scene.addEventListener('touchend', () => {
     touchDX = 0;
 });
 
-// Khởi chạy lần đầu
-updateSrsToggleUI();
-updateFuriganaToggleUI();
-updateCounters();
-updateUndoButton();
-renderCard();
+// ==== Khởi chạy: tải tiến trình + vị trí đang học từ DB rồi mới vẽ thẻ ====
+async function init() {
+    updateSrsToggleUI();
+    updateFuriganaToggleUI();
+    updateCounters();
+    updateUndoButton();
+    document.getElementById('stats').innerText = 'Đang tải tiến trình...';
+
+    try {
+        const rows = await api('GET', `/api/progress/${typeKey}/${levelKey}`);
+        rows.forEach(r => { progressMap[String(r.card_id)] = r.status; });
+        await migrateLegacyLocalData();
+    } catch (e) {
+        console.error('Không tải được tiến trình:', e);
+        showSyncError('Không tải được tiến trình từ máy chủ.');
+    }
+
+    currentQueue = buildInitialQueue();
+    registerCards(currentQueue);
+    srsFilteredEmpty = (currentQueue.length === 0 && !isLearnedMode && isSrsEnabled() &&
+        (isUnlearnedMode ? getSavedUnlearned().length > 0 : originalCards.length > 0));
+
+    restoreSession(await loadSession());
+
+    ready = true;
+    updateCounters();
+    updateUndoButton();
+    renderCard();
+}
+init();
     </script>
 </body>
 </html>
