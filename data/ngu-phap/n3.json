@@ -1,1 +1,1128 @@
-[]
+[
+  {
+    "id": "1",
+    "kanji": "~ば~ほど",
+    "furigana": "Vば・Aいければ・Aな/Nなら・Aな/Nであれば + Vる/Aい/Aな/N ほど",
+    "example": "1. 日本語は勉強すればするほど面白くなる。(Tiếng Nhật thì càng học càng thú vị.)\n2. 私は、困難なら困難なほど、頑張ろうと思う性格だ。(Tôi có tính cách là: càng khó khăn thì càng cố gắng.)\n3. 努力すればするほど、夢に近づけます。(Càng cố gắng, bạn sẽ càng tiến gần đến ước mơ.)",
+    "meaning": "Ý nghĩa: Càng... càng...\nCách dùng: Diễn tả việc cùng với sự thay đổi của một hành vi hay trạng thái nào đó, một điều khác cũng thay đổi theo. Hành vi/trạng thái vế trước càng tiến triển thì vế sau cũng thay đổi tương ứng."
+  },
+  {
+    "id": "2",
+    "kanji": "~ようなら",
+    "furigana": "Thể thường (Aな -> な/であれば, N -> の/であれば) ＋ ようなら",
+    "example": "1. 忙しいようなら、無理に参加しなくてもいいですよ。(Nếu bạn bận thì không cần miễn cưỡng tham gia đâu.)\n2. 仕事が早く終わるようなら、ぜひ忘年会に参加してください。(Nếu công việc xong sớm thì cậu nhất định phải tham gia tiệc tất niên đấy nhé!)\n3. 明日天気がいいようなら、サッカーをしましょう。(Nếu ngày mai thời tiết đẹp thì chúng mình chơi bóng đá nhé!)",
+    "meaning": "Ý nghĩa: Nếu như... (giả sử xảy ra một tình huống nào đó)\nCách dùng: Dùng để giả định tình huống có thể xảy ra trong tương lai, từ đó đưa ra hướng xử lý, hành động hoặc lời khuyên ở vế sau. Sắc thái mềm mại, lịch sự, tôn trọng quyết định của người nghe."
+  },
+  {
+    "id": "3",
+    "kanji": "~ように",
+    "furigana": "Vる・Vない ＋ ように",
+    "example": "1. 早く病気が治るように祈っています。(Tôi cầu chúc bạn sớm khỏi bệnh.)\n2. 道を間違えないように気を付けてね。(Hãy cẩn thận để không bị nhầm đường nhé.)\n3. 日本の会社で働けるように、日本語を勉強しています。(Để có thể làm việc trong các công ty Nhật Bản thì tôi đang học tiếng Nhật.)",
+    "meaning": "Ý nghĩa: Để V / Để không V\nCách dùng: Dùng để nói về việc thực hiện hành động vế sau nhằm đạt được mục tiêu, trạng thái ở vế trước. Phía trước thường là động từ không có tính ý chí."
+  },
+  {
+    "id": "4",
+    "kanji": "~ようにする",
+    "furigana": "Vる・Vない ＋ ようにする",
+    "example": "1. 電話の前にメールをするようにします。(Tôi sẽ cố gắng gửi mail trước khi gọi điện.)\n2. この前のテストの結果があまりよくなかったから、これから毎日勉強するようにしなきゃ。(Vì kết quả bài test trước không tốt lắm, nên từ giờ tôi phải cố gắng học mỗi ngày.)",
+    "meaning": "Ý nghĩa: (Sẽ) Cố gắng V/không V (để thực hiện mục tiêu nào đó)\nCách dùng: Diễn tả những việc người nói từ thời điểm nói trở đi sẽ ý thức thực hiện thường xuyên. Thường đi kèm các dạng như ようにしてください, ようにしましょう."
+  },
+  {
+    "id": "5",
+    "kanji": "~ようにしている",
+    "furigana": "Vる・Vない ＋ ようにしている",
+    "example": "1. 毎日7時間以上、寝るようにしています。(Tôi cố gắng ngủ trên 7 tiếng mỗi ngày.)\n2. 家を買いたいから、毎月貯金するようにしています。(Vì tôi muốn mua nhà nên hàng tháng tôi đều cố gắng dành dụm tiền.)\n3. どんなときでも前向きに考えるようにしている。(Dù ở hoàn cảnh nào, tôi cũng luôn cố gắng duy trì thói quen suy nghĩ tích cực.)",
+    "meaning": "Ý nghĩa: Cố gắng (duy trì thói quen) làm/không làm V\nCách dùng: Thể hiện việc người nói đang cố gắng duy trì làm hoặc không làm việc nào đó như một thói quen hàng ngày."
+  },
+  {
+    "id": "6",
+    "kanji": "~ところだ",
+    "furigana": "Vる・Vている・Vた ＋ ところだ",
+    "example": "1. これからご飯を食べるところです。(Tôi chuẩn bị ăn cơm bây giờ.)\n2. 今そっちに向かっているところだから、ちょっと待ってね。(Bây giờ tôi đang đến chỗ bạn nên hãy đợi một chút nhé.)\n3. たった今帰ったところです。(Bây giờ tôi vừa mới về.)",
+    "meaning": "Ý nghĩa: Sắp sửa V (Vる) / Đúng lúc đang V (Vている) / Vừa mới V (Vた)\nCách dùng: Diễn tả thời điểm ngay trước khi, trong khi, hoặc ngay sau khi một hành động xảy ra. Đứng giữa câu có thể kết hợp với trợ từ thành ところで, ところだから..."
+  },
+  {
+    "id": "7",
+    "kanji": "~たばかりだ",
+    "furigana": "Vた ＋ ばかりだ",
+    "example": "1. さっきお菓子を食べたばかりだ。(Tôi vừa mới ăn kẹo xong.)\n2. 先月、仕事を始めたばかりだ。(Tôi vừa bắt đầu công việc vào tháng trước.)\n3. このパソコンは買ったばかりなのに、もう動かなくなった。(Cái máy tính này mới mua mà đã hỏng rồi.)",
+    "meaning": "Ý nghĩa: Vừa mới V\nCách dùng: Diễn tả hành động vừa xảy ra và người nói cảm thấy thời gian trôi qua kể từ khi kết thúc là ngắn. Mang tính cảm nhận chủ quan (có thể là vừa xong, hoặc tuần trước, tháng trước...)."
+  },
+  {
+    "id": "8",
+    "kanji": "~って (1)",
+    "furigana": "N ＋ って",
+    "example": "1. 富士山って日本で一番高い山らしいです。(Nghe nói núi Phú Sĩ là ngọn núi cao nhất Nhật Bản.)\n2. 日本語って難しい？(Tiếng Nhật có khó không?)\n3. 日本ってどんな国？(Nhật Bản là nước như thế nào?)",
+    "meaning": "Ý nghĩa: ~ thì...\nCách dùng: Đứng sau chủ đề của câu, dùng thay thế cho trợ từ は trong giao tiếp văn nói hàng ngày."
+  },
+  {
+    "id": "9",
+    "kanji": "~って (2)",
+    "furigana": "Thể ngắn ＋ って",
+    "example": "1. あの二人は付き合ってるって。(Thấy bảo hai người đấy đang hẹn hò với nhau.)\n2. Thanh 先生は子供ができたって。(Nghe nói cô Thanh có em bé rồi.)\n3. 彼女は N3 に合格したんだって。(Nghe nói cô ấy đỗ N3 rồi.)",
+    "meaning": "Ý nghĩa: Nghe nói là... / Thấy bảo là...\nCách dùng: Dùng trong văn nói để trích dẫn lại lời của người khác hoặc thông tin nghe được từ nơi khác. Tương tự んだって."
+  },
+  {
+    "id": "10",
+    "kanji": "~って (3)",
+    "furigana": "Mệnh đề (thể ngắn) ＋ って",
+    "example": "1. 立ち入り禁止って書いてある。((Trên tấm biển) Có viết là cấm vào.)\n2. 「よくできたよ」ってほめてくれた。(Tôi đã được khen là “Con đã làm rất tốt” đấy!)",
+    "meaning": "Ý nghĩa: Là...\nCách dùng: Thay thế cho trợ từ と trong các cụm như と思う, と言う, と書いてある. Dùng trong văn nói."
+  },
+  {
+    "id": "11",
+    "kanji": "~って(4) / ~という",
+    "furigana": "N1 ＋ という / って ＋ N2",
+    "example": "1. ベトナムという国 (Đất nước mang tên là Việt Nam)\n2. 寿司って / という料理 (Món ăn mà gọi là sushi)\n3. Thanh さんという人 / Thanh さんって人 (Người mà tên là Thanh)",
+    "meaning": "Ý nghĩa: N2 gọi là N1 / N2 tên là N1\nCách dùng: N1 là tên riêng hoặc danh từ cụ thể, N2 là danh từ chung có phạm vi rộng hơn. っていう/って là dạng văn nói của という."
+  },
+  {
+    "id": "12",
+    "kanji": "~らしい",
+    "furigana": "N ＋ らしい",
+    "example": "1. 今日は夏らしい日だね。(Hôm nay là một ngày đúng kiểu mùa hè.)\n2. ゆか先生は日本人らしい顔をしている。(Cô Yuka có khuôn mặt đậm chất người Nhật.)\n3. 花火がないと夏らしくなくなってしまう。(Nếu không có pháo hoa thì đâu còn là mùa hè nữa.)",
+    "meaning": "Ý nghĩa: Ra dáng / Đậm chất / Chuẩn...\nCách dùng: Biểu thị tính chất điển hình của một sự việc/đối tượng nào đó. Nらしい được chia và sử dụng như tính từ đuôi い."
+  },
+  {
+    "id": "13",
+    "kanji": "~を中心にして",
+    "furigana": "N1 ＋ を中心に(て) / を中心とする / を中心にした ＋ N2",
+    "example": "1. この町はベトナム人観光客を中心にして観光客が多い。(Thành phố này có rất nhiều du khách mà chủ yếu là du khách Việt Nam.)\n2. 発音を中心として日本語について研究しています。(Tôi đang nghiên cứu tiếng Nhật mà trọng tâm là phát âm.)\n3. 今週の研究会では少子化を中心とした問題について話し合った。(Buổi nghiên cứu tuần này đã nói chuyện về vấn đề mà trọng tâm là mức sinh giảm.)",
+    "meaning": "Ý nghĩa: Mà chủ yếu là... / Trọng tâm là...\nCách dùng: Nhấn mạnh vào đối tượng/nội dung làm trung tâm, trọng tâm của hành động, sự việc."
+  },
+  {
+    "id": "14",
+    "kanji": "~について",
+    "furigana": "N ＋ について(は/も/のN2)",
+    "example": "1. もう半年ぐらい付き合っていたのに、彼について何もわかんない。(Mặc dù đã hẹn hò được nửa năm rồi thế nhưng mà tôi chẳng biết gì về anh ấy cả.)\n2. 今大学院で日本語教育について研究しています。(Hiện tại ở cao học mình đang nghiên cứu về giáo dục tiếng Nhật.)\n3. 自分の夢についての作文 (Bài văn về ước mơ của mình.)",
+    "meaning": "Ý nghĩa: Về N...\nCách dùng: Dùng khi đề cập đến chủ đề được nói (話す), nghe (聞く), suy nghĩ (考える), viết (書く), điều tra (調べる)..."
+  },
+  {
+    "id": "15",
+    "kanji": "~において",
+    "furigana": "N ＋ において(は/も) / におけるN2",
+    "example": "1. 今週のコンサートは東京ドームにおいて行われる予定です。(Buổi hòa nhạc tuần này được dự kiến tổ chức ở tòa nhà Tokyo Dome.)\n2. 私の人生において、失敗したことはたくさんあります。(Trong cuộc đời của tôi thì đã có rất nhiều lần tôi thất bại.)\n3. 学校における教育 (Giáo dục ở trong trường học)",
+    "meaning": "Ý nghĩa: Ở, tại, trong, trên... (địa điểm, hoàn cảnh, lĩnh vực)\nCách dùng: Mang tính chất trang trọng (văn viết), không dùng cho những hành động sinh hoạt đơn giản, hàng ngày."
+  },
+  {
+    "id": "16",
+    "kanji": "~にとって",
+    "furigana": "N ＋ にとって(は/も/のN2)",
+    "example": "1. 国にとって若者は貴重な財産である。(Đối với đất nước, những người trẻ là tài sản quý giá.)\n2. お金は会社にとって血ともいえる。(Có thể nói rằng tiền là máu đối với công ty.)\n3. あなたにとって、私は友達なのか、恋人なのか、一回ハッキリ言ってほしい。(Đối với anh thì em là bạn hay người yêu, anh hãy nói một lần cho rõ xem nào.)",
+    "meaning": "Ý nghĩa: Đối với N thì...\nCách dùng: N đứng trước thường là người/chủ thể. Vế sau đưa ra đánh giá, nhận xét, quan điểm hoặc nhận định."
+  },
+  {
+    "id": "17",
+    "kanji": "~に対して (1)",
+    "furigana": "N ＋ に対して(は/も/のN2) / に対するN2",
+    "example": "1. 彼は女に対していつも優しいです。(Anh ấy lúc nào cũng tốt với phụ nữ.)\n2. 私の意見に対して、父はいつも反対している。(Bố tôi lúc nào cũng phản đối những ý kiến của tôi.)\n3. もう子供じゃないから、自分の行動に対して、責任を持たなきゃいけない。(Vì không còn là trẻ con nữa, nên tôi phải có trách nhiệm với hành động của mình.)",
+    "meaning": "Ý nghĩa: Đối với... / Cho đối tượng nào đó\nCách dùng: Vế sau là hành động, thái độ, cảm xúc hướng trực tiếp tới đối tượng/vấn đề đứng trước."
+  },
+  {
+    "id": "18",
+    "kanji": "~に対して (2)",
+    "furigana": "Thể thường (Aな/N -> な/である + の) ＋ に対して",
+    "example": "1. 発音が難しいベトナム語に対して、日本語は発音が簡単だが、漢字が多いです。(Trái với tiếng Việt phát âm khó, tiếng Nhật phát âm dễ nhưng lại nhiều chữ Hán.)\n2. こっちの店は列が長いのに対して、向こうの店は一人もいない。(Trái với cửa hàng bên này người xếp hàng dài, thì cửa hàng bên kia chẳng có một ai cả.)",
+    "meaning": "Ý nghĩa: Trái với... / So với... thì...\nCách dùng: Đặt hai vế đối lập hoặc so sánh hai tính chất khác biệt nhau để nêu sự tương phản."
+  },
+  {
+    "id": "19",
+    "kanji": "~に従って (1)",
+    "furigana": "N ＋ に従って",
+    "example": "1. 外国に住めば、その国の法律に従って、行動しなければならない。(Nếu sống ở nước ngoài thì phải hành động tuân theo luật pháp ở nước đấy.)\n2. 交通ルールに従って、車も歩行者も通行する。(Cả ô tô lẫn người đi bộ đều tuân theo luật giao thông để tham gia giao thông.)\n3. 子どもの頃から、母の言葉に従って生きてきた。(Từ nhỏ, tôi đã sống theo những lời mẹ dặn.)",
+    "meaning": "Ý nghĩa: Tuân theo, làm theo đúng như...\nCách dùng: Thực hiện hành động theo chỉ thị, hướng dẫn, quy tắc, luật lệ, lời khuyên bảo đã có sẵn."
+  },
+  {
+    "id": "20",
+    "kanji": "~に従って (2)",
+    "furigana": "N・Vる ＋ に従って",
+    "example": "1. 太陽が昇るに従って、気温も高くなる。(Mặt trời càng lên cao thì nhiệt độ càng nóng lên.)\n2. 経験が積み重なるに従って、自信がついてくる。(Càng tích luỹ được nhiều kinh nghiệm thì chúng ta càng thấy tự tin hơn.)\n3. 歳を重ねるに従って、本当に大切なものが見えてくる。(Càng lớn tuổi, ta càng nhận ra điều gì là thực sự quan trọng.)",
+    "meaning": "Ý nghĩa: Cùng với... thì... / Càng... thì càng...\nCách dùng: Biểu thị sự biến đổi tương ứng theo thời gian, hoàn cảnh. Vế sau biến đổi do chịu tác động/ảnh hưởng của vế trước."
+  },
+  {
+    "id": "21",
+    "kanji": "~によって (1)",
+    "furigana": "N・Vること ＋ によって / により",
+    "example": "1. インターネットによって、さまざまな情報を得ることができる。(Thông qua mạng internet, chúng ta có thể thu thập được rất nhiều thông tin.)\n2. 日本人とよく交流することによって、日本語も発達しました。(Thông qua việc thường hay giao lưu với người Nhật, tiếng Nhật cũng giỏi lên.)\n3. アンケートによる調査 (Cuộc điều tra bằng phiếu điều tra)",
+    "meaning": "Ý nghĩa: Bằng... / Thông qua...\nCách dùng: Chỉ phương tiện, công cụ hoặc cách thức thực hiện. Không dùng cho các dụng cụ sinh hoạt hàng ngày. により là dạng lịch sự/văn viết."
+  },
+  {
+    "id": "22",
+    "kanji": "~によって (2)",
+    "furigana": "N・Vること ＋ によって / により",
+    "example": "1. 大雪によって、電車が止まりました。(Vì tuyết lớn nên tàu bị dừng lại.)\n2. 働いている会社が倒産されたことによって、仕事がなくなりました。(Công ty nơi tôi làm việc bị phá sản nên là tôi mất việc.)\n3. 地震による死者 (Người chết do động đất)",
+    "meaning": "Ý nghĩa: Vì... / Do...\nCách dùng: Diễn tả nguyên nhân, lý do dẫn đến kết quả nào đó. Thường dùng trong báo chí, thông báo, văn bản chính thức."
+  },
+  {
+    "id": "23",
+    "kanji": "~によって (3)",
+    "furigana": "N ＋ によって",
+    "example": "1. 人によって考え方も違います。(Tùy vào mỗi người mà cách suy nghĩ sẽ khác nhau.)\n2. ここからは天候によって、富士山は見えたり、見えなかったりします。(Từ vị trí này, tùy vào thời tiết mà có thể nhìn thấy núi Phú Sĩ hoặc là không.)\n3. 努力した分によって、結果も異なります。(Tùy vào những cái đã nỗ lực mà kết quả cũng sẽ khác.)",
+    "meaning": "Ý nghĩa: Tùy vào... / Tùy theo...\nCách dùng: Biểu thị vế sau thay đổi hoặc khác nhau tùy thuộc vào N đứng trước. Thường đi với 違う, 様々, 異なる..."
+  },
+  {
+    "id": "24",
+    "kanji": "~ことで",
+    "furigana": "Vること ＋ で",
+    "example": "1. 体を温めることで、風邪を引きにくくなるそうです。(Nghe nói rằng bằng cách làm ấm cơ thể thì sẽ khó bị cảm lạnh hơn.)\n2. ボランティア活動に参加することで、さまざまな経験を得ることができます。(Thông qua việc tham gia hoạt động tình nguyện mà có thể thu được nhiều kinh nghiệm khác nhau.)\n3. 人の話を聞くことで、自分の考えが深まることもある。(Bằng cách lắng nghe người khác, đôi khi suy nghĩ của bản thân sẽ trở nên sâu sắc hơn.)",
+    "meaning": "Ý nghĩa: Bằng việc... / Nhờ việc... / Thông qua việc...\nCách dùng: Diễn tả phương pháp, cách thức hành động cụ thể để đạt được một kết quả tốt nào đó."
+  },
+  {
+    "id": "25",
+    "kanji": "~おかげで",
+    "furigana": "Thể thường (Aな -> な/である, N -> の/である) ＋ おかげで",
+    "example": "1. Thanh 先生が丁寧に教えてくれたおかげで、N3 の文法について詳しく理解できました。(Nhờ có cô Thanh giảng giải một cách cẩn thận cho tôi, mà tôi đã hiểu chi tiết ngữ pháp N3.)\n2. 彼が励ましてくれたおかげで、元気が出た。(Nhờ có anh ấy động viên tôi, mà tôi đã phấn chấn hơn.)\n3. 薬のおかげか風邪が治りました。(Không biết có phải nhờ thuốc mà mình đã khỏi bệnh cảm hay không.)",
+    "meaning": "Ý nghĩa: Nhờ có...\nCách dùng: Dùng khi có kết quả tốt nhờ sự giúp đỡ hay nguyên nhân nào đó. Chứa đựng cảm xúc biết ơn. Dạng おかげか thể hiện sự không chắc chắn."
+  },
+  {
+    "id": "26",
+    "kanji": "~せいで",
+    "furigana": "Thể thường (Aな -> な/である, N -> の/である) ＋ せいで",
+    "example": "1. 新型コロナウイルスのせいで、日本に行けなくなった。(Chỉ tại virus Corona mà mình không thể đi Nhật được.)\n2. タピオカを飲んだせいか、夜眠れなかった。(Không biết có phải là vì uống trà sữa không mà bây giờ mình bị mất ngủ.)\n3. 気のせいか、今日のパンはいつもより小さい。(Không biết có phải do cảm giác hay không mà bánh mỳ hôm nay nhỏ hơn mọi khi.)",
+    "meaning": "Ý nghĩa: Chỉ tại... / Tại vì... (kết quả xấu)\nCách dùng: Đưa ra nguyên nhân dẫn đến kết quả tiêu cực, không mong muốn. Trách móc, đổ lỗi."
+  },
+  {
+    "id": "27",
+    "kanji": "~ことから",
+    "furigana": "Thể thường (Aな -> な/である, N -> である) ＋ ことから",
+    "example": "1. うちの犬は、春に生まれたことから「春」という名前になった。(Vì chú cún nhà tôi được sinh ra vào mùa xuân nên nó được đặt tên là Haru.)\n2. 彼女はとても賢く美しいことから、皆の注目を集めている。(Vì cô ấy rất thông minh và xinh đẹp nên thu hút được sự chú ý của mọi người.)\n3. その男の子は、彼女に顔がそっくりだったことから、彼女の弟だとわかった。(Vì cậu bé đó có khuôn mặt giống hệt cô ấy nên tôi biết được rằng đó là em trai của cô ấy.)",
+    "meaning": "Ý nghĩa: Xuất phát từ... / Vì lý do...\nCách dùng: Dùng để giải thích nguồn gốc tên gọi, lý do đưa ra phán đoán, hoặc nguyên nhân dẫn đến một sự việc."
+  },
+  {
+    "id": "28",
+    "kanji": "~そうにない",
+    "furigana": "Vます(bỏ ます) ＋ そうにない / そうもない / そうにもない",
+    "example": "1. この本は出てくる言葉が難しくて読めそうもない。(Cuốn sách này có nhiều từ ngữ khó nên có vẻ tôi khó mà đọc được.)\n2. 明日の試合で、勝てそうに(も)ありません。(Trong trận đấu ngày mai, tôi khó có thể thắng được.)\n3. しばらく雨が止みそうにないから、家でゆっくりしていよう。(Vì trời chẳng có vẻ gì là sẽ tạnh ngay, thế nên thong thả nghỉ ngơi ở nhà thôi.)",
+    "meaning": "Ý nghĩa: Khó mà V / Chẳng có vẻ gì sẽ V\nCách dùng: Dạng phủ định của そうだ, diễn tả một sự việc gần như không có khả năng xảy ra."
+  },
+  {
+    "id": "29",
+    "kanji": "~がる",
+    "furigana": "Vたい(bỏ い) / Aい(bỏ い) / Aな ＋ がる",
+    "example": "1. 田舎に住む祖母が、久しぶりに孫に会いたがっている。(Người bà sống ở quê đang muốn gặp cháu của mình.)\n2. 猫は眠たがっている。(Con mèo đang muốn ngủ.)\n3. ホラー映画を観て、妹は一人で眠れないと怖がっている。(Sau khi xem phim kinh dị thì em gái tôi sợ rằng em ấy không thể ngủ một mình.)",
+    "meaning": "Ý nghĩa: Cảm thấy/Muốn... (mô tả người khác)\nCách dùng: Miêu tả trạng thái, cảm xúc, mong muốn của người thứ ba (không phải người nói). Thường dùng ở dạng がっている."
+  },
+  {
+    "id": "30",
+    "kanji": "~始める",
+    "furigana": "Vます(bỏ ます) ＋ 始める",
+    "example": "1. 3月末になって桜が咲き始める。(Sang đến cuối tháng 3, hoa anh đào bắt đầu nở.)\n2. 雨が降り始める (Trời bắt đầu mưa)\n3. 日本語を勉強し始めたのは2年前です。(Tôi bắt đầu học tiếng Nhật từ 2 năm trước.)",
+    "meaning": "Ý nghĩa: Bắt đầu V\nCách dùng: Diễn tả sự bắt đầu của một hành động, thói quen hoặc hiện tượng tự nhiên kéo dài."
+  },
+  {
+    "id": "31",
+    "kanji": "~終わる",
+    "furigana": "Vます(bỏ ます) ＋ 終わる",
+    "example": "1. 書き終わる (Viết xong)\n2. 飲み終わる (Uống xong)\n3. 本を読み終わる (Đọc xong sách)",
+    "meaning": "Ý nghĩa: V xong / Kết thúc V\nCách dùng: Diễn tả việc hoàn thành, kết thúc một hành động đã diễn ra trước đó."
+  },
+  {
+    "id": "32",
+    "kanji": "~続ける",
+    "furigana": "Vます(bỏ ます) ＋ 続ける",
+    "example": "1. 留学から帰っても、日本語の勉強をし続けたいと思います。(Dù có trở về nước sau khi đi du học thì tôi vẫn sẽ tiếp tục việc học tiếng Nhật.)\n2. 何事も、やり続けることで成果が見えてくるだろう。(Chuyện gì thì chuyện, bằng việc chúng ta duy trì làm thì chắc hẳn sẽ nhìn thấy thành quả.)\n3. 登山で休みなく歩き続けたので、とても疲れてしまった。(Trong lúc leo núi, tôi cứ liên tục đi bộ mà không nghỉ nên rất mệt.)",
+    "meaning": "Ý nghĩa: Tiếp tục / Duy trì / Liên tục V\nCách dùng: Biểu thị sự tiếp tục duy trì một hành động hay thói quen mà không ngắt quãng."
+  },
+  {
+    "id": "33",
+    "kanji": "~直す",
+    "furigana": "Vます(bỏ ます) ＋ 直す",
+    "example": "1. このレポートは間違いが多いので、書き直してください。(Vì bản báo cáo này nhiều lỗi sai nên bạn hãy viết lại đi!)\n2. 雨に濡れてしまった洗濯物は、洗い直してください。(Quần áo phơi mà bị ẩm vì mưa thì hãy giặt lại nhé!)\n3. 失敗しても、何度でもやり直せばいいのだ。(Dù thất bại, chỉ cần làm lại bao nhiêu lần cũng được.)",
+    "meaning": "Ý nghĩa: Làm lại V (sửa sai, cải thiện)\nCách dùng: Diễn tả hành động làm lại từ đầu sau khi thử nghiệm thất bại, sai sót hoặc chưa đạt yêu cầu."
+  },
+  {
+    "id": "34",
+    "kanji": "~として",
+    "furigana": "N ＋ として / としてのN2",
+    "example": "1. 日本語の先生として働いています。(Tôi đang làm việc với tư cách là một giáo viên tiếng Nhật.)\n2. 留学生として日本に来ました。(Tôi đến Nhật với tư cách là một du học sinh.)\n3. 趣味としてピアノを習っています。(Tôi đang học piano như là sở thích của mình.)",
+    "meaning": "Ý nghĩa: Với tư cách, vai trò / Như là...\nCách dùng: Chỉ tư cách, chức danh, vai trò, hoặc tư cách sở thích của người/vật."
+  },
+  {
+    "id": "35",
+    "kanji": "~てもおかしくない",
+    "furigana": "Vても・Aいくても・Aな/Nでも ＋ おかしくない / 不思議じゃない",
+    "example": "1. そう言われたら、彼が怒ってもおかしくない。(Bị nói như thế thì anh ấy nổi giận cũng chẳng có gì là lạ.)\n2. 彼女のお父さんはフィリピン人だから、彼女の名前がカタカナでも不思議ではない。(Bố cô ấy là người Philippines nên tên cô ấy viết bằng katakana cũng không có gì lạ.)\n3. あれだけ努力してきたから、合格してもおかしくない。(Vì đã cố gắng đến thế, nên đỗ cũng là điều dễ hiểu.)",
+    "meaning": "Ý nghĩa: Dù có V thì cũng không lạ / Chẳng có gì bất ngờ\nCách dùng: Nói về một điều hiển nhiên, đương nhiên có thể đoán trước hoặc có khả năng xảy ra cao."
+  },
+  {
+    "id": "36",
+    "kanji": "~ことか",
+    "furigana": "Thể thường (Aな -> な) ＋ ことか",
+    "example": "1. どれだけ心配したことか。(Mình đã lo lắng biết bao nhiêu!)\n2. N1 に合格できたらどんなにうれしいことか。(Nếu mà đỗ được N1 thì vui sướng biết bao nhiêu.)\n3. 1点足りなく試験に落ちたのは何と残念なことか。(Việc trượt kỳ thi chỉ vì thiếu 1 điểm là vô cùng đáng tiếc.)",
+    "meaning": "Ý nghĩa: Vô cùng... / Biết bao nhiêu!\nCách dùng: Bày tỏ mức độ cảm xúc cao độ. Thường đi kèm với từ nghi vấn như どんなに, どれほど, なんと..."
+  },
+  {
+    "id": "37",
+    "kanji": "~だろう",
+    "furigana": "Thể thường (Aな/N bỏ だ) ＋ だろう",
+    "example": "1. ダイエットは大変だろうな。(Ăn kiêng chắc là vất vả/cực lắm nhỉ!)\n2. 明日、遊園地は混んでいるだろうね。(Ngày mai, khu vui chơi chắc là phải đông lắm nhỉ!)\n3. JLPT のN1はきっととても難しいだろう。(Kỳ thi JLPT N1 chắc là khó lắm nhỉ.)",
+    "meaning": "Ý nghĩa: Có lẽ... / Chắc hẳn là...\nCách dùng: Thể hiện sự suy đoán của người nói với độ chắc chắn cao. Trong văn nói thường thêm ね hoặc な ở cuối."
+  },
+  {
+    "id": "38",
+    "kanji": "~だろうか",
+    "furigana": "Thể thường (Aな/N bỏ だ) ＋ だろうか",
+    "example": "1. 彼にできるだろうか。(Không biết anh ấy có làm được không nhỉ?)\n2. 彼女はこのプレゼントを喜んでくれるだろうか。(Không biết cô ấy có vui với món quà này không nhỉ?)\n3. 本当にこの選択は正しいだろうか。(Liệu lựa chọn này có thực sự đúng không nhỉ?)",
+    "meaning": "Ý nghĩa: Không biết... / Liệu có... không nhỉ?\nCách dùng: Diễn tả sự hoài nghi, phân vân hoặc lo lắng về một sự việc."
+  },
+  {
+    "id": "39",
+    "kanji": "~には",
+    "furigana": "Vる ＋ には",
+    "example": "1. 海外に行くには、パスポートが必要です。(Để đi nước ngoài thì cần phải có hộ chiếu.)\n2. この部屋は二人で住むには狭すぎます。(Căn phòng này quá là chật để cho 2 người sống.)\n3. この辞書は日本語を学ぶにはとってもいいです。(Quyển từ điển này rất là tốt cho việc học tiếng Nhật.)",
+    "meaning": "Ý nghĩa: Để V thì... / Đối với việc V thì...\nCách dùng: Dùng để chỉ mục đích cần đạt được, hoặc đưa ra đánh giá cho một việc cụ thể nào đó."
+  },
+  {
+    "id": "40",
+    "kanji": "~Vると/Vてはいけないから",
+    "furigana": "Vると / Vては ＋ いけないから / いけないので",
+    "example": "1. 道に迷ってはいけないので、地図を持って行きましょう。(Để không lạc đường thì mang theo bản đồ đi nhé!)\n2. 遅れてはいけないので、早めに家を出ます。(Vì không được đến muộn nên tôi sẽ rời khỏi nhà sớm.)",
+    "meaning": "Ý nghĩa: Vì/Để không V (tránh tình huống xấu)...\nCách dùng: Đưa ra tình huống xấu có thể xảy ra, từ đó thực hiện biện pháp phòng ngừa ở vế sau."
+  },
+  {
+    "id": "41",
+    "kanji": "~など / ~なんか / ~なんて (1)",
+    "furigana": "N ＋ など / なんか / なんて",
+    "example": "1. 今夜、日本料理なんてどう？(Tối nay (ăn) đồ Nhật thì thế nào?)\n2. 今日、ラーメンなんかが食べたいなー。(Hôm nay tớ muốn ăn món gì như mỳ ra-men quá!)\n3. A: 今度の日曜日、どこに行く？ B: 遊園地なんかどう？(A: Chủ nhật tới mình đi đâu nhỉ? B: Khu vui chơi (chẳng hạn) thì thế nào?)",
+    "meaning": "Ý nghĩa: Như là... / Kiểu như...\nCách dùng: Đưa ra ví dụ hoặc gợi ý nhẹ nhàng. など (văn viết), なんか/なんて (văn nói)."
+  },
+  {
+    "id": "42",
+    "kanji": "~など / ~なんか / ~なんて (2)",
+    "furigana": "N ＋ など / なんか / なんて",
+    "example": "1. 学生時代は勉強なんかしなくてもいいと思っていた。(Thời sinh viên, tôi đã nghĩ rằng chẳng cần học hành gì đấy cũng được.)\n2. あの人の言葉など、信じられない。(Lời của người đó ấy mà, chẳng thể nào tin nổi!)\n3. 安いスマホなんか買っても、どうせすぐに壊れるよ。(Điện thoại rẻ tiền ấy mà, dù có mua thì kiểu gì cũng hỏng ngay thôi!)",
+    "meaning": "Ý nghĩa: Cái thứ như... (xem nhẹ / khiêm tốn)\nCách dùng: Đưa ra sự vật/sự việc với thái độ coi thường, xem nhẹ. Nếu nói về bản thân mang ý khiêm tốn."
+  },
+  {
+    "id": "43",
+    "kanji": "~なんて",
+    "furigana": "Thể thường (Aな/N ＋ だ/だった) ＋ なんて",
+    "example": "1. 約束の時間に遅れるなんて、彼らしくない。(Trễ giờ hẹn á, thật chẳng giống anh ấy gì cả!)\n2. 4月に東京で雪が降るなんて異常だ。(Vào tháng Tư mà lại có tuyết rơi ở Tokyo, quả là bất thường!)\n3. 宝くじ当たるなんて、夢にも思わなかったよ。(Trúng xổ số thì ngay cả trong mơ tôi cũng không hề nghĩ tới!)",
+    "meaning": "Ý nghĩa: Cái việc/Chuyện như... (kinh ngạc, ngạc nhiên)\nCách dùng: Bày tỏ sự ngạc nhiên, bất ngờ hoặc xúc động trước một việc ngoài dự đoán."
+  },
+  {
+    "id": "44",
+    "kanji": "~たらどう",
+    "furigana": "Vたら ＋ どう / どうですか",
+    "example": "1. わからないなら、先生に聞いてみたらどう？(Nếu không hiểu thì cậu thử hỏi giáo viên xem sao?)\n2. 痩せたいなら、甘い物をやめたらどう？(Nếu muốn giảm cân thì cậu thử bỏ đồ ngọt đi thì thế nào?)\n3. 自分が本当にやりたいことを、一度考えてみたらどう？(Cậu thử suy nghĩ 1 lần về điều mình thật sự muốn làm xem sao?)",
+    "meaning": "Ý nghĩa: Nếu V thì thế nào? / Thử V xem sao?\nCách dùng: Đưa ra phương án, gợi ý hoặc khuyên bảo đối phương một cách nhẹ nhàng."
+  },
+  {
+    "id": "45",
+    "kanji": "~ことだ",
+    "furigana": "Vる・Vない ＋ ことだ",
+    "example": "1. 皆さん、N2に合格したいのなら、今からちゃんと勉強することだ。(Các bạn nếu muốn đỗ N2 thì từ bây giờ nên học hành thật cẩn thận.)\n2. どんなことがあっても、冷静に対応することだ。(Dù có chuyện gì đi chăng nữa thì cũng nên xử lý một cách bình tĩnh.)\n3. 泣きたいときに我慢せずに泣くことだよ。(Khi bạn muốn khóc thì đừng chịu đựng mà hãy cứ khóc đi.)",
+    "meaning": "Ý nghĩa: Nên / Không nên V\nCách dùng: Đưa ra lời khuyên, cảnh báo mang tính phán đoán chủ quan của người nói. Thường do người trên nói với người dưới."
+  },
+  {
+    "id": "46",
+    "kanji": "~ことにする",
+    "furigana": "Vる・Vない ＋ ことにする / ことにした",
+    "example": "1. 決めた！4月から日本語を勉強することにします。((Nói với bạn) Tớ quyết định rồi! Từ tháng 4, tớ sẽ học tiếng Nhật.)\n2. 最近、運動不足だから、毎晩歩くことにしました。(Gần đây thiếu vận động nên tớ đã quyết định sẽ đi bộ hàng tối.)\n3. 健康のために、毎日運動することにした。(Để khoẻ mạnh, tôi quyết định hàng ngày sẽ tập thể dục.)",
+    "meaning": "Ý nghĩa: Quyết định V / Không V\nCách dùng: Diễn tả quyết định của bản thân người nói. ことにする (quyết định ngay lúc nói), ことにした (đã quyết định từ trước)."
+  },
+  {
+    "id": "47",
+    "kanji": "~ということだ",
+    "furigana": "Thể thường / Vる・Vない ＋ ということだ",
+    "example": "1. 私にとって幸せとは、人を幸せにするということだ。(Với tôi, hạnh phúc chính là làm cho mọi người hạnh phúc.)\n2. 大人になるということは、自分の責任は自分で取るということです。(Trưởng thành chính là việc bản thân chịu trách nhiệm của mình.)\n3. 幸せになるということは「あるものに気づくこと」ということだ。(Hạnh phúc có nghĩa là nhận ra những điều mình đang có.)",
+    "meaning": "Ý nghĩa: Có nghĩa là...\nCách dùng: Giải thích, diễn giải định nghĩa hoặc ý nghĩa của một sự việc/từ ngữ ở vế trước."
+  },
+  {
+    "id": "48",
+    "kanji": "~という点で",
+    "furigana": "Thể thường / N ＋ という点で",
+    "example": "1. A社のパソコンより、B社のパソコンのほうが丈夫だという点で評価が高い。(So với laptop công ty A thì laptop công ty B được đánh giá cao hơn về mặt bền.)\n2. 窓が西向きという点で、この部屋を借りるのを迷っている。(Về điểm cửa sổ hướng về phía Tây mà tôi đang phân vân việc thuê căn phòng này.)\n3. この町は人が優しいという点で、他のどこよりも好きだ。(Về mặt con người thân thiện thì tôi yêu nơi này hơn bất kỳ đâu.)",
+    "meaning": "Ý nghĩa: Ở điểm là... / Về mặt...\nCách dùng: Dùng để đưa ra một khía cạnh, đặc điểm cụ thể làm cơ sở so sánh, đánh giá."
+  },
+  {
+    "id": "49",
+    "kanji": "~としたら",
+    "furigana": "Thể thường ＋ としたら",
+    "example": "1. もしも生まれ変わるとしたら、何になりたいですか。(Giả sử cậu được sinh ra lại lần nữa, cậu muốn trở thành gì?)\n2. もし私があなただったとしたら、試験に落ちたと思いますけどね。(Giả sử tớ mà là cậu, thì tớ trượt luôn rồi.)\n3. 明日地球が終わるとしたら、今日は何をしたいですか。(Giả sử nếu như ngày mai thế giới kết thúc thì hôm nay các bạn muốn làm gì?)",
+    "meaning": "Ý nghĩa: Giả sử nếu mà... / Cho dù giả định là...\nCách dùng: Đưa ra một trường hợp giả định (thường là giả thiết hư cấu, khó xảy ra trên thực tế)."
+  },
+  {
+    "id": "50",
+    "kanji": "~としても",
+    "furigana": "Thể thường ＋ としても",
+    "example": "1. 後5分しかない。今走るとしても間に合わないかもしれない。(Chỉ còn 5 phút nữa thôi. Bây giờ cho dù có chạy thì cũng không thể kịp được.)\n2. たとえどんなにお金があるとしても買えないものがある。(Cho dù có bao nhiêu tiền đi chăng nữa thì có những thứ không thể nào mua được.)\n3. 親だとしても許可なしに子どもの日記を読んではいけないです。(Cho dù là bố mẹ thì cũng không được đọc nhật kí của con khi chưa được sự cho phép.)",
+    "meaning": "Ý nghĩa: Cho dù là... / Thậm chí nếu là...\nCách dùng: Đưa ra giả định nhượng bộ để trình bày lập trường, đánh giá của người nói ở vế sau."
+  },
+  {
+    "id": "51",
+    "kanji": "~ようとする",
+    "furigana": "V thể ý chí ＋ とする",
+    "example": "1. 出かけようとしたとき、電話がかかってきた。(Đúng lúc tôi định ra ngoài thì có điện thoại.)\n2. 仕事が終わり、家に帰ろうとした時、村上さんにご飯に行こうと誘われた。(Khi tôi xong việc và định về nhà thì lại được anh Murakami rủ đi ăn cơm.)\n3. 病気のせいで、大きく呼吸をしようとしても、うまくできない。(Chỉ tại bị bệnh mà dù tôi có cố hít thở mạnh, cũng không làm được.)\n4. 気が付くと夏休みが終わろうとしている。(Khi tôi nhận ra thì kỳ nghỉ hè đã sắp sửa kết thúc.)",
+    "meaning": "Ý nghĩa: Định V / Cố gắng V / Sắp sửa V\nCách dùng: Diễn tả hành động chuẩn bị thực hiện hoặc đang nỗ lực làm điều gì đó (với ĐT ý chí), hoặc hành động chuẩn bị xảy ra (với ĐT vô ý chí)."
+  },
+  {
+    "id": "52",
+    "kanji": "~ようとしない",
+    "furigana": "V thể ý chí ＋ としない",
+    "example": "1. 父に病院に行くことをすすめているが、父は行こうとしない。(Tôi đã khuyên bố đi bệnh viện, nhưng ông ấy nhất quyết không chịu đi.)\n2. 彼は病気になっても、たばこを吸うのをやめようとしなかった。(Dù đã bị bệnh, anh ấy vẫn không chịu bỏ thuốc lá.)\n3. チャンスが目の前にあるのに、彼は一歩踏み出そうとしない。(Dù cơ hội đang ở ngay trước mắt, anh ấy vẫn không chịu bước tới.)",
+    "meaning": "Ý nghĩa: Quyết không V / Không chịu V\nCách dùng: Diễn tả ai đó (người thứ ba) cố tình không có ý định hoặc từ chối thực hiện một hành động."
+  },
+  {
+    "id": "53",
+    "kanji": "~のほかに",
+    "furigana": "Thể thường (Aな -> な, N -> の) ＋ ほかに / ほかは",
+    "example": "1. 健康管理のほかに、ストレス解消も大切です。(Ngoài quản lí sức khoẻ, việc loại bỏ căng thẳng cũng rất quan trọng.)\n2. 揚げ春巻きを作りたいんですが、挽肉のほかに何を買ったらいい？(Tớ muốn làm nem rán, ngoài thịt xay ra thì mua gì nữa thì được nhỉ?)\n3. 教室には私のほかに、だれもいません。(Trong lớp học, ngoài tôi ra thì không có thêm ai cả.)",
+    "meaning": "Ý nghĩa: Ngoài... ra thì...\nCách dùng: ほかに dùng để bổ sung thêm yếu tố khác; ほかは dùng để đối chiếu, ngoại trừ yếu tố đó ra thì các cái khác mang tính chất ngược lại."
+  },
+  {
+    "id": "54",
+    "kanji": "~一方で",
+    "furigana": "Thể thường (Aな -> な/である, N -> の/である) ＋ 一方で",
+    "example": "1. 私の家は、今、支出が多い一方で、収入があまり多くない。(Gia đình tôi hiện giờ chỉ thì nhiều mà thu nhập lại chẳng được bao nhiêu.)\n2. この仕事は、 me日はとても暇な一方で、土日や祝日はとても忙しい。(Công việc này vào ngày thường rất rảnh, mặt khác, vào thứ 7, chủ nhật hoặc ngày lễ lại vô cùng bận rộn.)\n3. 彼は、日中働いている一方で、夜は学校に通っている。(Anh ấy ban ngày thì đi làm, tối đến thì đi học.)\n4. 私は日本語の教師である一方で、母親でもある。(Tôi là 1 giáo viên dạy tiếng Nhật, đồng thời còn là 1 người mẹ.)",
+    "meaning": "Ý nghĩa: Mặt khác... / Đồng thời thì...\nCách dùng: So sánh, đối chiếu hai mặt trái ngược của một chủ đề, hoặc biểu thị hai hành động/vai trò diễn ra song song."
+  },
+  {
+    "id": "55",
+    "kanji": "~だけでなく",
+    "furigana": "Thể thường (Aな/N không có だ) ＋ だけでなく",
+    "example": "1. この木は、日本にだけでなく、中国や韓国にもある。(Cây này không chỉ có ở Nhật Bản mà còn có ở Trung Quốc và Hàn Quốc.)\n2. 彼は仕事が早いだけでなく、丁寧だ。(Anh ấy không chỉ làm việc nhanh mà còn rất tỉ mỉ.)\n3. 試合に負けただけでなく、けがもしてしまった。(Tôi không chỉ thua trận đấu mà còn bị chấn thương nữa.)",
+    "meaning": "Ý nghĩa: Không chỉ... mà còn...\nCách dùng: Diễn tả ý nghĩa không chỉ riêng sự việc/đối tượng đó mà còn có cái khác nữa (vế sau thường đi với も)."
+  },
+  {
+    "id": "56",
+    "kanji": "~ばかりでなく",
+    "furigana": "Thể thường (Aな -> な/である, N -> である) ＋ ばかりで(は)なく",
+    "example": "1. 彼女は英語ばかりでなく日本語も話せます。(Cô ấy không những nói được tiếng Anh, mà còn cả tiếng Nhật nữa.)\n2. 彼女は外見が綺麗なばかりでなく、心もとても優しいです。(Cô ấy không chỉ có ngoại hình xinh đẹp, mà tâm hồn cũng vô cùng nhân hậu.)\n3. 彼はおごってくれたばかりでなく、家まで送ってくれました。(Anh ấy không những đãi tôi bữa ăn, mà còn chở về tận nhà nữa.)",
+    "meaning": "Ý nghĩa: Không chỉ... mà còn...\nCách dùng: Bổ sung thêm thông tin ở vế sau, tương tự như だけでなく. Vế sau hay đi kèm các trợ từ như も, まで, さえ."
+  },
+  {
+    "id": "57",
+    "kanji": "~はずだ",
+    "furigana": "Thể thường (Aな -> な/である, N -> の/である) ＋ はずだ",
+    "example": "1. 朝から何回電話しても出ないから、彼女は今出かけているはずだ。(Sáng nay gọi bao nhiêu lần cũng không bắt máy, chắc là cô ấy đang đi vắng rồi.)\n2. こんな時間になったから、彼女はもう寝ているはずだ。(Đã muộn thế này rồi, chắc cô ấy ngủ rồi.)\n3. 彼女はハノイ出身だから、ハノイに詳しいはずだ。(Vì cô ấy là người Hà Nội gốc, nên chắc chắn phải hiểu rõ về Hà Nội.)",
+    "meaning": "Ý nghĩa: Chắc chắn là... / Đương nhiên là...\nCách dùng: Đưa ra kết luận hoặc phỏng đoán mang tính chắc chắn cao dựa trên lý do, căn cứ cụ thể."
+  },
+  {
+    "id": "58",
+    "kanji": "~はずがない",
+    "furigana": "Thể thường (Aな -> な/である, N -> の/である) ＋ はずがない / わけがない",
+    "example": "1. とても優しいタインちゃんだから、そんなひどいことを言ったわけがない／はずがない。(Bé Thanh vốn hiền lành như thế, sao có thể nói lời độc ác như vậy được.)\n2. 家事に手を出したことがない彼は、料理ができるはずがない。(Một người chưa từng đụng tay vào việc nhà như anh ấy thì làm sao có thể nấu ăn được.)\n3. あんなに実力がある田中さんは、試験に落ちるはずがない。(Anh Tanaka có năng lực xuất sắc như thế, làm sao có thể trượt kỳ thi được.)",
+    "meaning": "Ý nghĩa: Làm sao có thể... / Chắc chắn không...\nCách dùng: Nhấn mạnh sự phủ định tuyệt đối dựa trên góc nhìn hoặc lập luận chủ quan của người nói."
+  },
+  {
+    "id": "59",
+    "kanji": "~に関して",
+    "furigana": "N ＋ に関して(は) / に関する ＋ N2",
+    "example": "1. 今回の事件に関しては現在調査しております。(Hiện tại chúng tôi đang điều tra về vụ án lần này.)\n2. 授業に関する意見がございましたら、コメント欄に書き込んでください。(Nếu bạn có ý kiến gì về bài học, xin hãy ghi vào phần bình luận.)",
+    "meaning": "Ý nghĩa: Về / Liên quan đến...\nCách dùng: Cách dùng tương tự について nhưng mang sắc thái trang trọng, lịch sự hơn."
+  },
+  {
+    "id": "60",
+    "kanji": "~にわたって",
+    "furigana": "N ＋ にわたって / にわたり / にわたる ＋ N2",
+    "example": "1. このアイドルグループは 20 年間にわたって愛されている。(Nhóm nhạc thần tượng này đã được yêu mến trong suốt 20 năm.)\n2. 新型コロナウイルスは全世界にわたって流行っている。(Virus Corona đang lây lan trên toàn thế giới.)\n3. 1 週間にわたったコンサートは無事に終わりました。(Buổi biểu diễn trong suốt 1 tuần đã kết thúc suôn sẻ.)",
+    "meaning": "Ý nghĩa: Trên toàn... / Trong suốt...\nCách dùng: N đứng trước chỉ khoảng thời gian hoặc phạm vi không gian mà trạng thái/hành động kéo dài liên tục."
+  },
+  {
+    "id": "61",
+    "kanji": "~を通して (1)",
+    "furigana": "N ＋ を通して / を通じて",
+    "example": "1. 彼女の話を通して、彼氏が今浮気していることを知りました。(Thông qua câu chuyện của cô ấy, tôi đã biết người yêu mình ngoại tình.)\n2. 彼女を通して、私は彼と知り合いました。(Thông qua cô ấy, tôi đã quen biết anh ấy.)\n3. このアプリを通じて、日本人の友達がたくさんできました。(Thông qua cái app này tôi đã có nhiều người bạn là người Nhật.)",
+    "meaning": "Ý nghĩa: Thông qua...\nCách dùng: N đóng vai trò là phương tiện, cầu nối hoặc trung gian để thực hiện/đạt được điều gì đó."
+  },
+  {
+    "id": "62",
+    "kanji": "~を通して (2)",
+    "furigana": "N ＋ を通して / を通じて",
+    "example": "1. この国は、1 年を通してずっと寒い。(Đất nước này lạnh suốt cả năm.)\n2. N3 に合格するのに、3 ヶ月を通して一生懸命勉強する。(Để đỗ N3, tôi đã học hành chăm chỉ suốt 3 tháng.)\n3. この公園は、1 年を通していつでも花が楽しめる。(Ở công viên này, suốt cả năm lúc nào cũng có thể thưởng thức hoa.)",
+    "meaning": "Ý nghĩa: Trong suốt...\nCách dùng: N là từ chỉ thời gian, biểu thị một trạng thái hoặc hành động kéo dài liên tục trong khoảng thời gian đó."
+  },
+  {
+    "id": "63",
+    "kanji": "~を込めて",
+    "furigana": "N ＋ を込めて / を込めた ＋ N2",
+    "example": "1. 母の日に感謝の気持ちを込めてプレゼントをした。(Tôi đã tặng món quà bằng tất cả lòng biết ơn vào ngày của mẹ.)\n2. 恋人への気持ちを込めた曲を制作した。(Tôi đã sáng tác bài hát với tất cả tấm lòng hướng đến người yêu.)\n3. 心を込めて仕事をしています。(Tôi đang làm việc bằng tất cả tấm lòng.)",
+    "meaning": "Ý nghĩa: Chất chứa... / Dồn cả...\nCách dùng: N thường là cảm xúc, tâm tư (愛, 感謝, 心, 願い...), thể hiện hành động được làm với tình cảm dào dạt."
+  },
+  {
+    "id": "64",
+    "kanji": "~こと",
+    "furigana": "Vる・Vない ＋ こと",
+    "example": "1. レポートは今月末までに提出すること。(Hãy nộp bài báo cáo trước thời hạn là cuối tháng này.)\n2. 試験中に辞書を使わないこと。(Khi đi thi thì không được sử dụng từ điển.)\n3. 受験票を忘れないこと。(Không được quên phiếu dự thi.)",
+    "meaning": "Ý nghĩa: Hãy, phải V / Không được V\nCách dùng: Dùng trong quy định, thông báo, hướng dẫn chính thức tại trường học hay công ty (văn viết của Vなさい hoặc Vてはいけない)."
+  },
+  {
+    "id": "65",
+    "kanji": "~ことはない",
+    "furigana": "Vる ＋ ことはない",
+    "example": "1. 一回失敗したくらい、落ち込むことはない。やり直せばいい。(Mới thất bại 1 lần thôi, cậu không cần phải suy sụp, buồn bã như vậy đâu. Làm lại là được mà.)\n2. 家で注文できるから、わざわざ買いに行くことはない。(Vì có thể gọi đồ ở nhà nên không cần phải đi ra ngoài mua làm gì.)\n3. 大したことでもないから、そんなに怒ることはないじゃん。(Cũng đâu phải chuyện gì to tát, cậu đâu cần phải cáu đến mức như vậy.)",
+    "meaning": "Ý nghĩa: Không cần phải V\nCách dùng: Khuyên bảo hoặc động viên người khác rằng không cần thiết phải thực hiện hành động đó."
+  },
+  {
+    "id": "66",
+    "kanji": "~ほかない",
+    "furigana": "Vる ＋ (より)ほかない / しかない",
+    "example": "1. つまらなそうな映画だが、チケットを買ってしまったから見に行くほかない。(Phim có vẻ chán đấy nhưng vì lỡ mua vé rồi nên đành phải đi xem thôi.)\n2. 勉強を続けたかったが、子どもを育てるために、一度勉強をやめるほかなかった。(Muốn học tiếp lắm nhưng để nuôi con nên đành phải dừng học.)\n3. コンサートに行きたかったが、仕事が入ってしまったので、あきらめるしかない。(Rất muốn đi nghe nhạc nhưng vì có việc bận nên đành phải từ bỏ thôi.)",
+    "meaning": "Ý nghĩa: Chỉ còn cách V / Đành phải V\nCách dùng: Diễn tả hoàn cảnh không còn lựa chọn nào khác ngoài việc phải làm hành động vế sau."
+  },
+  {
+    "id": "67",
+    "kanji": "~ほうがいい",
+    "furigana": "Vた・Vない ＋ ほうがいい",
+    "example": "1. 一生懸命なのはいいけど、無理しないほうがいいですよ。(Không nên gắng sức quá đâu nhé!)\n2. この辺は、夜、危ないですから、女性は1人で歩かないほうがいいですよ。(Khu này buổi tối nguy hiểm nên phụ nữ không nên đi bộ một mình.)\n3. 小さな問題でも放っておくと膨れてしまうので、早く解決したほうがいい。(Dù là vấn đề nhỏ nếu bỏ mặc sẽ phình to ra, nên giải quyết sớm thì tốt hơn.)",
+    "meaning": "Ý nghĩa: Nên / Không nên V\nCách dùng: Đưa ra lời khuyên cho đối phương để tránh phát sinh rắc rối hoặc làm cho tình hình xấu đi."
+  },
+  {
+    "id": "68",
+    "kanji": "~べきだ",
+    "furigana": "Vる (する->すべき) / N・Aな + である / Aくある ＋ べきだ / べきではない",
+    "example": "1. 誰でも教育が受けられるように、高校や大学に払うお金は高くあるべきではない。(Để ai cũng được học hành thì tiền học phổ thông và đại học không nên quá cao.)\n2. 難しい文法を学ぶ前に、基礎的な文法をしっかり学ぶべきだ。(Trước khi học ngữ pháp khó thì nên học chắc ngữ pháp cơ bản.)\n3. ゲームに熱中するのはいいけど、勉強を忘れるべきじゃない。(Mê game thì cũng được nhưng không nên quên việc học.)",
+    "meaning": "Ý nghĩa: Nên / Cần phải V\nCách dùng: Đưa ra lời khuyên mang tính đạo đức, lẽ thường hoặc việc đúng đắn nên làm theo quy chuẩn xã hội."
+  },
+  {
+    "id": "69",
+    "kanji": "~てからでないと / ~てからでなければ",
+    "furigana": "Vて ＋ からでないと / からでなければ",
+    "example": "1. 手を洗ってからでないと、 ăn cơm はだめだよ。(Nếu chưa rửa tay thì không được ăn cơm đâu.)\n2. 契約書をよく読んでからでないと、 quan trọng 署名をしてはいけない。(Nếu chưa đọc kỹ hợp đồng thì không được ký tên.)\n3. 上司に tư vấn してからでなければ、 quyết định できません。(Nếu chưa bàn bạc với cấp trên thì không thể quyết định được.)",
+    "meaning": "Ý nghĩa: Nếu chưa V thì không thể... / Phải sau khi V thì mới...\nCách dùng: Diễn tả điều kiện bắt buộc, phải hoàn thành hành động vế trước thì mới có thể thực hiện được vế sau (vế sau thường mang ý phủ định hoặc khó khăn)."
+  },
+  {
+    "id": "70",
+    "kanji": "~てはじめて",
+    "furigana": "Vて ＋ はじめて",
+    "example": "1. 病気になってはじめて、 sức khỏe の quý giá さがわかった。(Chỉ sau khi bị bệnh thì tôi mới hiểu được sự quý giá của sức khỏe.)\n2. 日本へ行ってはじめて、 bận rộn 実際の sinh hoạt を trải nghiệm できた。(Chỉ sau khi sang Nhật tôi mới được trải nghiệm cuộc sống thực tế.)\n3. 子どもを育ててはじめて、 thân の vất vả さがわかる。(Chỉ sau khi nuôi con thì mới hiểu được sự vất vả của cha mẹ.)",
+    "meaning": "Ý nghĩa: Mới chỉ sau khi V... thì mới...\nCách dùng: Nhấn mạnh việc trải qua một hành động, trải nghiệm nào đó thì mới nhận ra, hiểu ra hoặc thực hiện được việc ở vế sau."
+  },
+  {
+    "id": "71",
+    "kanji": "~てもらってもいいですか",
+    "furigana": "Vて ＋ もらってもいいですか / もらえますか",
+    "example": "1. すみません、ちょっと giúp đỡ てもらってもいいですか。(Xin lỗi, bạn có thể giúp tôi một chút được không?)\n2. この bận 論文の kiểm tra をしてもらってもいいですか。(Bạn có thể kiểm tra giúp tôi bài luận này được không?)\n3. もう一度 giải thích してもらってもいいですか。(Bạn có thể giải thích lại một lần nữa giúp tôi được không?)",
+    "meaning": "Ý nghĩa: Bạn có thể làm V giúp tôi được không?\nCách dùng: Dùng để nhờ vả, yêu cầu đối phương làm điều gì đó cho mình một cách lịch sự, nhẹ nhàng."
+  },
+  {
+    "id": "72",
+    "kanji": "~てよかった",
+    "furigana": "Vて・Aくて・Aな/Nで ＋ よかった",
+    "example": "1. 日本語を quan trọng 勉強してよかった。(May mà mình đã chăm chỉ học tiếng Nhật.)\n2. 雨が降らなくてよかった。(May mà trời không mưa.)\n3. あなたに会えてよかった。(Thật may mắn vì đã được gặp bạn.)",
+    "meaning": "Ý nghĩa: Thật may vì đã... / Thật tốt khi...\nCách dùng: Bày tỏ sự vui mừng, cảm giác nhẹ nhõm, may mắn khi một sự việc đã xảy ra (hoặc không xảy ra) đúng như mong muốn."
+  },
+  {
+    "id": "73",
+    "kanji": "~てしかたがない / ~てしょうがない",
+    "furigana": "Vて・Aくて・Aなで ＋ しかたがない / しょうがない",
+    "example": "1. おなかがすいてしかたがない。(Bụng đói không chịu nổi.)\n2. 故郷の family に会いたくてしょうがない。(Tôi nhớ gia đình ở quê tha thiết / không chịu nổi.)\n3. 昨夜は bận rộn 寒くてしかたがなかった。(Đêm qua trời lạnh khủng khiếp / không chịu nổi.)",
+    "meaning": "Ý nghĩa: Rất... / Không chịu nổi / Cực kỳ...\nCách dùng: Diễn tả cảm xúc, cảm giác tự nhiên của cơ thể hoặc tâm trạng phát sinh ở mức độ cao không thể kiểm soát được."
+  },
+  {
+    "id": "74",
+    "kanji": "~かける / ~かけの (1)",
+    "furigana": "Vます(bỏ ます) ＋ かける / かけのN / かけている",
+    "example": "1. 飲みかけのコーヒーが mây 机の上に置いてある。(Cốc cà phê uống dở đang được đặt trên bàn.)\n2. 読みかけの本を bận rộn 最後に mây 終わらせた。(Tôi đã đọc xong phần còn dở của cuốn sách.)\n3. 彼は何か言いかけて、やめた。(Anh ấy định nói gì đó dở dang rồi lại dừng lại.)",
+    "meaning": "Ý nghĩa: Đang V dở / Chưa xong\nCách dùng: Diễn tả trạng thái một hành động đã bắt đầu thực hiện nhưng chưa hoàn thành xong."
+  },
+  {
+    "id": "75",
+    "kanji": "~かける / ~かけの (2)",
+    "furigana": "Vます(bỏ ます) ＋ かける / かけている",
+    "example": "1. 溺れかけている子どもを quan trọng 助けた。(Tôi đã cứu đứa trẻ suýt nữa thì chết đuối.)\n2. 車にひかれかけて、 quan trọng 危なかった。(Suýt chút nữa thì tôi bị ô tô tông phải, nguy hiểm thật.)\n3. 倒れかけている木を quan trọng cố định させた。(Gia cố lại cái cây suýt bị đổ.)",
+    "meaning": "Ý nghĩa: Suýt chút nữa thì V\nCách dùng: Diễn tả trạng thái sắp sửa xảy ra một sự việc (thường là nguy hiểm, rủi ro) nhưng cuối cùng không xảy ra."
+  },
+  {
+    "id": "76",
+    "kanji": "~きる (1)",
+    "furigana": "Vます(bỏ ます) ＋ きる / きれる / きれない",
+    "example": "1. 長い bận マラソンを quan trọng 走りきった。(Tôi đã chạy hết / hoàn thành trọn vẹn quãng đường marathon dài.)\n2. こんなに bận たくさんの bận 料理は quan trọng  ăn không hết (食べきれない)。(Nhiều thức ăn thế này thì không thể ăn hết được.)\n3. 買った本を quan trọng 読みきった。(Tôi đã đọc hết hoàn toàn cuốn sách đã mua.)",
+    "meaning": "Ý nghĩa: Làm V xong toàn bộ / Làm hết sạch\nCách dùng: Nhấn mạnh việc thực hiện hành động đến cùng, hoàn toàn xong xuôi, không còn lại gì."
+  },
+  {
+    "id": "77",
+    "kanji": "~きる (2)",
+    "furigana": "Vます(bỏ ます) ＋ きる",
+    "example": "1. 疲れきった顔をしている。(Gương mặt thể hiện sự mệt mỏi hoàn toàn / kiệt sức.)\n2. 彼は quan trọng 自分の quen biết を 信じきっている。(Anh ấy tin tưởng tuyệt đối vào người quen của mình.)\n3. 困りきった quan trọng 表情 (Nét mặt vô cùng bối rối / bế tắc.)",
+    "meaning": "Ý nghĩa: Hoàn toàn... / Rất... / Cực kỳ...\nCách dùng: Nhấn mạnh mức độ tối đa, tuyệt đối của một trạng thái, cảm xúc."
+  },
+  {
+    "id": "78",
+    "kanji": "~まま",
+    "furigana": "Vた・Vない・Nの・Aい・Aな ＋ まま",
+    "example": "1. テレビをつけたまま寝てしまった。(Tôi đã ngủ quen trong khi vẫn để tivi bật.)\n2. 窓を開けたまま xuất hiện (出かける)。(Đi ra ngoài mà vẫn để cửa sổ mở.)\n3. 昔のままで bận 変わらない。(Vẫn giữ nguyên như ngày xưa không thay đổi.)",
+    "meaning": "Ý nghĩa: Giữ nguyên trạng thái...\nCách dùng: Diễn tả việc một trạng thái được giữ nguyên trong khi một hành động khác diễn ra."
+  },
+  {
+    "id": "79",
+    "kanji": "~っぱなし",
+    "furigana": "Vます(bỏ ます) ＋ っぱなし",
+    "example": "1. 水を出しっぱなしにしないでください。(Đừng có để nước chảy suốt như thế.)\n2. 服を脱ぎっぱなしにして、 quan trọng 怒られた。(Cởi quần áo ra vứt đấy nên bị mắng.)\n3. 立ちっぱなしで quan trọng 足が痛い。(Đứng suốt cả buổi nên chân bị đau.)",
+    "meaning": "Ý nghĩa: Để nguyên / Để duy trì liên tục (mang sắc thái phàn nàn)\nCách dùng: Tương tự まま nhưng mang ý nghĩa tiêu cực, phê bình hoặc phàn nàn việc không dọn dẹp, để mặc một trạng thái kéo dài."
+  },
+  {
+    "id": "80",
+    "kanji": "~こともある / ~ thư thoảng",
+    "furigana": "Vる・Vない ＋ こともある / ことがある",
+    "example": "1. たまに quan trọng 朝ご飯を食べないこともある。(Thỉnh thoảng cũng có lúc tôi không ăn sáng.)\n2. 優しい quan trọng 彼女も、 quan trọng 怒ることがある。(Ngay cả người hiền lành như cô ấy cũng có lúc nổi giận.)\n3. バスが quan trọng 遅れることがあるので、 quan trọng 電車で行きます。(Vì đôi khi xe buýt cũng bị trễ nên tôi sẽ đi bằng tàu điện.)",
+    "meaning": "Ý nghĩa: Cũng có lúc... / Đôi khi...\nCách dùng: Diễn tả một việc thỉnh thoảng mới xảy ra, không thường xuyên."
+  },
+  {
+    "id": "81",
+    "kanji": "~ごとに",
+    "furigana": "N・Vる ＋ ごとに",
+    "example": "1. オリンピックは 4年ごとに quan trọng 開催される。(Olympic được tổ chức 4 năm một lần.)\n2. 会うごとに、 quan trọng 彼女は quan trọng きれいになる。(Mỗi lần gặp là cô ấy lại xinh đẹp hơn.)\n3. 部屋ごとに quan trọng エアコンが quan trọng ついている。(Mỗi phòng đều được lắp điều hòa.)",
+    "meaning": "Ý nghĩa: Cứ mỗi... / Cứ cách...\nCách dùng: Biểu thị lặp lại theo chu kỳ thời gian, khoảng cách hoặc theo từng đơn vị."
+  },  {
+    "id": "82",
+    "kanji": "~たびに",
+    "furigana": "Nの・Vる ＋ たびに",
+    "example": "1. この quan trọng 写真を見るたびに、 quan trọng 学生時代を quan trọng 思い出す。(Mỗi lần nhìn bức ảnh này, tôi lại nhớ về thời học sinh.)\n2. 母は quan trọng 旅行のたびに、 quan trọng お土産を quan trọng 買ってきてくれる。(Mỗi lần đi du lịch, mẹ tôi lại mua quà về.)\n3. 辞書を quan trọng 引くたびに、 quan trọng 新しい quan trọng 言葉を quan trọng 覚える。(Mỗi lần tra từ điển là lại học thêm được từ mới.)",
+    "meaning": "Ý nghĩa: Mỗi lần... / Mỗi khi...\nCách dùng: Diễn tả việc hễ cứ làm hành động vế trước thì hành động/sự việc vế sau lại diễn ra tương tự."
+  },
+  {
+    "id": "83",
+    "kanji": "~最中に",
+    "furigana": "Nの・Vている ＋ 最中に / 最中だ",
+    "example": "1. テストの最中に quan trọng 携帯電話が quan trọng 鳴ってしまった。(Ngay đúng lúc đang làm bài thi thì điện thoại reo.)\n2. 食事の最中に quan trọng 客が quan trọng 来た。(Ngay đúng lúc đang ăn cơm thì khách đến.)\n3. 今、 quan trọng 考え事の最中だから、 quan trọng 静かにして。(Bây giờ tôi đang đúng lúc tập trung suy nghĩ nên hãy trật tự đi.)",
+    "meaning": "Ý nghĩa: Đúng lúc đang... thì (có sự việc xẩy ra cản trở)\nCách dùng: Nhấn mạnh thời điểm cao điểm của hành động vế trước thì vế sau bất ngờ chen ngang."
+  },
+  {
+    "id": "84",
+    "kanji": "~ところへ / ~ところに / ~ところを / ~ところで",
+    "furigana": "Vる・Vている・Vた・Aい・Nの ＋ ところへ / ところに / ところを / ところで",
+    "example": "1. 出かけようとしたところへ、 quan trọng 友達が quan trọng 遊びに来た。(Đúng lúc định ra ngoài thì bạn đến chơi.)\n2. いいところに来たね。 quan trọng 一緒に quan trọng ご飯を食べよう。(Đến đúng lúc thế, cùng ăn cơm nhé.)\n3. 勉強しているところを quan trọng 母に見られた。(Tôi bị mẹ nhìn thấy đúng lúc đang học.)",
+    "meaning": "Ý nghĩa: Đúng lúc... thì...\nCách dùng: Đi kèm với trợ từ tùy thuộc vào động từ vế sau: へ/に (hướng/sự di chuyển đến), を (hành động tác động trực tiếp vào), で (ngắt giai đoạn)."
+  },
+  {
+    "id": "85",
+    "kanji": "~というと / ~といえば / ~といったら",
+    "furigana": "N・Thể thường ＋ というと / と言えば / と言ったら",
+    "example": "1. 日本の料理というと、 quan trọng 寿司や quan trọng 天ぷらが quan trọng 思い浮かぶ。(Nói đến món ăn Nhật Bản thì sẽ nghĩ ngay đến Sushi hay Tenpura.)\n2. 春といえば、 quan trọng 桜ですね。(Nhắc đến mùa xuân thì là hoa anh đào nhỉ.)\n3. 富士山と言ったら、 quan trọng 日本一 quan trọng 高い山だ。(Nói tới núi Phú Sĩ thì đó là ngọn núi cao nhất Nhật Bản.)",
+    "meaning": "Ý nghĩa: Hễ nhắc đến... / Nói về... thì...\nCách dùng: Đưa ra liên tưởng đầu tiên hoặc đại diện tiêu biểu nhất cho chủ đề được nhắc tới."
+  },
+  {
+    "id": "86",
+    "kanji": "~というより(も)",
+    "furigana": "Thể thường (Aな/N không dùng だ) ＋ というより(も)",
+    "example": "1. 彼は quan trọng 涼しいというより、 quan trọng 寒いと quan trọng 感じている。(Anh ấy cảm thấy lạnh đúng hơn là mát.)\n2. あの人は quan trọng 歌手というより quan trọng 芸人だ。(Người đó là diễn viên hài thì đúng hơn là ca sĩ.)\n3. この部屋は quan trọng 広いというより、 quan trọng 明るい。(Căn phòng này sáng sủa thì đúng hơn là rộng.)",
+    "meaning": "Ý nghĩa: Nói là... thì đúng hơn là...\nCách dùng: Đưa ra nhận định chính xác hơn hoặc phù hợp hơn so với ý kiến/cách gọi trước đó."
+  },
+  {
+    "id": "87",
+    "kanji": "~といっても",
+    "furigana": "Thể thường (N/Aな có thể giữ hoặc bỏ だ) ＋ といっても",
+    "example": "1. 料理ができるといっても、 quan trọng 簡単なものしか quan trọng 作れません。(Dù nói là biết nấu ăn nhưng tôi chỉ nấu được mấy món đơn giản thôi.)\n2. 今週は quan trọng 忙しいといっても、 quan trọng 先週ほどではない。(Dù nói là tuần này bận nhưng không đến mức như tuần trước.)\n3. 日本語が quan trọng 話せるといっても、 quan trọng 日常会話程度です。(Dù nói là nói được tiếng Nhật nhưng cũng chỉ ở mức giao tiếp hàng ngày.)",
+    "meaning": "Ý nghĩa: Dù nói là... (nhưng thực tế không đến mức như vậy)\nCách dùng: Đính chính hoặc giải thích lại thực tế vế sau không hoành tráng/cao siêu như vế trước gợi ra."
+  },
+  {
+    "id": "88",
+    "kanji": "~と言われている",
+    "furigana": "Thể thường ＋ と言われている",
+    "example": "1. 今年は quan trọng 猛暑になると quan trọng 言われている。(Người ta nói rằng năm nay sẽ là mùa hè nắng nóng gay gắt.)\n2. 納豆は quan trọng 体にいいと quan trọng 言われている。(Natto được cho là rất tốt cho cơ thể.)\n3. この神社は quan trọng 縁結びに quan trọng 利益があると言われている。(Ngôi đền này được cho là rất linh ứng trong việc cầu duyên.)",
+    "meaning": "Ý nghĩa: Người ta nói rằng... / Được cho là...\nCách dùng: Trình bày một ý kiến, dư luận hoặc đánh giá chung của xã hội, nhiều người."
+  },
+  {
+    "id": "89",
+    "kanji": "~ということだ / とのことだ",
+    "furigana": "Thể thường ＋ ということだ / とのことだ",
+    "example": "1. 天気予報によると、 quan trọng 明日は quan trọng 雨が降るということだ。(Theo dự báo thời tiết thì nghe nói ngày mai trời sẽ mưa.)\n2. 田中さんから quan trọng 連絡があって、 quan trọng 少し遅れるとのことだ。(Anh Tanaka có liên lạc bảo rằng anh ấy sẽ đến trễ một chút.)\n3. 事故で quan trọng 電車が quan trọng 止まっているということです。(Nghe nói là tàu bị dừng do tai nạn.)",
+    "meaning": "Ý nghĩa: Nghe nói là... / Thấy bảo là...\nCách dùng: Dùng để trích dẫn, truyền đạt lại thông tin nghe được từ nguồn khác (Thường đi với ~によると)."
+  },
+  {
+    "id": "90",
+    "kanji": "~とは",
+    "furigana": "N ＋ とは",
+    "example": "1. 著者とは、 quan trọng 本を書いた quan trọng 人のことです。(Tác giả có nghĩa là người viết nên cuốn sách.)\n2. 人生とは quan trọng 何だろうか。(Cuộc đời nghĩa là gì nhỉ?)\n3. 幸福とは quan trọng 心の quan trọng 豊かさのことだ。(Hạnh phúc có nghĩa là sự phong phú trong tâm hồn.)",
+    "meaning": "Ý nghĩa: Thường dùng để định nghĩa (~ có nghĩa là...)\nCách dùng: Dùng khi đưa ra định nghĩa, giải thích bản chất của một từ ngữ hoặc một khái niệm."
+  },
+  {
+    "id": "91",
+    "kanji": "~でしかない",
+    "furigana": "N ＋ でしかない",
+    "example": "1. それは単なる言い訳でしかない。(Đó chẳng qua chỉ là sự bào chữa mà thôi.)\n2. どんなに否定しても、これは事実でしかない。(Dù có phủ nhận thế nào thì đây cũng chỉ là sự thật.)\n3. 私はただの高校生でしかありません。(Tôi chỉ là một học sinh cấp 3 mà thôi.)",
+    "meaning": "Ý nghĩa: Chỉ là... / Không gì khác ngoài...\nCách dùng: Dùng để nhấn mạnh sự giới hạn, đánh giá sự việc không quá mức hoặc không có gì đặc biệt."
+  },
+  {
+    "id": "92",
+    "kanji": "~はもちろ〜んも",
+    "furigana": "N1 ＋ はもちろん ＋ N2 ＋ も",
+    "example": "1. 彼は日本語はもちろん、英語もペラペラだ。(Anh ấy thì tiếng Nhật là đương nhiên rồi, ngay cả tiếng Anh cũng nói rất lưu khoát.)\n2. このレストランは味はもちろん、サービスも素晴らしい。(Nhà hàng này hương vị là đương nhiên rồi, cả dịch vụ cũng tuyệt vời.)\n3. 大人はもちろん、子どもも楽しめる。(Người lớn là đương nhiên rồi, ngay cả trẻ em cũng có thể vui chơi.)",
+    "meaning": "Ý nghĩa: Không chỉ N1 mà ngay cả N2 cũng...\nCách dùng: Đưa N1 ra làm điều đương nhiên, sau đó bổ sung thêm N2 để nhấn mạnh quy mô hoặc phạm vi rộng hơn."
+  },
+  {
+    "id": "93",
+    "kanji": "~くらい / ほど~はない",
+    "furigana": "N ＋ くらい / ほど ＋ N(không có) ＋ はない",
+    "example": "1. 健康ほど大切なものはない。(Không có gì quan trọng bằng sức khỏe.)\n2. 彼女くらい優しい人はいない。(Không có ai hiền lành như cô ấy.)\n3. 旅行に行くことほど楽しいことはない。(Không có việc gì vui bằng việc đi du lịch.)",
+    "meaning": "Ý nghĩa: Không có... nào bằng...\nCách dùng: Dùng để đưa ra so sánh nhất, khẳng định đối tượng được nhắc đến là nhất."
+  },
+  {
+    "id": "94",
+    "kanji": "(~は)~ほど~ない",
+    "furigana": "N1 (は) ＋ N2 ＋ ほど ＋ Aくない / Aではない",
+    "example": "1. 今年の夏は去年ほど暑くない。(Mùa hè năm nay không nóng bằng năm ngoái.)\n2. 私は彼ほど日本語が上手ではない。(Tôi không giỏi tiếng Nhật bằng anh ấy.)\n3. この試験は思っていたほど難しくなかった。(Kỳ thi này không khó như tôi đã nghĩ.)",
+    "meaning": "Ý nghĩa: N1 không... bằng N2\nCách dùng: So sánh kém giữa hai đối tượng hoặc giữa thực tế với dự đoán."
+  },
+  {
+    "id": "95",
+    "kanji": "~代わりに (1)",
+    "furigana": "Vる・Nの ＋ 代わりに (thay vì làm ~ thì làm ~)",
+    "example": "1. 私の代わりに弟が行く。(Em trai tôi sẽ đi thay cho tôi.)\n2. バターの代わりにオリーブオイルを使う。(Dùng dầu ô liu thay cho bơ.)\n3. 電車で行く代わりに車で行くことにした。(Thay vì đi bằng tàu điện, tôi quyết định đi bằng ô ô.)",
+    "meaning": "Ý nghĩa: Thay vì làm... thì làm... / Thay cho...\nCách dùng: Diễn tả việc thay thế một hành động, phương tiện hoặc đối tượng này bằng một cái khác."
+  },
+  {
+    "id": "96",
+    "kanji": "~代わりに (2)",
+    "furigana": "Vる・Aい・Aな・Nの ＋ 代わりに (thay cho ~)",
+    "example": "1. この部屋は狭い代わりに、家賃が安い。(Căn phòng này hẹp nhưng bù lại giá thuê rẻ.)\n2. 日本語を教えてあげる代わりに、英語を教えてください。(Tôi sẽ dạy tiếng Nhật cho bạn, bù lại hãy dạy tiếng Anh cho tôi nhé.)\n3. 日曜日に働いた代わりに、月曜日に休んだ。(Tôi đã làm việc vào Chủ nhật, đổi lại tôi đã nghỉ vào thứ Hai.)",
+    "meaning": "Ý nghĩa: Thay cho... / Bù lại... / Đổi lại...\nCách dùng: Diễn tả sự bù trừ giữa hai mặt, vế trước có nhược điểm/tác động thì vế sau bù lại lợi ích hoặc ngược lại."
+  },
+  {
+    "id": "97",
+    "kanji": "~わりに(は)",
+    "furigana": "V/Aい/Aな/N ＋ わりに(は)",
+    "example": "1. 彼はたくさん食べるわりに、全然太らない。(Anh ấy ăn nhiều nhưng so với lượng ăn thì hoàn toàn không mập.)\n2. この値段のわりに、料理がとてもおいしい。(So với mức giá này thì đồ ăn rất ngon.)\n3. 年のわりに、若く見える。(So với tuổi tác thì trông còn rất trẻ.)",
+    "meaning": "Ý nghĩa: Dù... nhưng... / So với... thì...\nCách dùng: Diễn tả kết quả không tương xứng, trái với mức độ được dự đoán từ tiêu chuẩn ban đầu."
+  },
+  {
+    "id": "98",
+    "kanji": "~わけだ",
+    "furigana": "Thể thường (Aな -> な/である, N -> の/である) ＋ わけだ",
+    "example": "1. 寒わけだ。雪が降っている。(Thảo nào mà lạnh thế. Tuyết đang rơi kìa.)\n2. 彼は日本に5年も住んでいるから、日本語が上手なわけだ。(Anh ấy sống ở Nhật 5 năm rồi, thảo nào tiếng Nhật giỏi thế.)\n3. 100円の3割引だから、70円なわけだ。(Giảm giá 30% của 100 yen thì có nghĩa là còn 70 yen.)",
+    "meaning": "Ý nghĩa: Thảo nào... / Thành ra là... / Có nghĩa là...\nCách dùng: Dùng để đưa ra kết luận mang tính logic hoặc nhận ra lý do chính đáng cho một sự việc."
+  },
+  {
+    "id": "99",
+    "kanji": "~わけにはいかない",
+    "furigana": "Vる・Vない ＋ わけにはいかない",
+    "example": "1. 明日は大事な me 試験があるから、休むわけにはいかない。(Vì ngày mai có kỳ thi quan trọng nên không thể nghỉ được.)\n2. 車で来たから、お酒を飲むわけにはいかない。(Vì đi bằng ô tô đến nên không thể uống rượu được.)\n3. 先生に頼まれたことだから、断るわけにはいかない。(Vì là việc thầy nhờ nên không thể từ chối được.)",
+    "meaning": "Ý nghĩa: Không thể... / Không thể không...\nCách dùng: Diễn tả việc không thể thực hiện do rào cản đạo đức, xã hội, quy định hoặc trách nhiệm."
+  },
+  {
+    "id": "100",
+    "kanji": "~わけではない",
+    "furigana": "Thể thường (Aな -> な/である, N -> の/である) ＋ わけではない",
+    "example": "1. 日本料理が嫌いなわけではないが、納豆は食べられない。(Không phải là tôi ghét món ăn Nhật, chỉ là không ăn được Natto thôi.)\n2. 高いものが必ずしもいいわけではない。(Không phải đồ đắt tiền nào cũng tốt.)\n3. 彼女のことが嫌いなわけではない。(Không phải là tôi ghét cô ấy.)",
+    "meaning": "Ý nghĩa: Không hẳn là... / Không phải là...\nCách dùng: Phủ định nhẹ nhàng một phần hoặc bác bỏ nhận định mang tính tuyệt đối."
+  },
+  {
+    "id": "101",
+    "kanji": "~とは限らない",
+    "furigana": "Thể thường (Aな/N có thể có だ) ＋ とは限らない",
+    "example": "1. 高いものが必ずしもいいものだとは限らない。(Thứ đắt tiền chưa chắc đã là thứ tốt.)\n2. 新聞に書いてあることが、すべて本当だとは限らない。(Những gì viết trên báo chưa chắc tất cả đã là sự thật.)\n3. 努力すれば必ず成功するとは限らない。(Cố gắng chưa chắc đã thành công.)",
+    "meaning": "Ý nghĩa: Chưa chắc đã... / Không nhất thiết là...\nCách dùng: Phủ định tính tuyệt đối, khẳng định vẫn có trường hợp ngoại lệ xảy ra."
+  },
+  {
+    "id": "102",
+    "kanji": "~に比べて",
+    "furigana": "N ＋ に比べて / に比べ",
+    "example": "1. 兄に比べて、弟は静かだ。(So với anh trai thì em trai lặng lẽ hơn.)\n2. 去年のに比べて、今年の冬は暖かい。(So với năm ngoái thì mùa đông năm nay ấm hơn.)\n3. 以前に比べて、交通が便利になった。(So với trước đây thì giao thông đã trở nên thuận tiện hơn.)",
+    "meaning": "Ý nghĩa: So với...\nCách dùng: So sánh mức độ hoặc đặc điểm giữa hai đối tượng khác nhau."
+  },
+  {
+    "id": "103",
+    "kanji": "~ばいいのに",
+    "furigana": "Thể điều kiện (Vえば / Aければ / Aな・Nなら) ＋ いいのに",
+    "example": "1. もっと早く言えばいいのに。(Giá mà bạn nói sớm hơn thì tốt biết mấy.)\n2. 明日晴れればいいのに。(Giá mà ngày mai trời nắng thì tốt biết mấy.)\n3. 一緒に行けばいいのに。(Giá mà cùng đi thì tốt biết mấy.)",
+    "meaning": "Ý nghĩa: Giá mà... thì tốt biết mấy / Khuyên nhẹ: Nên... thì hơn\nCách dùng: Bày tỏ sự nuối tiếc, mong ước trái với thực tế hoặc khuyên nhủ ai đó nhẹ nhàng."
+  },
+  {
+    "id": "104",
+    "kanji": "~ばよかった ( のに )",
+    "furigana": "Thể điều kiện (Vえば / Vなければ) ＋ よかった (のに)",
+    "example": "1. 買っておけばよかった。(Biết thế mua trước thì tốt rồi.)\n2. もっと勉強すればよかった。(Phải chi lúc đó chăm học hơn thì tốt rồi.)\n3. 行かなければよかったのに。(Giá mà đừng đi thì có phải tốt hơn không.)",
+    "meaning": "Ý nghĩa: Biết thế/Giá mà... thì tốt rồi (tiếc nuối chuyện đã qua)\nCách dùng: Diễn tả sự hối hận, tiếc nuối về một hành động đã làm hoặc chưa làm trong quá khứ."
+  },
+  {
+    "id": "105",
+    "kanji": "~(で)さえ",
+    "furigana": "N ＋ (で)さえ",
+    "example": "1. ひらがなさえ読めない。(Ngay cả Hiragana còn không đọc được.)\n2. 専門家でさえ解けない問題だ。(Đó là bài toán mà ngay cả chuyên gia cũng không giải được.)\n3. 自分の名前さえ書けない。(Ngay cả tên mình cũng không viết nổi.)",
+    "meaning": "Ý nghĩa: Ngay cả... / Đến cả...\nCách dùng: Nhấn mạnh bằng cách đưa ra một ví dụ cực đoan, tối thiểu để suy ra các trường hợp khác."
+  },
+  {
+    "id": "106",
+    "kanji": "~さえ~ば",
+    "furigana": "N さえ ＋ Vば / Aければ / Aな・Nなら",
+    "example": "1. 天気さえよければ、出発しよう。(Chỉ cần thời tiết tốt là xuất phát thôi.)\n2. 愛さえあれば、何もいらない。(Chỉ cần có tình yêu thì không cần gì khác nữa.)\n3. 安くさえあれば、何でもいい。(Chỉ cần rẻ là cái gì cũng được.)",
+    "meaning": "Ý nghĩa: Chỉ cần... là...\nCách dùng: Diễn tả điều kiện duy nhất, tối thiểu để kết quả phía sau có thể xảy ra."
+  },
+  {
+    "id": "107",
+    "kanji": "~たって / ~だって",
+    "furigana": "Vた / Aかった / Aな・N ＋ だって",
+    "example": "1. 今から走ったって間に合わない。(Dù bây giờ có chạy thì cũng không kịp đâu.)\n2. 高かったって、欲しいものは買う。(Dù có đắt thì món đồ mình thích mình vẫn sẽ mua.)\n3. 誰だって失敗することはある。(Dù là ai đi nữa thì cũng có lúc thất bại.)",
+    "meaning": "Ý nghĩa: Dù... đi nữa / Cho dù...\nCách dùng: Hình thức giao tiếp thân mật trong văn nói của ~ても / ~でも."
+  },
+  {
+    "id": "108",
+    "kanji": "~に決まっている",
+    "furigana": "Thể thường (Aな/N bỏ だ) ＋ に決まっている",
+    "example": "1. そんなうまい話、嘘に決まっている。(Chuyện hời như thế chắc chắn là lừa đảo rồi.)\n2. 一人で外国へ行くなんて、心配するに決まっている。(Đi nước ngoài một mình thế thì chắc chắn là phải lo lắng rồi.)\n3. 相手はプロなんだから、勝てるわけがない。負けるに決まっている。(Đối thủ là chuyên nghiệp nên làm sao thắng được. Chắc chắn là thua thôi.)",
+    "meaning": "Ý nghĩa: Chắc chắn là... / Nhất định là...\nCách dùng: Bày tỏ phán đoán khẳng định mạnh mẽ, mang tính chủ quan của người nói."
+  },
+  {
+    "id": "109",
+    "kanji": "~がち",
+    "furigana": "Vます(bỏ ます)・N ＋ がち",
+    "example": "1. 彼は dạo này 休みがちだ。(Dạo này anh ấy thường hay nghỉ học/nghỉ làm.)\n2. ひとり暮らしは dinh dưỡng が lệch (偏りがち) になる。(Sống một mình thì dinh dưỡng dễ bị mất cân bằng.)\n3. 遠慮しがちな性格だ。(Tính cách có xu hướng hay e ngại/khép kín.)",
+    "meaning": "Ý nghĩa: Hay... / Có xu hướng...\nCách dùng: Diễn tả một khuynh hướng, xu hướng tiêu cực hoặc việc thường xuyên diễn ra ngoài ý muốn."
+  },
+  {
+    "id": "110",
+    "kanji": "~っけ",
+    "furigana": "Thể quá khứ (た) / N・Aな ＋ だっけ",
+    "example": "1. 今日は mấy giờ (何時) から mitting (会議) だっけ？(Hôm nay cuộc họp bắt đầu từ mấy giờ ấy nhỉ?)\n2. 田中さんの誕生日、 hôm nào (いつ) だっけ？(Sinh nhật của Tanaka-san là khi nào ấy nhỉ?)\n3. これ、 nói rồi (言ったっけ)？(Cái này tôi đã nói chưa ấy nhỉ?)",
+    "meaning": "Ý nghĩa: ...ấy nhỉ? / Có phải là... không nhỉ?\nCách dùng: Dùng trong văn nói để xác nhận lại điều bản thân đã quên hoặc không chắc chắn."
+  },
+  {
+    "id": "111",
+    "kanji": "~かと思った",
+    "furigana": "Thể thường ＋ かと思った",
+    "example": "1. ngỡ là giận (怒っているのかと思った)。(Tôi cứ tưởng là anh ấy đang giận cơ đấy.)\n2. ngỡ là chết ( chết / 死ぬかと思った)。(Tưởng chừng như sắp chết đến nơi rồi.)\n3. ngỡ là người quen (知り合いかと思った)。(Tôi đã ngỡ đó là người quen.)",
+    "meaning": "Ý nghĩa: Cứ tưởng là... / Ngỡ là...\nCách dùng: Bày tỏ cảm xúc giật mình, bất ngờ hoặc nhận ra thực tế khác với suy nghĩ ban đầu."
+  },
+  {
+    "id": "112",
+    "kanji": "~じゃない / ~じゃん",
+    "furigana": "Thể thường (Aな/N bỏ だ) ＋ じゃない / じゃん",
+    "example": "1. Đẹp đấy chứ (いいじゃない)！(Đẹp đấy chứ/Tốt đấy chứ!)\n2. Đã nói rồi mà ( bảo rồi / 言ったじゃない)。(Chẳng phải tôi đã nói rồi sao!)\n3. Đứng ở kia kìa (sắp xếp / あそこにあるじゃん)。(Chẳng phải nó ở đằng kia sao!)",
+    "meaning": "Ý nghĩa: Chẳng phải là... sao? / ...đấy thôi!\nCách dùng: Dùng trong giao tiếp thân mật để nhắc nhở, xác nhận hoặc nhấn mạnh phát hiện của bản thân."
+  },
+  {
+    "id": "113",
+    "kanji": "~でしょうか",
+    "furigana": "Thể lịch sự của ~だろうか (N/A/V + でしょうか)",
+    "example": "1. Mấy giờ thì tiện (何時ごろが宜しいでしょうか)。(Cho hỏi khoảng mấy giờ thì tiện ạ?)\n2. Có ai biết không (誰かご存じでしょうか)。(Không biết có ai biết điều này không ạ?)\n3. Có thể dùng cái này không (これを使ってもいいでしょうか)。(Liệu tôi có thể dùng cái này được không ạ?)",
+    "meaning": "Ý nghĩa: Liệu có... không nhỉ? / Có thể... không ạ?\nCách dùng: Dùng để hỏi hoặc nhờ vả một cách lịch sự, nhẹ nhàng và trang trọng."
+  },
+  {
+    "id": "114",
+    "kanji": "~のでしょうか / ~のでしょうか",
+    "furigana": "Thể thường (Aな->な, N->な) ＋ のでしょうか / んでしょうか",
+    "example": "1. Tại sao lại muộn (どうして遅れたのでしょうか)。(Không biết tại sao anh ấy lại đến muộn nhỉ?)\n2. Có thể mua ở đâu (どこで買えるのでしょうか)。(Liệu có thể mua món này ở đâu được nhỉ?)\n3. Lỗi do đâu (何が lầm / 理由なのでしょうか)。(Liệu lý do là gì nhỉ?)",
+    "meaning": "Ý nghĩa: Không biết là... nhỉ? / Liệu rằng...\nCách dùng: Dùng để thắc mắc, hỏi xin lý do hoặc giải thích một cách lịch sự, tế nhị."
+  },
+  {
+    "id": "115",
+    "kanji": "~たとたん",
+    "furigana": "Vた ＋ とたん(に)",
+    "example": "1. 窓を開けたとたん、 tạt vào (強い風が吹き込んできた)。(Vừa mới mở cửa sổ ra một cái là gió mạnh lùa ngay vào.)\n2. 立ち上がったとたん、 めまい (めまいがした)。(Ngay khi vừa đứng dậy thì tôi bị chóng mặt.)\n3. 疲れていたので、 giường (ベッドに入ったとたん、寝てしまった)。(Vì quá mệt nên vừa đặt lưng xuống giường là tôi ngủ mất tiêu.)",
+    "meaning": "Ý nghĩa: Ngay khi... / Vừa mới... thì...\nCách dùng: Diễn tả một hành động/sự việc bất ngờ xảy ra ngay lập tức sau một hành động khác."
+  },
+  {
+    "id": "116",
+    "kanji": "~ついでに",
+    "furigana": "Vる・Vた・Nの ＋ ついでに",
+    "example": "1. 散歩のついでに、 thư báo (郵便局へ寄ってきた)。(Nhân tiện đi dạo thì tôi đã ghé qua bưu điện luôn.)\n2. 買い物のついでに、 thư viện (図書館で本を返した)。(Nhân tiện đi mua đồ thì tôi đã trả sách ở thư viện.)\n3. 部屋を掃除するついでに、 rác (ゴミも捨ててきて)。(Sẵn tiện dọn phòng thì mang rác đi đổ giúp tôi nhé.)",
+    "meaning": "Ý nghĩa: Nhân tiện... / Sẵn tiện...\nCách dùng: Làm một việc chính, đồng thời lợi dụng cơ hội đó để thực hiện thêm một việc phụ khác."
+  },
+  {
+    "id": "117",
+    "kanji": "~途中で / ~途中に",
+    "furigana": "Vる・Nの ＋ 途中で / 途中に",
+    "example": "1. 帰る途中で、 mưa (雨に降られた)。(Trên đường về nhà thì tôi bị mắc mưa.)\n2. 会議の途中で、 điện thoại (電話がかかってきた)。(Giữa chừng cuộc họp thì có điện thoại gọi đến.)\n3. 料理の途中に、 ga (ガスが止まってしまった)。(Đang nấu ăn dở dang thì gas bị cắt.)",
+    "meaning": "Ý nghĩa: Trong khi đang... / Giữa chừng...\nCách dùng: Diễn tả một sự việc khác chen ngang vào khi một hành động hay quá trình đang diễn ra."
+  },
+  {
+    "id": "118",
+    "kanji": "~から~にかけて",
+    "furigana": "N1 から N2 にかけて",
+    "example": "1. 昨夜から今朝にかけて、 mưa (雨が降り続いた)。(Từ đêm qua đến sáng nay trời tiếp tục mưa.)\n2. 関東から東北にかけて、 bão (台風が近づいている)。(Từ khu vực Kanto đến Tohoku bão đang tiến gần.)\n3. 3月から4月にかけて、 sakura (桜が咲く)。(Từ tháng 3 đến tháng 4 hoa anh đào sẽ nở.)",
+    "meaning": "Ý nghĩa: Từ... đến... / Trong khoảng từ... đến...\nCách dùng: Diễn tả phạm vi thời gian hoặc không gian kéo dài một cách tương đối, không rõ ranh giới chính xác."
+  },
+  {
+    "id": "119",
+    "kanji": "ちっとも~ない",
+    "furigana": "ちっとも ＋ Vない / Aくない / Aではない",
+    "example": "1. 漢字がちっとも nhớ (覚えることができない)。(Tôi chẳng nhớ nổi chút chữ Kanji nào cả.)\n2. この本はちっとも thú vị (面白くない)。(Cuốn sách này chẳng thú vị chút nào cả.)\n3. 彼はちっとも phản省 (反省していない)。(Anh ấy chẳng hề ăn ăn hối cải chút nào.)",
+    "meaning": "Ý nghĩa: Một chút cũng không... / Hoàn toàn không...\nCách dùng: Dùng để phủ định hoàn toàn mức độ của sự việc, hay dùng trong văn nói (tương tự như 全然...ない)."
+  },
+  {
+    "id": "120",
+    "kanji": "~ずにいる",
+    "furigana": "Vない(bỏ ない) ＋ ずにいる (Suru -> せずにいる)",
+    "example": "1. 朝ご飯を食べずにいる。(Vẫn giữ tình trạng không ăn sáng.)\n2. 返事を返さずにいる。(Vẫn chưa chịu nhắn tin trả lời.)\n3. 真実を言わずにいる。(Vẫn giữ im lặng không chịu nói ra sự thật.)",
+    "meaning": "Ý nghĩa: Vẫn không... / Tiếp tục không làm...\nCách dùng: Diễn tả trạng thái một hành động nào đó vẫn duy trì không thực hiện trong suốt khoảng thời gian."
+  },
+  {
+    "id": "121",
+    "kanji": "~だらけ",
+    "furigana": "N ＋ だらけ",
+    "example": "1. この服は bẩn (泥だらけだ)。(Bộ quần áo này đầy dính toàn bùn đất.)\n2. この lầm (間違いだらけの文章だ)。(Đoạn văn này toàn là lỗi sai.)\n3. 部屋が nợ ( mụn / 借金だらけだ)。(Căn phòng đầy vết bẩn / Anh ta nợ nần chồng chất.)",
+    "meaning": "Ý nghĩa: Toàn là... / Đầy... (dày đặc)\nCách dùng: Nhấn mạnh sự xuất hiện nhiều của những thứ không tốt, tiêu cực (bụi, rác, lỗi sai, nợ...)."
+  },
+  {
+    "id": "122",
+    "kanji": "~向き",
+    "furigana": "N ＋ 向き",
+    "example": "1. この công việc (この仕事は女性向きだ)。(Công việc này thích hợp với phụ nữ.)\n2. Thích hợp cho người bắt đầu (初心者向きのコース)。(Khóa học phù hợp cho người mới bắt đầu.)\n3. Thích hợp cho trẻ em (子ども向きの phim / アニメ)。(Phim hoạt hình thích hợp cho trẻ em.)",
+    "meaning": "Ý nghĩa: Thích hợp với... / Phù hợp với...\nCách dùng: Nói về tính chất tự nhiên của đối tượng nào đó vốn dĩ rất vừa vặn, phù hợp cho một nhóm đối tượng."
+  },
+  {
+    "id": "123",
+    "kanji": "~向け",
+    "furigana": "N ＋ 向け",
+    "example": "1. Dành cho người nước ngoài (外国人向けのマンション)。(Căn hộ được thiết kế dành riêng cho người nước ngoài.)\n2. Dành cho trẻ em (子ども向けの絵本)。(Sách tranh dành riêng cho trẻ em.)\n3. Dành cho thị trường nước ngoài (海外向けの製品)。(Sản phẩm hướng tới thị trường nước ngoài.)",
+    "meaning": "Ý nghĩa: Dành cho... / Hướng tới...\nCách dùng: Diễn tả mục đích chủ quan khi sản xuất, chế tạo hay thiết kế ra một thứ gì đó nhắm tới đối tượng cụ thể."
+  },
+  {
+    "id": "124",
+    "kanji": "~をする",
+    "furigana": "N ＋ をする",
+    "example": "1. Đeo cà vạt (ネクタイをしている)。(Đang đeo cà vạt.)\n2. Có khuôn mặt đáng yêu (可愛い顔をしている)。(Có một khuôn mặt rất đáng yêu.)\n3. Mang dáng vẻ sang trọng (高級な cảm giác / 感じがする)。(Mang lại cảm giác cao cấp.)",
+    "meaning": "Ý nghĩa: Mang/Mặc/Có (diện mạo, hình dáng, đặc điểm...)\nCách dùng: Diễn tả các đặc điểm外観 (ngoại hình, trạng thái, màu sắc, hình dáng...) mà đối tượng sở hữu."
+  },
+  {
+    "id": "125",
+    "kanji": "~か何か",
+    "furigana": "N ＋ か何か",
+    "example": "1. Trà hay thứ gì đó (お茶か何か飲みませんか)。(Bạn có muốn uống chút trà hay thứ gì đó không?)\n2. Bị cảm hay sao đó (風邪か何かでしょうか)。(Liệu có phải là bị cảm hay sao đó không?)\n3. Đồ ăn gì đó (パンか何か食べる)。(Ăn bánh mì hay thứ gì đó đi.)",
+    "meaning": "Ý nghĩa: ...hay thứ gì đó / ...hoặc đại loại thế\nCách dùng: Nêu ra một ví dụ đại diện khi đề xuất hoặc đưa ra suy đoán không quá chắc chắn."
+  },
+  {
+    "id": "126",
+    "kanji": "~させておく",
+    "furigana": "Thể sai khiến (させる) ＋ ておく",
+    "example": "1. Để trẻ chơi tự do (子どもを自由に遊ばせておく)。(Cứ để cho trẻ con chơi đùa tự do.)\n2. Để yên cho ngủ (寝させておく)。(Cứ để yên cho nó ngủ.)\n3. Để thằng bé làm (彼にやらせておこう)。(Cứ để mặc cho cậu ta làm đi.)",
+    "meaning": "Ý nghĩa: Cứ để cho... làm / Cứ để mặc...\nCách dùng: Cho phép hoặc để mặc ai đó tiếp tục thực hiện một hành động mà không can thiệp vào."
+  },
+  {
+    "id": "127",
+    "kanji": "~につき (1)",
+    "furigana": "N(Số lượng) ＋ につき",
+    "example": "1. このお菓子は一人につき二つまでです。(Món bánh này mỗi người chỉ được lấy tối đa 2 cái.)\n2. 会費は1人につき1,000円です。(Hội phí là 1,000 yên cho mỗi người.)\n3. 1時間につき1,000円の駐車料金がかかります。(Phí gửi xe là 1,000 yên cho mỗi giờ.)",
+    "meaning": "Ý nghĩa: Cứ mỗi... / Cho mỗi...\nCách dùng: Dùng để biểu thị tỷ lệ, phân bổ số lượng tương ứng."
+  },
+  {
+    "id": "128",
+    "kanji": "~につき (2)",
+    "furigana": "N ＋ につき",
+    "example": "1. 雨天につき、試合は中止します。(Vì trời mưa nên trận đấu bị hủy bỏ.)\n2. 清掃中につき、立入禁止。(Vì đang dọn dẹp nên cấm vào.)\n3. 工事中につき、ご協力をお願いします。(Do đang thi công, xin vui lòng hợp tác.)",
+    "meaning": "Ý nghĩa: Vì... / Do...\nCách dùng: Dùng trong thông báo, văn bản chính thức hoặc biển hiệu để nêu lý do, nguyên nhân."
+  },
+  {
+    "id": "129",
+    "kanji": "~もの / ~もん",
+    "furigana": "Thể thường ＋ もの / もん",
+    "example": "1. だって知らなかったんだもの。(Tại em có biết đâu cơ chứ.)\n2. 一人で行くのは怖いんだもん。(Tại đi một mình sợ lắm mà.)\n3. まだ子どもだもの、仕方がないよ。(Vì vẫn còn là trẻ con nên đành chịu thôi.)",
+    "meaning": "Ý nghĩa: Vì... mà / Tại vì... (bao biện, làm nũng)\nCách dùng: Dùng ở cuối câu trong giao tiếp thân mật (thường là phụ nữ, trẻ em) để phân thanh minh, đưa ra lý do."
+  },
+  {
+    "id": "130",
+    "kanji": "~ものだから / ~もので",
+    "furigana": "Thể thường (Aな->な, N->な) ＋ ものだから / もので",
+    "example": "1. 事故があったものだから、遅れてしまいました。(Vì gặp tai nạn nên tôi đã đến muộn.)\n2. 道路が混んでいたもので、すみません。(Vì đường đông quá nên xin lỗi bạn nhé.)\n3. 急なことだったものだから、準備ができなかった。(Vì sự việc quá đột ngột nên tôi chưa kịp chuẩn bị.)",
+    "meaning": "Ý nghĩa: Vì... (nguyên nhân, lý do cá nhân)\nCách dùng: Dùng để giải thích lý do, đưa ra lời thanh minh hoặc xin lỗi một cách lịch sự."
+  },
+  {
+    "id": "131",
+    "kanji": "~をきっかけに / ~がきっかけで",
+    "furigana": "N・Vの ＋ をきっかけに(して) / がきっかけで",
+    "example": "1. 日本のアニメを見たのをきっかけに、日本語の勉強を始めた。(Nhân cơ hội xem phim hoạt hình Nhật Bản, tôi đã bắt đầu học tiếng Nhật.)\n2. 入院をきっかけに、たばこをやめた。(Nhân dịp nhập viện, tôi đã bỏ thuốc lá.)\n3. 引っ越しがきっかけで、新しい bạn (友達) ができた。(Nhờ việc chuyển nhà mà tôi đã có thêm bạn mới.)",
+    "meaning": "Ý nghĩa: Nhân cơ hội... / Từ khởi đầu là... / Nhờ có...\nCách dùng: Chỉ ra yếu tố, sự kiện khởi đầu dẫn đến một sự thay đổi hoặc hành động mới."
+  },
+  {
+    "id": "132",
+    "kanji": "~ことになっている",
+    "furigana": "Vる・Vない ＋ ことになっている",
+    "example": "1. 法律で、20歳未満の飲酒は禁止されていることになっている。(Theo quy định của pháp luật, người dưới 20 tuổi bị cấm uống rượu.)\n2. 明日は8時に集合することになっている。(Thỏa thuận là sáng mai 8 giờ sẽ tập hợp.)\n3. 授業中は携帯電話を使ってはいけないことになっている。(Theo quy định thì không được dùng điện thoại trong giờ học.)",
+    "meaning": "Ý nghĩa: Theo quy định là... / Đã được quyết định là...\nCách dùng: Diễn tả các quy định, luật lệ, kế hoạch hoặc tập quán đã được người khác/tập thể quyết định sẵn."
+  },
+  {
+    "id": "133",
+    "kanji": "~かねる / ~かねない",
+    "furigana": "Vます(bỏ ます) ＋ かねる / かねない",
+    "example": "1. そのご質問にはお答えしかねます。(Tôi khó mà / không thể trả lời câu hỏi đó được.)\n2. 暴飲暴食を続けると、病気になりかねない。(Nếu tiếp tục ăn uống vô độ thì hoàn toàn có thể bị bệnh đấy.)\n3. このままでは、事故が起きかねない。(Cứ tình trạng này thì rất có thể xảy ra tai nạn.)",
+    "meaning": "Ý nghĩa: かねる: Khó mà... / Không thể... | かねない: Có thể... / Rất có khả năng (xảy ra kết quả xấu)\nCách dùng: 「かねる」 dùng trong văn phong lịch sự từ chối khéo; 「かねない」 cảnh báo nguy cơ xấu có thể xảy ra."
+  },
+  {
+    "id": "134",
+    "kanji": "~がたい",
+    "furigana": "Vます(bỏ ます) ＋ がたい",
+    "example": "1. 彼女がそんなことを言ったとは、信じがたい。(Rất khó tin là cô ấy lại nói ra điều như vậy.)\n2. 許しがたい行為だ。(Đó là một hành vi khó mà tha thứ được.)\n3. 幼い頃の思い出は、忘れがたい。(Kỷ niệm thời thơ ấu thật khó mà quên được.)",
+    "meaning": "Ý nghĩa: Khó... / Khó mà...\nCách dùng: Thường đi với các động từ cảm xúc, nhận thức (信じる, 許す, 理解する...) để thể hiện sự khó khăn về mặt tâm lý, cảm xúc."
+  },
+  {
+    "id": "135",
+    "kanji": "~っこない",
+    "furigana": "Vます(bỏ ます) ＋ っこない",
+    "example": "1. こんなにたくさんの料理、一人で食べきれっこない。(Nhiều đồ ăn thế này thì một mình tuyệt đối không thể ăn hết được.)\n2. 今日中にこの仕事を終わらせることなんてできっこない。(Chuyện hoàn thành công việc này trong ngày hôm nay là tuyệt đối không thể.)\n3. 彼が来るっこないよ。(Anh ta tuyệt đối sẽ không đến đâu.)",
+    "meaning": "Ý nghĩa: Tuyệt đối không... / Làm sao mà... được\nCách dùng: Nhấn mạnh sự phủ định, khẳng định chủ quan của người nói rằng một việc gì đó là hoàn toàn không khả thi."
+  },
+  {
+    "id": "136",
+    "kanji": "~っぽい (1)",
+    "furigana": "N ＋ っぽい",
+    "example": "1. 彼女は大人っぽい服を着ている。(Cô ấy mặc bộ quần áo trông có vẻ rất người lớn.)\n2. その色、子供っぽくない？(Màu đó trông chẳng phải có vẻ hơi trẻ con sao?)\n3. あれは男っぽい話し方だ。(Đó là cách nói chuyện có vẻ rất nam tính.)",
+    "meaning": "Ý nghĩa: Trông có vẻ... / Mang phong thái...\nCách dùng: Diễn tả vẻ ngoài, đặc điểm giống như một đối tượng nào đó (dù bản chất không phải)."
+  },
+  {
+    "id": "137",
+    "kanji": "~っぽい (2)",
+    "furigana": "N ＋ っぽい",
+    "example": "1. このお茶は水っぽい。(Trà này nhiều nước quá / loãng quá.)\n2. 油っぽい料理は苦手だ。(Tôi không thích các món ăn chứa nhiều dầu mỡ.)\n3. 白っぽいシャツを着ている。(Anh ấy đang mặc chiếc áo sơ mi thiên về màu trắng.)",
+    "meaning": "Ý nghĩa: Nhiều... / Thiên về...\nCách dùng: Nhấn mạnh sự thành phần, tính chất nổi trội (nhiều nước, nhiều mỡ, ngả màu...)."
+  },
+  {
+    "id": "138",
+    "kanji": "~っぽい (3)",
+    "furigana": "Vます(bỏ ます) ＋ っぽい",
+    "example": "1. 彼は怒りっぽい性格だ。(Anh ấy có tính cách rất hay giận dỗi.)\n2. 最近、忘れっぽくなった。(Dạo này tôi trở nên hay quên.)\n3. 飽きっぽい性格を治したい。(Tôi muốn sửa cái tính hay chán của mình.)",
+    "meaning": "Ý nghĩa: Thường... / Dễ hay...\nCách dùng: Chỉ xu hướng, khuynh hướng hành vi mang tính thường xuyên (thường có hướng tiêu cực)."
+  },
+  {
+    "id": "139",
+    "kanji": "~ていく",
+    "furigana": "Vて ＋ いく",
+    "example": "1. これからも日本語の勉強を続けていくつもりだ。(Tôi định sẽ tiếp tục học tiếng Nhật từ giờ trở đi.)\n2. 鳥が飛んでいった。(Con chim đã bay đi mất.)\n3. 暖かくなっていくでしょう。(Thời tiết chắc là sẽ dần ấm lên.)",
+    "meaning": "Ý nghĩa: Tiếp tục... / Dần dần... (hướng ra xa / đến tương lai)\nCách dùng: Diễn tả sự di chuyển ra xa vị trí người nói hoặc sự thay đổi tiếp diễn từ hiện tại đến tương lai."
+  },
+  {
+    "id": "140",
+    "kanji": "~てくる",
+    "furigana": "Vて ＋ くる",
+    "example": "1. だんだん寒くなってきた。(Trời đã bắt đầu trở nên lạnh dần rồi.)\n2. ずっとこの伝統を守ってきた。(Chúng tôi đã liên tục giữ gìn truyền thống này tới tận bây giờ.)\n3. 雨が降ってきた。(Trời bắt đầu đổ mưa rồi.)",
+    "meaning": "Ý nghĩa: Bắt đầu... / Trở nên... (từ quá khứ đến hiện tại / hướng lại gần)\nCách dùng: Diễn tả hành động di chuyển tiến lại gần hoặc sự thay đổi tiến triển từ quá khứ kéo dài đến hiện tại."
+  },
+  {
+    "id": "141",
+    "kanji": "~とともに (1)",
+    "furigana": "N ＋ とともに",
+    "example": "1. 家族とともに過ごす時間が大切だ。(Khoảng thời gian trải qua cùng với gia đình là rất quan trọng.)\n2. 友人とともに bão (事業) を始めた。(Tôi đã bắt đầu sự nghiệp cùng với bạn của mình.)\n3. 時代とともに変化する。(Thay đổi cùng với thời đại.)",
+    "meaning": "Ý nghĩa: Cùng với...\nCách dùng: Bày tỏ việc làm một hành động nào đó cùng với một đối tượng khác."
+  },
+  {
+    "id": "142",
+    "kanji": "~とともに (2)",
+    "furigana": "Vる・N ＋ とともに",
+    "example": "1. 年をとるとともに、体が弱くなる。(Càng nhỏ tuổi/lớn tuổi thì cơ thể lại càng yếu đi.)\n2. 時代の変化とともに、 người dùng (価値観) も変わる。(Càng theo sự thay đổi của thời đại thì giá trị quan cũng thay đổi theo.)\n3. 技術の進歩とともに、 sinh hoạt (生活が便利になった)。(Càng cùng với sự tiến bộ kỹ thuật thì cuộc sống càng thuận tiện.)",
+    "meaning": "Ý nghĩa: Càng... càng... / Mối quan hệ kéo theo\nCách dùng: Diễn tả hai sự việc thay đổi biến chuyển tỉ lệ thuận đồng thời với nhau."
+  },
+  {
+    "id": "143",
+    "kanji": "~とともに (3)",
+    "furigana": "Vる・Aい・Aな/Nである ＋ とともに",
+    "example": "1. 彼は歌手であるとともに、 phó (作曲家) でもある。(Anh ấy đồng thời vừa là ca sĩ, vừa là nhạc sĩ.)\n2. この製品は quan trọng (便利であるとともに)、 thiết kế (デザインもいい)。(Sản phẩm này đồng thời vừa tiện lợi lại vừa có thiết kế đẹp.)\n3. 喜ぶとともに、 hận (不安も感じた)。(Vừa vui mừng nhưng đồng thời cũng cảm thấy lo lắng.)",
+    "meaning": "Ý nghĩa: Đồng thời... / Vừa... lại vừa...\nCách dùng: Diễn tả sự tồn tại song song của hai trạng thái, đặc điểm hoặc vai trò."
+  },
+  {
+    "id": "144",
+    "kanji": "~につれて",
+    "furigana": "Vる・N ＋ につれて",
+    "example": "1. 台風が近づくにつれて、風が強くなってきた。(Càng tiến gần bão thì gió lại càng mạnh lên.)\n2. 時間が経つにつれて、 nỗi đau (悲しみ) が和らいだ。(Càng theo thời gian trôi qua thì nỗi buồn càng nguôi khoai.)\n3. 再開が進むにつれて、 thành phố (街が変わっていく)。(Càng tiến hành tái thiết thì thành phố càng đổi thay.)",
+    "meaning": "Ý nghĩa: Càng... thì càng... / Mối quan hệ kéo theo\nCách dùng: Diễn tả sự thay đổi kéo theo mang tính tự nhiên, một bên biến đổi dẫn tới bên kia biến đổi theo."
+  },
+  {
+    "id": "145",
+    "kanji": "~も~ば~も",
+    "furigana": "N1 も ＋ V/Aば ＋ N2 も",
+    "example": "1. 人生には nhàn (楽しいこともあれば)、 khổ (苦しいこともある)。(Cuộc đời có lúc vui mà cũng có lúc khổ.)\n2. 彼は học (勉強もできれば)、 thể thao (スポーツも得意だ)。(Anh ấy học cũng giỏi mà thể thao cũng giỏi.)\n3. Tiền (お金もなければ)、 time (時間もない)。(Tiền cũng không có mà thời gian cũng không.)",
+    "meaning": "Ý nghĩa: Vừa... lại vừa... / Cả... lẫn...\nCách dùng: Liệt kê hai đối tượng/đặc điểm song song cùng tồn tại (cùng tích cực hoặc cùng tiêu cực)."
+  },
+  {
+    "id": "146",
+    "kanji": "V たうえで",
+    "furigana": "Vた ＋ うえで",
+    "example": "1. 家族と相談したうえで、決めます。(Sau khi bàn bạc với gia đình xong thì tôi mới quyết định.)\n2. 内容を確認したうえで、 ngón (サインしてください)。(Xin hãy ký tên sau khi đã xác nhận kỹ nội dung.)\n3. 実物を見たうえで、 thi hành (購入を検討する)。(Tôi sẽ xem xét mua sau khi đã tận mắt nhìn thấy hiện vật.)",
+    "meaning": "Ý nghĩa: Sau khi... thì mới...\nCách dùng: Chuẩn bị/thực hiện xong hành động V1 làm tiền đề cần thiết rồi mới tiến hành hành động V2."
+  },
+  {
+    "id": "147",
+    "kanji": "~うえに",
+    "furigana": "Thể thường (Aな->な/である, N->の/である) ＋ うえに",
+    "example": "1. 彼女は綺麗なうえに、 quan trọng (頭がいい)。(Cô ấy không những đẹp mà lại còn thông minh.)\n2. この店は taste (味が悪いうえに)、 giá (値段も高い)。(Quán này không những dở mà giá lại còn đắt.)\n3. Đã trễ (遅れたうえに)、 forgotten (宿題も忘れた)。(Đã đến muộn rồi lại còn quên cả bài tập.)",
+    "meaning": "Ý nghĩa: Không những... mà còn... / Hơn nữa...\nCách dùng: Cộng thêm một đặc điểm cùng tính chất (cùng tốt hoặc cùng xấu) để nhấn mạnh mức độ."
+  },
+  {
+    "id": "148",
+    "kanji": "~ないことは ( も ) ない",
+    "furigana": "Vない・Aくない・Aではない ＋ ことは(も)ない",
+    "example": "1. 食べられないことはないが、あまりおいしくない。(Không phải là không ăn được, nhưng không ngon lắm.)\n2. 走れば間に合わないこともない。(Nếu chạy thì không phải là không kịp đâu.)\n3. 気持ちが分からないこともない。(Không phải là tôi không hiểu cảm giác đó.)",
+    "meaning": "Ý nghĩa: Không phải là không... / Cũng có khả năng là...\nCách dùng: Phủ định kép để đưa ra lời khẳng định nhẹ nhàng, dè dặt hoặc có điều kiện."
+  },
+  {
+    "id": "149",
+    "kanji": "~に違いにない",
+    "furigana": "Thể thường (Aな/N bỏ だ) ＋ に違いにない",
+    "example": "1. 犯人は彼に違いない。(Thủ phạm chắc chắn là hắn ta.)\n2. これだけ練習したのだから、 thành công (成功するに違いない)。(Đã luyện tập đến mức này thì chắc chắn sẽ thành công.)\n3. 彼は疲れているに違いない。(Chắc chắn là anh ấy đang rất mệt.)",
+    "meaning": "Ý nghĩa: Chắc chắn là... / Không thể sai được\nCách dùng: Thể hiện phán đoán suy luận có tính phỏng đoán căn cứ mạnh mẽ của người nói."
+  },
+  {
+    "id": "150",
+    "kanji": "~に相違ない",
+    "furigana": "Thể thường (Aな/N bỏ だ) ＋ に相違ない",
+    "example": "1. この証拠からみて、彼が犯人に相違ない。(Đánh giá từ bằng chứng này, chắc chắn hắn là thủ phạm.)\n2. 今後の景気は mờ (悪化するに相違ない)。(Tình hình kinh tế sắp tới chắc chắn sẽ tồi tệ đi.)\n3. 成功するのは彼に相違ない。(Người thành công chắc chắn là anh ấy.)",
+    "meaning": "Ý nghĩa: Chắc chắn là... / Nhất định là...\nCách dùng: Tương tự như に違いない nhưng mang văn phong trang trọng, hay dùng trong văn viết/báo cáo."
+  },
+  {
+    "id": "151",
+    "kanji": "~ぬきで",
+    "furigana": "N ＋ ぬきで / ぬきにして / ぬきの",
+    "example": "1. 朝ご飯ぬきで会社へ行った。(Tôi đã đi làm mà bỏ qua / không ăn sáng.)\n2. お礼ぬきで、 khao (本音で話しましょう)。(Bỏ qua những lời xã giao đi, chúng ta hãy nói chuyện thành thật với nhau.)\n3. わさびぬきでお願いします。(Xin vui lòng cho tôi suất không lấy mù tạt/wasabi.)",
+    "meaning": "Ý nghĩa: Không có... / Bỏ qua...\nCách dùng: Chỉ việc lược bỏ một yếu tố thông thường hoặc vốn dĩ phải có để thực hiện việc khác."
+  },
+  {
+    "id": "152",
+    "kanji": "~をもとに ( して )",
+    "furigana": "N ＋ をもとに / をもとにして",
+    "example": "1. この映画は thật (事実に基いて / 事実をもとにして) 作られた。(Bộ phim này được làm dựa trên sự thật.)\n2. アンケートの結果をもとに、 kẹp (新商品を開発した)。(Dựa trên kết quả khảo sát, chúng tôi đã phát triển sản phẩm mới.)\n3. 試験の成績をもとに (クラスを分ける)。(Dựa vào thành tích thi để chia lớp.)",
+    "meaning": "Ý nghĩa: Dựa trên... / Lấy... làm cơ sở, nguyên liệu\nCách dùng: Dùng khi tạo ra một cái mới (sách, phim, sản phẩm, quyết định...) từ tài liệu hay nền tảng gốc."
+  },
+  {
+    "id": "153",
+    "kanji": "~からといって",
+    "furigana": "Thể thường ＋ からといって",
+    "example": "1. 安いからといって、 buy (買いすぎるのはよくない)。(Không phải cứ rẻ là mua nhiều đâu.)\n2. 日本に住んでいるからといって、 nihongo (日本語が上手だとは限らない)。(Không phải cứ sống ở Nhật là tiếng Nhật sẽ giỏi.)\n3. 好きだからといって、 ăn (毎日食べるのは体に良くない)。(Dù có thích đi nữa thì việc ngày nào cũng ăn cũng không tốt cho cơ thể.)",
+    "meaning": "Ý nghĩa: Cho dù nói là... / Không phải cứ... thì là...\nCách dùng: Dùng để phủ định suy luận thông thường, vế sau thường đi với とは限らない, わけではない..."
+  },
+  {
+    "id": "154",
+    "kanji": "~以来",
+    "furigana": "Vて・N ＋ 以来",
+    "example": "1. 日本へ来て以来、 mãi (ずっと東京に住んでいる)。(Kể từ khi đến Nhật Bản tới nay, tôi liên tục sống ở Tokyo.)\n2. 卒業以来、 meeting (彼に会っていない)。(Kể từ khi tốt nghiệp tới nay, tôi chưa từng gặp lại anh ấy.)\n3. 昨日の事件以来、 sợ (怖くて外出できない)。(Kể từ sự cố ngày hôm qua tới giờ, tôi sợ không dám ra ngoài.)",
+    "meaning": "Ý nghĩa: Kể từ khi... cho đến nay\nCách dùng: Diễn tả một sự việc diễn ra liên tục, duy trì không đổi từ một mốc thời gian trong quá khứ."
+  },
+  {
+    "id": "155",
+    "kanji": "~に限る",
+    "furigana": "Vる・Vない・N ＋ に限る",
+    "example": "1. 暑い日は、 bia (冷たいビールに限る)。(Ngày nóng thì cứ làm ly bia lạnh là nhất.)\n2. 風邪を引いた時は、 ngủ (早く寝るに限る)。(Khi bị cảm thì tốt nhất là nên đi ngủ sớm.)\n3. 危険な場所には、 tiến (近寄らないに限る)。(Nơi nguy hiểm thì tốt nhất là không nên lại gần.)",
+    "meaning": "Ý nghĩa: Là tốt nhất / Chỉ có... là nhất\nCách dùng: Khẳng định sự lựa chọn của bản thân là tối ưu và tuyệt vời nhất trong hoàn cảnh đó."
+  },
+  {
+    "id": "156",
+    "kanji": "~かのように / ~かのような / ~かのようだ",
+    "furigana": "Thể thường (Aな/N là である) ＋ かのようだ / かのように / かのような",
+    "example": "1. 彼はまるですべてを知っているかのように話す。(Anh ta nói chuyện cứ như thể là biết hết mọi thứ vậy.)\n2. まだ春ではないのに、 sakura (桜が咲いているかのように見えた)。(Dù chưa phải mùa xuân nhưng trông cứ như hoa anh đào đang nở vậy.)\n3. まるで夢であるかのような thời gian (時間だった)。(Đó là khoảng thời gian giống hệt như một giấc mơ vậy.)",
+    "meaning": "Ý nghĩa: Cứ như thể là... / Trông giống như là...\nCách dùng: So sánh giả định một sự việc không có thật nhưng thực tế lại diễn ra giống hệt như vậy."
+  },
+  {
+    "id": "157",
+    "kanji": "~くせに",
+    "furigana": "Thể thường (Aな->な, N->の) ＋ くせに",
+    "example": "1. 知っているくせに、 chỉ (教えてくれない)。(Dù biết thế mà lại không chịu chỉ cho tôi.)\n2. 男のくせに、 khóc (泣くなよ)。(Là con trai mà lại khóc à.)\n3. 下手なくせに、 khoe (威張っている)。(Dù dở mà lúc nào cũng vên váo/khoe khoang.)",
+    "meaning": "Ý nghĩa: Mặc dù... mà lại... / Thế mà...\nCách dùng: Bày tỏ sự trách móc, coi thường hay mỉa mai đối phương khi hành động trái ngược với thực tế."
+  },
+  {
+    "id": "158",
+    "kanji": "~うちに",
+    "furigana": "Vる・Vている・Vない・Aい・Aな・Nの ＋ うちに",
+    "example": "1. 日本にいるうちに、一度富士山に登ってみたい。(Trong lúc còn ở Nhật, tôi muốn thử leo núi Phú Sĩ một lần.)\n2. 熱いうちに、召し上がってください。(Xin mời ăn ngay trong lúc thức ăn còn nóng.)\n3. 気がつかないうちに、外は暗くなっていた。(Trong lúc không chú ý, bên ngoài trời đã tối mất rồi.)",
+    "meaning": "Ý nghĩa: Trong lúc... / Tranh thủ khi... / Trong khi chưa...\nCách dùng: Thực hiện hành động trước khi trạng thái thay đổi, hoặc diễn tả một sự thay đổi xảy ra tự nhiên trong khi đang thực hiện trạng thái nào đó."
+  },
+  {
+    "id": "159",
+    "kanji": "~あいだ ( 間 )",
+    "furigana": "Vている・Nの ＋ 間",
+    "example": "1. 夏休みの間、ずっと実家にいた。(Trong suốt kỳ nghỉ hè, tôi đã ở nhà cha mẹ suốt.)\n2. 彼女が料理を作っている間、私はテレビを見ていた。(Trong suốt lúc cô ấy nấu ăn, tôi đã ngồi xem tivi.)\n3. 子供が寝ている間、本を読んでいた。(Trong suốt khoảng thời gian con ngủ, tôi đã đọc sách.)",
+    "meaning": "Ý nghĩa: Trong suốt khoảng thời gian...\nCách dùng: Diễn tả một hành động/trạng thái diễn ra liên tục song song trong toàn bộ khoảng thời gian của một hành động/trạng thái khác."
+  },
+  {
+    "id": "160",
+    "kanji": "~あいだに ( 間に )",
+    "furigana": "Vている・Nの ＋ 間に",
+    "example": "1. 留守の間に、荷物が届いた。(Trong lúc tôi vắng nhà, hàng đã được giao đến.)\n2. 母親が昼寝をしている間に、子供は外へ遊びに行った。(Trong lúc người mẹ đang ngủ trưa, đứa trẻ đã đi ra ngoài chơi.)\n3. 電車を待っている間に、友達にメールを送った。(Trong khoảnh khắc chờ tàu, tôi đã gửi tin nhắn cho bạn.)",
+    "meaning": "Ý nghĩa: Trong khi... / Trong lúc...\nCách dùng: Diễn tả một hành động mang tính khoảnh khắc/ngắn hạn xảy ra tại một thời điểm nào đó trong khoảng thời gian diễn ra hành động khác."
+  },
+  {
+    "id": "161",
+    "kanji": "~反面 ( はんめん )",
+    "furigana": "Thể thường (Aな->な/である, N->である) ＋ 反面",
+    "example": "1. この薬はよく効く反面、副作用強い。(Thuốc này hiệu quả tốt nhưng mặt khác tác dụng phụ cũng mạnh.)\n2. ひとり暮らしは自由な反面、寂しいこともある。(Sống một mình tự do nhưng mặt khác cũng có lúc cô đơn.)\n3. 彼は優しがある反面、厳しいところもある。(Anh ấy một mặt thì dịu dàng nhưng mặt khác cũng có điểm rất nghiêm khắc.)",
+    "meaning": "Ý nghĩa: Trái lại... / Mặt khác... / Nhưng ngược lại...\nCách dùng: Diễn tả hai mặt đối lập, trái ngược nhau cùng tồn tại trên một đối tượng hoặc sự việc."
+  }
+]
