@@ -101,19 +101,17 @@
         </div>
 
         <div class="nav-item">
-            <a href="/import">Import</a>
-        </div>
-
-        <div class="nav-item">
             <a href="/dashboard">📊 Dashboard</a>
         </div>
 
         <div class="nav-item">
             <% if (typeof user !== 'undefined' && user) { %>
-                <span style="opacity: 0.85; margin-right: 8px;">👤 <%= user.email %></span>
-                <form action="/logout" method="POST" style="display: inline;">
-                    <button type="submit" class="nav-btn" style="background: none; border: none; cursor: pointer; font: inherit; color: inherit; padding: 0;">Đăng xuất</button>
-                </form>
+                <a href="#"> 
+                    <span style="opacity: 0.85; margin-right: 8px; display: inline-block; max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle;" title="<%= user.email %>">👤 <%= user.email %></span>
+                    <form action="/logout" method="POST" style="display: inline;">
+                        <button type="submit" class="nav-btn" style="background: none; border: none; cursor: pointer; font: inherit; color: inherit; padding: 0;">Đăng xuất</button>
+                    </form>
+                </a>
             <% } else { %>
                 <a href="/login">Đăng nhập</a>
             <% } %>
