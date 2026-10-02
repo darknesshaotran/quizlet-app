@@ -311,6 +311,64 @@ function updateFuriganaToggleUI() {
     btn.classList.toggle('btn-tool-active', on);
 }
 
+// ==== Phát âm tiếng Nhật: nút 🔊 trên thẻ (speechSynthesis có sẵn trong trình duyệt) ====
+const TTS_SUPPORTED = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+let jaVoice = null;
+let noVoiceWarned = false;
+
+function pickJaVoice() {
+    const list = window.speechSynthesis.getVoices() || [];
+    const ja = list.filter(v => /^ja([-_]|$)/i.test(v.lang || ''));
+    const best = /Premium|Enhanced|Natural|Google|Kyoko|Otoya|Nanami|Haruka|Ayumi|O-Ren/i;
+    jaVoice = ja.find(v => best.test(v.name || '')) || ja[0] || null;
+}
+if (TTS_SUPPORTED) {
+    pickJaVoice(); // Chrome nạp danh sách giọng bất đồng bộ nên phải nghe thêm sự kiện này
+    window.speechSynthesis.onvoiceschanged = pickJaVoice;
+}
+
+// Chỉ lấy phần chữ Nhật để đọc (bỏ ngoặc, romaji, tiếng Việt, ký hiệu ~).
+// Từ vựng ưu tiên cột phiên âm (furigana) vì chữ Hán dễ bị đọc sai.
+const JP_RUN = /[\u3040-\u30ff\u31f0-\u31ff\u3400-\u4dbf\u4e00-\u9fff\uff66-\uff9f\u3005]+/g;
+function japaneseOnly(raw) {
+    const m = String(raw == null ? '' : raw).match(JP_RUN);
+    return m ? m.join(' ') : '';
+}
+function cardSpeechText(card) {
+    if (card.kanji || card.furigana) {
+        const reading = String(card.furigana || '').split(/[,、;\/／|]/)[0];
+        return japaneseOnly(reading) || japaneseOnly(card.kanji);
+    }
+    return japaneseOnly(card.structure);
+}
+
+// Nút 🔊 nằm trên thẻ (cả 2 mặt). stopPropagation để bấm nút không làm lật thẻ.
+function speakBtnHtml(card) {
+    if (!TTS_SUPPORTED || !cardSpeechText(card)) return '';
+    return '<button type="button" class="speak-btn" title="Nghe phát âm" aria-label="Nghe phát âm" ' +
+           'onclick="event.stopPropagation(); speakCurrent();">🔊</button>';
+}
+
+function speakCurrent() {
+    if (!TTS_SUPPORTED) return;
+    const card = currentQueue[currentIndex];
+    const text = card ? cardSpeechText(card) : '';
+    if (!text) return;
+
+    const synth = window.speechSynthesis;
+    const hasVoices = (synth.getVoices() || []).length > 0;
+    if (hasVoices && !jaVoice && !noVoiceWarned) {
+        noVoiceWarned = true;
+        showSyncError('Thiết bị chưa có giọng đọc tiếng Nhật. Hãy cài gói ngôn ngữ tiếng Nhật trong cài đặt hệ thống để nghe đúng.');
+    }
+    if (synth.speaking || synth.pending) synth.cancel(); // ngắt câu đang đọc dở
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'ja-JP';
+    if (jaVoice) u.voice = jaVoice;
+    u.rate = 0.9; // chậm hơn tốc độ thường một chút cho người học
+    synth.speak(u);
+}
+
 function todayStr() { return new Date().toISOString().slice(0, 10); }
 
 // Cập nhật lịch ôn tập cho 1 thẻ theo thuật toán SM-2 (grade: 0 Lại, 1 Khó, 2 Tốt, 3 Dễ)
@@ -535,9 +593,9 @@ function renderCard() {
 
     if (kanji) {
         const furiganaHtml = (furigana && isFuriganaVisible()) ? `<p>(${furigana})</p>` : '';
-        document.getElementById('card-front').innerHTML = `<h3>${kanji}</h3>${furiganaHtml}`;
+        document.getElementById('card-front').innerHTML = `<h3>${kanji}</h3>${furiganaHtml}${speakBtnHtml(card)}`;
     } else {
-        document.getElementById('card-front').innerHTML = `<h3>${card.structure || ''}</h3>`;
+        document.getElementById('card-front').innerHTML = `<h3>${card.structure || ''}</h3>${speakBtnHtml(card)}`;
     }
 
     let backHtml = '';
@@ -545,7 +603,7 @@ function renderCard() {
     if (meaning) backHtml += `<p style="white-space: pre-line;"><strong>Nghĩa:</strong> ${meaning}</p>`;
     if (example) backHtml += `<p style="white-space: pre-line;"><small style="color: var(--card-back-muted);">${example}</small></p>`;
 
-    document.getElementById('card-back').innerHTML = backHtml || '<p>Chưa có chi tiết</p>';
+    document.getElementById('card-back').innerHTML = speakBtnHtml(card) + (backHtml || '<p>Chưa có chi tiết</p>');
 
     updateUndoButton();
     saveSession();

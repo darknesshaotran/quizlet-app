@@ -421,6 +421,38 @@ h1, h2, h3 {
 .guest-note a { color: var(--ink-strong); font-weight: 800; }
 
 /* =========================================================
+   NÚT PHÁT ÂM 🔊 TRÊN THẺ
+   ========================================================= */
+.speak-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--paper);
+    color: var(--ink-strong);
+    font-size: 17px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.speak-btn:hover { transform: translateY(-1px); border-color: var(--gold); }
+.speak-btn:active { transform: scale(0.93); }
+.card-back .speak-btn {
+    background: rgba(255,255,255,0.55);
+    border-color: rgba(201,162,77,0.5);
+}
+:root[data-theme="dark"] .card-back .speak-btn { background: rgba(255,255,255,0.08); }
+
+/* =========================================================
    FLASHCARD NAVIGATION (arrows + scene)
    ========================================================= */
 .card-nav-wrapper {

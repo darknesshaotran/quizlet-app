@@ -76,9 +76,17 @@ app.post('/logout', (req, res) => {
 });
 
 // Trang Học Quizlet (Chung cho cả bài mới lẫn bài Chưa Thuộc)
+// Chỉ cho phép đúng các bộ thẻ có thật (chặn kiểu /quizlet/..%2f..%2fpackage để đọc file ngoài thư mục data)
+const DECK_TYPES = ['tu-vung', 'ngu-phap'];
+const DECK_LEVELS = ['n1', 'n2', 'n3', 'n4', 'n5'];
+function isValidDeck(type, level) {
+    return DECK_TYPES.includes(type) && DECK_LEVELS.includes(level);
+}
+
 // Học flashcard KHÔNG cần đăng nhập (khách lưu tiến độ trên thiết bị; có tài khoản thì lưu lên DB)
 app.get('/quizlet/:type/:level', (req, res) => {
     const { type, level } = req.params;
+    if (!isValidDeck(type, level)) return res.status(404).send('Không tìm thấy bộ thẻ');
     const mode = req.query.mode;
     const isUnlearned = mode === 'unlearned'; // Chế độ xem từ CHƯA THUỘC
     const isLearned = mode === 'learned';     // Chế độ xem từ ĐÃ THUỘC
@@ -101,6 +109,7 @@ app.get('/quizlet/:type/:level', (req, res) => {
 // Quiz trắc nghiệm cũng không cần đăng nhập
 app.get('/quiz/:type/:level', (req, res) => {
     const { type, level } = req.params;
+    if (!isValidDeck(type, level)) return res.status(404).send('Không tìm thấy bộ thẻ');
     const filePath = path.join(__dirname, '../data', type, `${level}.json`);
     let cards = [];
 
