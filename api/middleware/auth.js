@@ -10,7 +10,7 @@ const cookieOptions = {
 };
 
 function setSessionCookies(res, session) {
-    res.cookie(ACCESS_COOKIE, session.access_token, { ...cookieOptions, maxAge: 1000 * 60 * 60 }); // 1 giờ
+    res.cookie(ACCESS_COOKIE, session.access_token, { ...cookieOptions, maxAge: 1000 * 60 * 60 *24 }); // 1 ngày
     res.cookie(REFRESH_COOKIE, session.refresh_token, { ...cookieOptions, maxAge: 1000 * 60 * 60 * 24 * 30 }); // 30 ngày
 }
 
@@ -43,7 +43,7 @@ async function attachUser(req, res, next) {
     const refreshToken = req.cookies[REFRESH_COOKIE];
     if (refreshToken) {
         try {
-            const { data, error } = await supabase.auth.refreshSession({ refresh_token: refreshToken });
+            const { data, error } = await refreshOnce(refreshToken);
             if (data && data.session && !error) {
                 setSessionCookies(res, data.session);
                 req.user = data.session.user;
@@ -55,7 +55,17 @@ async function attachUser(req, res, next) {
             clearSessionCookies(res);
         }
     }
+    const inFlightRefresh = new Map();
 
+    function refreshOnce(refreshToken) {
+        if (inFlightRefresh.has(refreshToken)) {
+            return inFlightRefresh.get(refreshToken);
+        }
+        const promise = supabase.auth.refreshSession({ refresh_token: refreshToken })
+            .finally(() => inFlightRefresh.delete(refreshToken));
+        inFlightRefresh.set(refreshToken, promise);
+        return promise;
+    }
     next();
 }
 
